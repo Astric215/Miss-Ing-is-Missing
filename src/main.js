@@ -10,10 +10,12 @@ let config = {
         forceSetTimeOut: true
     },
     autoCenter: true,
-    scene: [ Load, Menu ]
+    scene: [Load, Menu, Play]
 };
 
 let pip1;
 let tileSize = 32;
 
 let game = new Phaser.Game(config);
+
+// reserve keyboard vars

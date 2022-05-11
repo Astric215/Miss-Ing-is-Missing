@@ -14,7 +14,20 @@ class Menu extends Phaser.Scene
         pip1.moveTo(200,200, 1000, 'power0', 0);
     }
 
-    update()
+    create() 
     {
+
+    }
+
+    update() 
+    {
+        console.log('menuscene');
+        
+        //check if the left button is down on the mouse if so go to play
+        //click to start
+        if(this.input.activePointer.leftButtonDown())
+        {
+            this.scene.start("playScene");
+        }
     }
 }
