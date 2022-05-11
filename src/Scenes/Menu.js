@@ -25,7 +25,7 @@ class Menu extends Phaser.Scene
         //click to start
         if(this.input.activePointer.leftButtonDown())
         {
-            this.scene.start("CharacterSelectionScene");
+            this.scene.start("characterSelectionScene");
         }
     }
 }
