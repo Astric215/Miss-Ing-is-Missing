@@ -1,3 +1,6 @@
+/*
+    definition of game and other var
+*/
 let config = {
     type: Phaser.AUTO,
     width: 640,
@@ -10,6 +13,8 @@ let config = {
     scene: [Load, Menu, Play]
 };
 
+let pip1;
+let tileSize = 32;
 
 let game = new Phaser.Game(config);
 
