@@ -11,7 +11,7 @@ class Load extends Phaser.Scene
     preload() 
     {
         //load atlases
-        this.load.atlas('tile_atlas', './assets/Atlases/Tiles.png', './assets/Atlases/Tiles.json');
+        this.load.atlas('tileAtlas', './assets/Atlases/Tiles.png', './assets/Atlases/Tiles.json');
         this.load.atlas('tPipSprites', './assets/Atlases/tmp/tmpPip.png', './assets/Atlases/tmp/tmpPip.json');
         
         //load images

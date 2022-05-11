@@ -26,7 +26,7 @@ class Map
             {
                 let config = this.map[i][j];
                 this.map[i][j] = 
-                    new Tile(this.scene, j*32, i*32, 'tile_atlas', config["texture"], {}, this.map[i][j]).setOrigin(0, 0);
+                    new Tile(this.scene, j*tileSize, i*tileSize, 'tileAtlas', config["texture"], {}, this.map[i][j]).setOrigin(0, 0);
             }
         }
     }
