@@ -1,7 +1,7 @@
 class DressUp extends Phaser.Scene {
     constructor()
     {
-        super("DressUpScene");
+        super("dressUpScene");
     }
 
     create() 
@@ -12,6 +12,6 @@ class DressUp extends Phaser.Scene {
     update() 
     {
         console.log('DressUpscene');
-        this.scene.start("MansionScene");
+        this.scene.start("mansionScene");
     }
 }

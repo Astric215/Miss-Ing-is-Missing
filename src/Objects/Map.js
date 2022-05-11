@@ -8,6 +8,7 @@ class Map
 
     loadMap()
     {
+        console.log('loading map');
         //load the map
         this.map = 
         [

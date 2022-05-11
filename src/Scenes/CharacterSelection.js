@@ -12,6 +12,6 @@ class CharacterSelection extends Phaser.Scene {
     update() 
     {
         console.log('CharacterSelectionscene');
-        this.scene.start("DressUpScene");
+        this.scene.start("dressUpScene");
     }
 }
