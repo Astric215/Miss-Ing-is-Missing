@@ -15,6 +15,6 @@ class Mansion extends Phaser.Scene {
 
     update() 
     {
-      console.log("mansionScene")  
+
     }
 }

@@ -14,6 +14,8 @@ class Load extends Phaser.Scene
         this.load.atlas('tile_atlas', './assets/Atlases/Tiles.png', './assets/Atlases/Tiles.json');
         this.load.atlas('tPipSprites', './assets/Atlases/tmp/tmpPip.png', './assets/Atlases/tmp/tmpPip.json');
         
+        //load images
+        this.load.image('menu', './assets/Images/Menu.png');
         //when loading is comlete go to the main menu
         this.load.on('complete', () => 
         {
