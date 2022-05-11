@@ -37,14 +37,28 @@ class Pip extends Phaser.GameObjects.Container
         this.y += y;
     }
 
+    moveTo(tx, ty, dur = 1000, eas = 'power0', del = 0)
+    {
+        this.scene.tweens.add(
+            {
+                targets: this,
+                x: tx,
+                y: ty,
+                duration: dur,
+                ease: eas,
+                delay: del
+            }
+        );
+    }
+
     changeHair(hair)
     {
-        this.getAt(3).setFrame("Hair_" + hair + ".png");
+        this.getAt(3).setFrame("Hair_" + hair);
     }
     
     changeHead(head)
     {
-        this.getAt(2).setFrame("Head_" + head + ".png");
+        this.getAt(2).setFrame("Head_" + head);
     }
     
     changeBody(body)
