@@ -11,9 +11,11 @@ class Map
         //load the map
         this.map = 
         [
-            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}],
-            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}],
-            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}]
+            [{"texture": 'wall'}, {"texture": 'wall'},  {"texture": 'wall'},  {"texture": 'wall'},  {"texture": 'wall'}],
+            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'wall'}],
+            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'wall'}],
+            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'wall'}],
+            [{"texture": 'wall'}, {"texture": 'wall'}, {"texture": 'wall'}, {"texture": 'wall'}, {"texture": 'wall'}]
         ];
 
         //load the map into the world
@@ -23,7 +25,7 @@ class Map
             {
                 let config = this.map[i][j];
                 this.map[i][j] = 
-                    new Tile(this.scene, j*32, i*32, config["texture"], null, {}, this.map[i][j]);
+                    new Tile(this.scene, j*32, i*32, 'tile_atlas', config["texture"], {}, this.map[i][j]).setOrigin(0, 0);
             }
         }
     }

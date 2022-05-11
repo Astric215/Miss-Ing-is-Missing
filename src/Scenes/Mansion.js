@@ -12,6 +12,6 @@ class Play extends Phaser.Scene {
 
     update() 
     {
-        console.log('playscene');
+        
     }
 }
