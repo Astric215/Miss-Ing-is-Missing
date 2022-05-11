@@ -10,7 +10,7 @@ let config = {
         forceSetTimeOut: true
     },
     autoCenter: true,
-    scene: [Load, Menu, Play]
+    scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
 };
 
 let pip1;
