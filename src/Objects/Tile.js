@@ -10,6 +10,6 @@ class Tile extends Phaser.Physics.Matter.Sprite
 
     update()
     {
-       
+
     }
 }
