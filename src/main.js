@@ -1,3 +1,6 @@
+/*
+    definition of game and other var
+*/
 let config = {
     type: Phaser.AUTO,
     width: 640,
@@ -7,9 +10,11 @@ let config = {
         forceSetTimeOut: true
     },
     autoCenter: true,
-    scene: [Load, Menu, Play]
+    scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
 };
 
+let pip1;
+let tileSize = 32;
 
 let game = new Phaser.Game(config);
 
