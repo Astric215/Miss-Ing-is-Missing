@@ -6,7 +6,7 @@ class Load extends Phaser.Scene {
 
     preload() 
     {
-
+        this.load.atlas('tile_atlas', './assets/Atlases/Tiles.png', './assets/Atlases/Tiles.json');
     }
 
     update() 

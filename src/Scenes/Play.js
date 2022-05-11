@@ -6,7 +6,8 @@ class Play extends Phaser.Scene {
 
     create() 
     {
-
+        this.map = new Map(this);
+        this.map.loadMap();
     }
 
     update() 
