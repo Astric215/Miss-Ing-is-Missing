@@ -21,7 +21,8 @@ class Map
             for(let j = 0; j < this.map[i].length; j++)
             {
                 let config = map[i][j];
-                this.map[i][j] = new Tile(this.scene, j*32, i*32, config["texture"], null, {});
+                this.map[i][j] = 
+                    new Tile(this.scene, j*32, i*32, config["texture"], null, {}, this.map[i][j]);
             }
         }
     }
