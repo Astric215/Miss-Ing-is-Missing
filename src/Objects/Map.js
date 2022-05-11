@@ -10,9 +10,9 @@ class Map
         //load the map
         this.map = 
         [
-            [{"texture": 1}],
-            [],
-            []
+            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}],
+            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}],
+            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}]
         ];
 
         //load the map into the world
