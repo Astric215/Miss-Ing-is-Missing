@@ -1,12 +1,16 @@
 class Load extends Phaser.Scene {
-    constructor(){
+    constructor()
+    {
         super("loadScene");
     }
-    preload() {
+
+    preload() 
+    {
 
     }
 
-    update() {
+    update() 
+    {
        console.log('loadscene');
        this.scene.start("menuScene");
     }

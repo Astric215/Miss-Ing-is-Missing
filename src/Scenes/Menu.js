@@ -1,13 +1,16 @@
 class Menu extends Phaser.Scene {
-    constructor(){
+    constructor()
+    {
         super("menuScene");
     }
 
-    create() {
+    create() 
+    {
 
     }
 
-    update() {
+    update() 
+    {
         console.log('menuscene');
         
         //check if the left button is down on the mouse if so go to play
