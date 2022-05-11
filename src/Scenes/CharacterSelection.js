@@ -1,7 +1,7 @@
 class CharacterSelection extends Phaser.Scene {
     constructor()
     {
-        super("CharacterSelectionScene");
+        super("characterSelectionScene");
     }
 
     create() 
