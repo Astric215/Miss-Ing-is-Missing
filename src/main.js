@@ -14,5 +14,6 @@ let config = {
 };
 
 let pip1;
+let tileSize = 32;
 
 let game = new Phaser.Game(config);
