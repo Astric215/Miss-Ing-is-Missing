@@ -63,12 +63,12 @@ class Pip extends Phaser.GameObjects.Container
     
     changeBody(body)
     {
-        this.getAt(1).setFrame("Body_" + body + ".png");
+        this.getAt(1).setFrame("Body_" + body);
     }
     
     changeLegs(legs)
     {
-        this.getAt(0).setFrame("Leg_" + legs + ".png");
+        this.getAt(0).setFrame("Leg_" + legs);
     }
 
     checkStats()
