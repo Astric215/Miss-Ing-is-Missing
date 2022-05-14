@@ -6,6 +6,7 @@ class Map
         this.scene = scene;
     }
 
+    //loads the map into the scene from a json file
     loadMap()
     {
         console.log('loading map');
@@ -29,10 +30,5 @@ class Map
                     new Tile(this.scene, j*tileSize, i*tileSize, 'tileAtlas', config["texture"], {}, this.map[i][j]).setOrigin(0, 0);
             }
         }
-    }
-
-    placeMap()
-    {
-        
     }
 }
