@@ -29,12 +29,44 @@ class Pip extends Phaser.GameObjects.Container
         this.stats = 10; // {}:
         this.trait = "booby"; // (:
         this.npcToggle = false;
+        this.ix = 0;
+        this.iy = 0;
     }
 
     move(x, y)
     {
         this.x += x;
         this.y += y;
+    }
+
+    moveTile(ix, iy, side = 0, dur = 1000, eas = 'power0', del = 0)
+    {
+        this.ix += ix;
+        this.iy += iy;
+        this.side = side;
+        if(dur < 0)
+        {
+            this.scene.tweens.add(
+                {
+                    targets: this,
+                    x: this.ix*tileSize + this.side*tileSize/2 + tileSize/4,
+                    y: this.iy*tileSize + tileSize/2,
+                    duration: Phaser.Math.Distance.Between(this.x, this.y, this.ix*tileSize + this.side*tileSize/2 + tileSize/4, this.iy*tileSize + tileSize/2)*10,
+                    ease: eas,
+                    delay: del
+                }
+            );
+        }
+        this.scene.tweens.add(
+            {
+                targets: this,
+                x: this.ix*tileSize + this.side*tileSize/2 + tileSize/4,
+                y: this.iy*tileSize + tileSize/2,
+                duration: dur,
+                ease: eas,
+                delay: del
+            }
+        );
     }
 
     moveTo(tx, ty, dur = 1000, eas = 'power0', del = 0)
@@ -49,6 +81,38 @@ class Pip extends Phaser.GameObjects.Container
                 delay: del
             }
         );
+    }
+
+    moveToTile(ix, iy, side = 0, dur = 1000, eas = 'power0', del = 0)
+    {
+        this.ix = ix;
+        this.iy = iy;
+        this.side = side;
+        if(dur < 0)
+        {
+            this.scene.tweens.add(
+                {
+                    targets: this,
+                    x: ix*tileSize + side*tileSize/2 + tileSize/4,
+                    y: iy*tileSize + tileSize/2,
+                    duration: Phaser.Math.Distance.Between(this.x, this.y, ix*tileSize + side*tileSize/2 + tileSize/4, iy*tileSize + tileSize/2)*10,
+                    ease: eas,
+                    delay: del
+                }
+            );
+        }
+        else {
+            this.scene.tweens.add(
+                {
+                    targets: this,
+                    x: ix*tileSize + side*tileSize/2 + tileSize/4,
+                    y: iy*tileSize + tileSize/2,
+                    duration: dur,
+                    ease: eas,
+                    delay: del
+                }
+            );
+        }
     }
 
     changeHair(hair)
