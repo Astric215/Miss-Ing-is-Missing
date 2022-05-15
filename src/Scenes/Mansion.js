@@ -11,6 +11,8 @@ class Mansion extends Phaser.Scene {
 
         pip1 = new Pip(this, 100, 100, 1, 1, 1, 1);
         pip1.moveToTile(2,2,0, 1000, 'power0', 0);
+        
+        this.pathfinder = new Pathfinder();
     }
 
     update() 
