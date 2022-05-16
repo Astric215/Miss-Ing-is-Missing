@@ -12,7 +12,7 @@ class CharacterSelection extends Phaser.Scene {
         pip1 = this.pipPos1.toArr();
         pip2 = this.pipPos2.toArr();
         pip3 = this.pipPos3.toArr();
-        this.go = this.add.rectangle(320, 340, 100, 20, 0xff0000);
+        this.go = this.add.rectangle(game.config.width/2, game.config.height/2, 100, 20, 0xff0000);
         this.go.setInteractive();
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {
