@@ -56,17 +56,9 @@ class Pip extends Phaser.GameObjects.Container
         console.log(this);
     }
 
-    shift(scene)
+    toArr()
     {
-        this.iterate((child) =>
-        {
-            console.log(scene);
-            child.scene = scene;
-            scene.add.existing(child);
-        }, this);   
-        this.scene = scene;
-        scene.add.existing(this);
-        console.log(this);
+        return [this.x, this.y, this.hair, this.tone, this.gender];
     }
 
     move(x, y)
