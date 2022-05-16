@@ -33,13 +33,16 @@ class Pathfinder
     
     constructPath(goal)
     {
+        this.path = [];
         let current = goal;
+        console.log('path:' + this.path);
+        //go through cameFrom until you are at the start
         while((current != this.start))
         {
-            
+            console.log(current.config["name"])
             this.path.push(current);
             current = this.cameFrom[current.config["name"]];
         }
-        console.log('path:' + this.path);
+        
     }
 }

@@ -190,7 +190,6 @@ class Pip extends Phaser.GameObjects.Container
     {
         if(this.pathfinder.path.length != 0)
         {
-            console.log('pathfind' + this.pathfinder.path.length);
             let nextMove = this.pathfinder.path.pop();
             this.moveToTile(nextMove.tileX,nextMove.tileY,0, -1, 'power0', 0);
             
