@@ -13,9 +13,17 @@ let config = {
     scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
 };
 
-let pip1;
-let tileSize = 32;
+let pip1, pip2, pip3;
+let tileSize = 64;
 
 let game = new Phaser.Game(config);
 
 // reserve keyboard vars
+
+
+function pad(n, width, z) 
+{
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
