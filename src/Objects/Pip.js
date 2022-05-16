@@ -34,8 +34,7 @@ class Pip extends Phaser.GameObjects.Container
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "torsoMale" + this.tonePad));
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "headTone" + this.tonePad));
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "hairStyle" + this.hairPad));
-            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "footLeft" + this.tonePad));
-            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "footRight" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "feetTone" + this.tonePad));
         }
         if(this.gender == 1)
         {
@@ -43,15 +42,13 @@ class Pip extends Phaser.GameObjects.Container
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "torsoFemale" + this.tonePad));
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "headTone" + this.tonePad));
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "hairStyle" + this.hairPad));
-            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "footLeft" + this.tonePad));
-            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "footRight" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "feetTone" + this.tonePad));
         }
         this.stats = 10; // {}:
         this.trait = "booby"; // (:
         this.npcToggle = false;
         this.ix = 0;
         this.iy = 0;
-        this.setScale(.5, .5);
         this.tween;
         console.log(this);
     }
