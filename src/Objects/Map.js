@@ -29,6 +29,8 @@ class Map
                 config["name"] = j.toString() + ',' + i.toString();
                 this.map[i][j] = 
                     new Tile(this.scene, j*tileSize, i*tileSize, 'tileAtlas', config["texture"], {}, this.map[i][j]).setOrigin(0, 0);
+                this.map[i][j].tileX = j;
+                this.map[i][j].tileY = i;
             }
         }
         //set adjacency list

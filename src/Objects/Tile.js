@@ -6,6 +6,8 @@ class Tile extends Phaser.GameObjects.Image
         scene.add.existing(this);
         this.config = config;
         this.adjacent = [];
+        this.tileX = 0;
+        this.tileY = 0;
     }
 
     update()

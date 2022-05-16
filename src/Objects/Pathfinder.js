@@ -22,12 +22,12 @@ class Pathfinder
             let current = frontier.pop()
             for(let i = 0; i < current.adjacent.length; i++)
             {
-                if(!(current.adjacent[i] in cameFrom)){
+                if(!(current.adjacent[i].config["name"] in cameFrom)){
                     frontier.push(current.adjacent[i]);
-                    cameFrom[current.adjacent[i]] = current;
+                    cameFrom[current.adjacent[i].config["name"]] = current;
                 }
             }
-        }       
+        }      
     }
     
     constructPath(goal)
@@ -36,8 +36,7 @@ class Pathfinder
         while(current != this.start)
         {
             this.path.push(current);
-            current = cameFrom[current]
+            current = cameFrom[current.config["name"]];
         }
-        this.path.push(this.start);
     }
 }
