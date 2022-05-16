@@ -3,13 +3,21 @@
 */
 let config = {
     type: Phaser.AUTO,
-    width: 640,
-    height: 480,
+    width: 960,
+    height: 540,
     fps: {
         target: 60,
         forceSetTimeOut: true
     },
-    autoCenter: true,
+    //autoCenter: true,
+
+    //new code to center AND scale to fit screen
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 960,
+        height: 540
+    },
     scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
 };
 
