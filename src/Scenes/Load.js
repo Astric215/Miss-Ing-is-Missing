@@ -13,7 +13,9 @@ class Load extends Phaser.Scene
         //load atlases
         this.load.atlas('tileAtlas', './assets/Atlases/Tiles.png', './assets/Atlases/Tiles.json');
         this.load.atlas('tPipSprites', './assets/Atlases/tmp/tmpPip.png', './assets/Atlases/tmp/tmpPip.json');
-        this.load.atlas('bodyAtlas', './assets/Atlases/tmp/bodySheet.png', './assets/Atlases/tmp/bodySheet.json');
+        this.load.atlas('bodyAtlas', './assets/Atlases/bodySheet.png', './assets/Atlases/bodySheet.json');
+        this.load.atlas('ladyAtlas', './assets/Atlases/ladyClothing.png', './assets/Atlases/ladyClothing.json');
+        this.load.atlas('dudeAtlas', './assets/Atlases/dudeClothing.png', './assets/Atlases/dudeClothing.json');
         
         //load images
         this.load.image('menu', './assets/Images/Menu.png');
