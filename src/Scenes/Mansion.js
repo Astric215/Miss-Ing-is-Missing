@@ -17,10 +17,24 @@ class Mansion extends Phaser.Scene {
     }
 
     update() 
-    {
+    {   
+        /*this.input.on('pointerdown', function(pointer){
+            console.log(this.input.y/tileSize);
+            this.p1.setDestination(this.map.map[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
+            
+        });*/
+
         if(this.input.activePointer.leftButtonDown())
         {
-            this.p1.moveToTile(Math.floor(this.input.x/tileSize),Math.floor(this.input.y/tileSize),0, -1, 'power0', 0);
+            //set up the paths
+            if(this.input.y/tileSize < 5 && this.input.x/tileSize < 5)
+            {
+                this.p1.setDestination(this.map.map[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
+            }
         }
+
+        this.p1.currentTile = this.map.map[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
+        this.p1.update();
+        
     }
 }

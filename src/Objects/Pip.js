@@ -23,6 +23,11 @@ class Pip extends Phaser.GameObjects.Container
     {
         super(scene, x, y);
         scene.add.existing(this);
+        //pathfinding vars
+        this.pathfinder = new Pathfinder();
+        this.destination = null;
+        this.currentTile = null;
+
         this.gender = gender;
         this.hair = hair;
         this.hairPad = pad(hair, 2, "0");
@@ -169,4 +174,37 @@ class Pip extends Phaser.GameObjects.Container
     {
         return this.stats;
     }
+
+    /*set the destination for the pathfinding
+        setDestination(goal)
+        goal - a tile object*/
+    setDestination(goal)
+    {
+        //set the goal and start for the p1 pathfinder and run pathfinding algo
+        this.destination = goal;
+        this.pathfinder.bfs(this.currentTile);
+        this.pathfinder.constructPath(this.destination);
+    }
+
+    pathfind()
+    {
+        if(this.pathfinder.path.length != 0)
+        {
+            console.log('pathfind' + this.pathfinder.path.length);
+            let nextMove = this.pathfinder.path.pop();
+            this.moveToTile(nextMove.tileX,nextMove.tileY,0, -1, 'power0', 0);
+            
+        }
+        
+    }
+
+    update()
+    {
+        //console.log(this.currentTile +','+ this.destination);
+        if((this.currentTile != this.destination) && this.destination != null)
+        {
+            this.pathfind();
+        }
+    }
+
 }

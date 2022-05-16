@@ -15,16 +15,17 @@ class Pathfinder
         let frontier = [];
         frontier.push(this.start);
         this.cameFrom = {};
-        this.cameFrom[this.start] = null;
+        this.cameFrom[this.start.config['name']] = null;
 
-        while(frontier.size != 0)
+        while(frontier.length != 0)
         {
-            let current = frontier.pop()
+
+            let current = frontier.pop();
             for(let i = 0; i < current.adjacent.length; i++)
             {
-                if(!(current.adjacent[i].config["name"] in cameFrom)){
+                if(!(current.adjacent[i].config["name"] in this.cameFrom)){
                     frontier.push(current.adjacent[i]);
-                    cameFrom[current.adjacent[i].config["name"]] = current;
+                    this.cameFrom[current.adjacent[i].config["name"]] = current;
                 }
             }
         }      
@@ -33,10 +34,12 @@ class Pathfinder
     constructPath(goal)
     {
         let current = goal;
-        while(current != this.start)
+        while((current != this.start))
         {
+            
             this.path.push(current);
-            current = cameFrom[current.config["name"]];
+            current = this.cameFrom[current.config["name"]];
         }
+        console.log('path:' + this.path);
     }
 }
