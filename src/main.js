@@ -13,7 +13,8 @@ let config = {
     scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
 };
 
-let pip1;
+let pip1, pip2, pip3;
+let pip1arr, pip2arr, pip3arr;
 let tileSize = 32;
 
 let game = new Phaser.Game(config);

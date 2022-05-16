@@ -9,7 +9,11 @@ class Mansion extends Phaser.Scene {
         this.map = new Map(this);
         this.map.loadMap();
 
-        pip1 = new Pip(this, 100, 100, 1, 1, 1, 1);
+        console.log(pip1);
+        console.log(pip1arr);
+        pip1.shift(this);
+        pip2.shift(this);
+        pip3.shift(this);
         pip1.moveToTile(2,2,0, 1000, 'power0', 0);
     }
 

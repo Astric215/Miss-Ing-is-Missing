@@ -51,6 +51,22 @@ class Pip extends Phaser.GameObjects.Container
         this.npcToggle = false;
         this.ix = 0;
         this.iy = 0;
+        this.setScale(.5, .5);
+        this.tween;
+        console.log(this);
+    }
+
+    shift(scene)
+    {
+        this.iterate((child) =>
+        {
+            console.log(scene);
+            child.scene = scene;
+            scene.add.existing(child);
+        }, this);   
+        this.scene = scene;
+        scene.add.existing(this);
+        console.log(this);
     }
 
     move(x, y)
@@ -137,7 +153,12 @@ class Pip extends Phaser.GameObjects.Container
 
     changeHair(hair)
     {
-        this.getAt(3).setFrame("Hair_" + hair);
+        if(this.gender == 0)
+        {
+            this.hair = hair;
+            this.hairPad = pad(hair, 2, "0");
+            this.getAt(3).setTexture("");
+        }
     }
     
     changeHead(head)
