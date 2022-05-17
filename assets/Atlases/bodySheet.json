@@ -1,0 +1,795 @@
+
+{
+    "frames": {
+        "hairStyle07": {
+            "frame": {
+                "x": 77,
+                "y": 18,
+                "w": 13,
+                "h": 14
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 14
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 14
+            }
+        },
+        "hairStyle09": {
+            "frame": {
+                "x": 39,
+                "y": 59,
+                "w": 10,
+                "h": 12
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 10,
+                "h": 12
+            },
+            "sourceSize": {
+                "w": 10,
+                "h": 12
+            }
+        },
+        "torsoMale01": {
+            "frame": {
+                "x": 0,
+                "y": 85,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "legsFemale02": {
+            "frame": {
+                "x": 35,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "legsMale03": {
+            "frame": {
+                "x": 77,
+                "y": 58,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "legsMale01": {
+            "frame": {
+                "x": 77,
+                "y": 33,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "footLeft02": {
+            "frame": {
+                "x": 23,
+                "y": 31,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        },
+        "footRight02": {
+            "frame": {
+                "x": 58,
+                "y": 101,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        },
+        "footLeft01": {
+            "frame": {
+                "x": 78,
+                "y": 106,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        },
+        "footRight01": {
+            "frame": {
+                "x": 48,
+                "y": 101,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        },
+        "hairStyle04": {
+            "frame": {
+                "x": 77,
+                "y": 0,
+                "w": 14,
+                "h": 17
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 14,
+                "h": 17
+            },
+            "sourceSize": {
+                "w": 14,
+                "h": 17
+            }
+        },
+        "headTone04": {
+            "frame": {
+                "x": 32,
+                "y": 44,
+                "w": 14,
+                "h": 13
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 14,
+                "h": 13
+            },
+            "sourceSize": {
+                "w": 14,
+                "h": 13
+            }
+        },
+        "hairStyle01": {
+            "frame": {
+                "x": 0,
+                "y": 26,
+                "w": 11,
+                "h": 17
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 11,
+                "h": 17
+            },
+            "sourceSize": {
+                "w": 11,
+                "h": 17
+            }
+        },
+        "torsoFemale02": {
+            "frame": {
+                "x": 92,
+                "y": 26,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "legsFemale03": {
+            "frame": {
+                "x": 63,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "legsFemale04": {
+            "frame": {
+                "x": 49,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "legsMale04": {
+            "frame": {
+                "x": 63,
+                "y": 25,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "legsMale02": {
+            "frame": {
+                "x": 63,
+                "y": 50,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "hairStyle11": {
+            "frame": {
+                "x": 48,
+                "y": 85,
+                "w": 12,
+                "h": 15
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 12,
+                "h": 15
+            },
+            "sourceSize": {
+                "w": 12,
+                "h": 15
+            }
+        },
+        "headTone03": {
+            "frame": {
+                "x": 24,
+                "y": 59,
+                "w": 14,
+                "h": 13
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 14,
+                "h": 13
+            },
+            "sourceSize": {
+                "w": 14,
+                "h": 13
+            }
+        },
+        "hairStyle08": {
+            "frame": {
+                "x": 50,
+                "y": 59,
+                "w": 10,
+                "h": 12
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 10,
+                "h": 12
+            },
+            "sourceSize": {
+                "w": 10,
+                "h": 12
+            }
+        },
+        "torsoFemale03": {
+            "frame": {
+                "x": 92,
+                "y": 52,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "torsoFemale04": {
+            "frame": {
+                "x": 0,
+                "y": 59,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "torsoMale04": {
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "torsoMale03": {
+            "frame": {
+                "x": 92,
+                "y": 78,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "torsoMale02": {
+            "frame": {
+                "x": 24,
+                "y": 85,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "hairStyle02": {
+            "frame": {
+                "x": 0,
+                "y": 44,
+                "w": 16,
+                "h": 14
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 16,
+                "h": 14
+            },
+            "sourceSize": {
+                "w": 16,
+                "h": 14
+            }
+        },
+        "headTone02": {
+            "frame": {
+                "x": 72,
+                "y": 85,
+                "w": 14,
+                "h": 13
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 14,
+                "h": 13
+            },
+            "sourceSize": {
+                "w": 14,
+                "h": 13
+            }
+        },
+        "headTone01": {
+            "frame": {
+                "x": 17,
+                "y": 44,
+                "w": 14,
+                "h": 13
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 14,
+                "h": 13
+            },
+            "sourceSize": {
+                "w": 14,
+                "h": 13
+            }
+        },
+        "hairStyle06": {
+            "frame": {
+                "x": 24,
+                "y": 0,
+                "w": 10,
+                "h": 12
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 10,
+                "h": 12
+            },
+            "sourceSize": {
+                "w": 10,
+                "h": 12
+            }
+        },
+        "hairStyle03": {
+            "frame": {
+                "x": 35,
+                "y": 25,
+                "w": 9,
+                "h": 17
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 17
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 17
+            }
+        },
+        "hairStyle10": {
+            "frame": {
+                "x": 12,
+                "y": 31,
+                "w": 10,
+                "h": 12
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 10,
+                "h": 12
+            },
+            "sourceSize": {
+                "w": 10,
+                "h": 12
+            }
+        },
+        "hairStyle05": {
+            "frame": {
+                "x": 61,
+                "y": 85,
+                "w": 10,
+                "h": 13
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 10,
+                "h": 13
+            },
+            "sourceSize": {
+                "w": 10,
+                "h": 13
+            }
+        },
+        "torsoFemale01": {
+            "frame": {
+                "x": 92,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 23,
+                "h": 25
+            },
+            "sourceSize": {
+                "w": 23,
+                "h": 25
+            }
+        },
+        "legsFemale01": {
+            "frame": {
+                "x": 49,
+                "y": 25,
+                "w": 13,
+                "h": 24
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 13,
+                "h": 24
+            },
+            "sourceSize": {
+                "w": 13,
+                "h": 24
+            }
+        },
+        "footLeft04": {
+            "frame": {
+                "x": 58,
+                "y": 106,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        },
+        "footRight04": {
+            "frame": {
+                "x": 12,
+                "y": 26,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        },
+        "footLeft03": {
+            "frame": {
+                "x": 68,
+                "y": 106,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        },
+        "footRight03": {
+            "frame": {
+                "x": 48,
+                "y": 106,
+                "w": 9,
+                "h": 4
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 9,
+                "h": 4
+            },
+            "sourceSize": {
+                "w": 9,
+                "h": 4
+            }
+        }
+    },
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "bodySheet.png",
+        "size": {
+            "w": 115,
+            "h": 110
+        },
+        "scale": 1
+    }
+}
