@@ -24,7 +24,7 @@ class Pip extends Phaser.GameObjects.Container
         super(scene, x, y);
         scene.add.existing(this);
         //pathfinding vars
-        this.pathfinder = new Pathfinder();
+        this.pathfinder = new Pathfinder(scene);
         this.destination = null;
         this.currentTile = null;
 
@@ -191,7 +191,7 @@ class Pip extends Phaser.GameObjects.Container
         if(this.pathfinder.path.length != 0)
         {
             let nextMove = this.pathfinder.path.pop();
-            this.moveToTile(nextMove.tileX,nextMove.tileY,0, -1, 'power0', 0);
+            this.moveToTile(nextMove.tileX,nextMove.tileY,1, -1, 'power0', 0);
             
         }
         
