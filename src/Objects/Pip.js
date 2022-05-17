@@ -14,23 +14,53 @@
         change head
         change body
         change legs
+        change feet
         check stats
 */
 class Pip extends Phaser.GameObjects.Container 
 {
-    constructor(scene, x, y, hair, head, body, legs)
+    constructor(scene, x, y, hair, tone, gender)
     {
         super(scene, x, y);
         scene.add.existing(this);
-        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "tPipSprites", "Leg_" + legs));
-        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "tPipSprites", "Body_" + body));
-        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "tPipSprites", "Head_" + head));
-        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "tPipSprites", "Hair_" + hair));
+        //pathfinding vars
+        this.pathfinder = new Pathfinder();
+        this.destination = null;
+        this.currentTile = null;
+
+        this.gender = gender;
+        this.hair = hair;
+        this.hairPad = pad(hair, 2, "0");
+        this.tone = tone;
+        this.tonePad = pad(tone, 2, "0");
+        if(this.gender == 0)
+        {
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "legsMale" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "torsoMale" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "headTone" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "hairStyle" + this.hairPad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "feetTone" + this.tonePad));
+        }
+        if(this.gender == 1)
+        {
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "legsFemale" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "torsoFemale" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "headTone" + this.tonePad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "hairStyle" + this.hairPad));
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "feetTone" + this.tonePad));
+        }
         this.stats = 10; // {}:
         this.trait = "booby"; // (:
         this.npcToggle = false;
         this.ix = 0;
         this.iy = 0;
+        this.tween;
+        console.log(this);
+    }
+
+    toArr()
+    {
+        return [this.x, this.y, this.hair, this.tone, this.gender];
     }
 
     move(x, y)
@@ -117,7 +147,12 @@ class Pip extends Phaser.GameObjects.Container
 
     changeHair(hair)
     {
-        this.getAt(3).setFrame("Hair_" + hair);
+        if(this.gender == 0)
+        {
+            this.hair = hair;
+            this.hairPad = pad(hair, 2, "0");
+            this.getAt(3).setTexture("");
+        }
     }
     
     changeHead(head)
@@ -139,4 +174,36 @@ class Pip extends Phaser.GameObjects.Container
     {
         return this.stats;
     }
+
+    /*set the destination for the pathfinding
+        setDestination(goal)
+        goal - a tile object*/
+    setDestination(goal)
+    {
+        //set the goal and start for the p1 pathfinder and run pathfinding algo
+        this.destination = goal;
+        this.pathfinder.bfs(this.currentTile);
+        this.pathfinder.constructPath(this.destination);
+    }
+
+    pathfind()
+    {
+        if(this.pathfinder.path.length != 0)
+        {
+            let nextMove = this.pathfinder.path.pop();
+            this.moveToTile(nextMove.tileX,nextMove.tileY,0, -1, 'power0', 0);
+            
+        }
+        
+    }
+
+    update()
+    {
+        //console.log(this.currentTile +','+ this.destination);
+        if((this.currentTile != this.destination) && this.destination != null)
+        {
+            this.pathfind();
+        }
+    }
+
 }
