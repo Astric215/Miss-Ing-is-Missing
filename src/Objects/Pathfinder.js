@@ -37,7 +37,7 @@ class Pathfinder
                 if(!(current.adjacent[i].config["name"] in this.cameFrom)){
                     frontier.push(current.adjacent[i]);
                     this.cameFrom[current.adjacent[i].config["name"]] = current;
-                    this.addArrow(current, i);
+                    //this.addArrow(current, i);
                 }
             }
         }      

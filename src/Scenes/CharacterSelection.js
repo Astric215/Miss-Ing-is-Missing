@@ -70,7 +70,7 @@ class CharacterSelection extends Phaser.Scene {
 
                 pip1 = this.pipPos1.toArr();
                 pip2 = this.pipPos2.toArr();
-                pip3 = this.pipPospi3.toArr();
+                pip3 = this.pipPos3.toArr();
                 
             }
         }, this)
