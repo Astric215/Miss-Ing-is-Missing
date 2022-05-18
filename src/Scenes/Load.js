@@ -20,7 +20,10 @@ class Load extends Phaser.Scene
 
         
         //load images
-        this.load.image('menu', './assets/Images/Menu.png');
+        //CHANGING THIS TEMPORARILY TO BG ART FOR TESTING
+        //this.load.image('menu', './assets/Images/Menu.png');
+        this.load.image('menu', './assets/Backgrounds/DressingBackground.png');
+
         //when loading is comlete go to the main menu
         this.load.on('complete', () => 
         {
