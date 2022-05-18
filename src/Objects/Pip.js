@@ -58,6 +58,12 @@ class Pip extends Phaser.GameObjects.Container
         console.log(this);
     }
 
+    destroyPip ()
+    {
+        this.destroy();
+    }
+
+
     toArr()
     {
         return [this.x, this.y, this.hair, this.tone, this.gender];
