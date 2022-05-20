@@ -24,7 +24,7 @@ class Map
         {
             for(let j = 0; j < this.map[i].length; j++)
             {
-                //
+                //add the tiles to the world
                 let config = this.map[i][j];
                 config["name"] = j.toString() + ',' + i.toString();
                 this.map[i][j] = 
@@ -33,7 +33,7 @@ class Map
                 this.map[i][j].tileY = i;
             }
         }
-        //set adjacency list
+        //set adjacency list of all tiles
         for(let i = 0; i < this.map.length; i++)
         {
             for(let j = 0; j < this.map[i].length; j++)

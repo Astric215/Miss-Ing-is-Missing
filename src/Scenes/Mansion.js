@@ -24,6 +24,7 @@ class Mansion extends Phaser.Scene {
             
         });*/
 
+        //when a tile is clicked
         if(this.input.activePointer.leftButtonDown())
         {
             //set up the paths
@@ -33,6 +34,7 @@ class Mansion extends Phaser.Scene {
             }
         }
 
+        //set the pips current tile
         this.p1.currentTile = this.map.map[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
         this.p1.update();
         

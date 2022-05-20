@@ -63,18 +63,20 @@ class Pip extends Phaser.GameObjects.Container
         this.destroy();
     }
 
-
+    //make an array of this pips traits
     toArr()
     {
         return [this.x, this.y, this.hair, this.tone, this.gender];
     }
 
+    //move the pip by (x,y)
     move(x, y)
     {
         this.x += x;
         this.y += y;
     }
 
+    //move by an amount of tiles
     moveTile(ix, iy, side = 0, dur = 1000, eas = 'power0', del = 0)
     {
         this.ix += ix;
@@ -105,6 +107,7 @@ class Pip extends Phaser.GameObjects.Container
         );
     }
 
+    //move to an xy coordinate
     moveTo(tx, ty, dur = 1000, eas = 'power0', del = 0)
     {
         this.scene.tweens.add(
@@ -119,6 +122,7 @@ class Pip extends Phaser.GameObjects.Container
         );
     }
 
+    //move to a specific tile
     moveToTile(ix, iy, side = 0, dur = 1000, eas = 'power0', del = 0)
     {
         this.ix = ix;
@@ -150,7 +154,8 @@ class Pip extends Phaser.GameObjects.Container
             );
         }
     }
-
+    
+    //change the hair of the pip
     changeHair(hair)
     {
         if(this.gender == 0)
@@ -161,21 +166,25 @@ class Pip extends Phaser.GameObjects.Container
         }
     }
     
+    //change the head
     changeHead(head)
     {
         this.getAt(2).setFrame("Head_" + head);
     }
     
+    //change the body
     changeBody(body)
     {
         this.getAt(1).setFrame("Body_" + body + ".png");
     }
     
+    //change the legs
     changeLegs(legs)
     {
         this.getAt(0).setFrame("Leg_" + legs + ".png");
     }
 
+    //return the stats of this pip
     checkStats()
     {
         return this.stats;
@@ -192,6 +201,8 @@ class Pip extends Phaser.GameObjects.Container
         this.pathfinder.constructPath(this.destination);
     }
 
+
+    //move along the path defined by the pathfinder
     pathfind()
     {
         if(this.pathfinder.path.length != 0)
@@ -206,6 +217,7 @@ class Pip extends Phaser.GameObjects.Container
     update()
     {
         //console.log(this.currentTile +','+ this.destination);
+        //keep pathfinding until the pip is at the location
         if((this.currentTile != this.destination) && this.destination != null)
         {
             this.pathfind();

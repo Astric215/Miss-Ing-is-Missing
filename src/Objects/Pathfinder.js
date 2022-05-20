@@ -27,11 +27,12 @@ class Pathfinder
         }
         console.log('arrows: ' + this.arrows.length);
 
+        //while there are still tiles to be explored
         while(frontier.length != 0)
         {
 
             let current = frontier.shift();
-            
+            //add all adjacent tiles to the tile to the searchable frontier
             for(let i = 0; i < current.adjacent.length; i++)
             {
                 if(!(current.adjacent[i].config["name"] in this.cameFrom)){
