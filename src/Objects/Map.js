@@ -10,6 +10,11 @@ class Map
     loadMap()
     {
         console.log('loading map');
+        //add in the map from Tiled
+        let map = this.scene.add.tilemap("mansionMap");
+        let tileset = map.addTilesetImage('mansionTiles', 'mansionTiles');  // set tileset name
+        let layer = map.createLayer('ground', tileset, 0, 0);  // set layer name
+        
         //load the map
         this.map = 
         [

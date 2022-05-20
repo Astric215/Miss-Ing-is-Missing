@@ -25,6 +25,10 @@ class Load extends Phaser.Scene
         this.load.image('menu', './assets/Backgrounds/DressingBackground.png');
         this.load.audio('button_click', './assets/Sfx/ButtonClick.wav');
 
+        //load tiled JSON and tilemap
+        this.load.tilemapTiledJSON("mansionMap", "./assets/Maps/MansionMap.json");
+        this.load.image('mansionTiles', './assets/Atlases/Tiles.png');
+
         //when loading is comlete go to the main menu
         this.load.on('complete', () => 
         {

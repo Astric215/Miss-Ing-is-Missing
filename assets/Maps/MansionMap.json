@@ -1,0 +1,47 @@
+{ "compressionlevel":-1,
+ "height":7,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 2, 2, 1, 2, 2, 2, 2, 2, 1,
+            1, 2, 2, 1, 2, 2, 1, 2, 2, 1,
+            1, 2, 2, 1, 2, 2, 1, 2, 2, 1,
+            1, 2, 2, 1, 2, 2, 1, 2, 2, 1,
+            1, 2, 2, 2, 2, 2, 1, 2, 2, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+         "height":7,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":10,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.4",
+ "tileheight":64,
+ "tilesets":[
+        {
+         "columns":1,
+         "firstgid":1,
+         "image":"..\/Atlases\/Tiles.png",
+         "imageheight":129,
+         "imagewidth":64,
+         "margin":0,
+         "name":"mansionTiles",
+         "spacing":1,
+         "tilecount":2,
+         "tileheight":64,
+         "tilewidth":64
+        }],
+ "tilewidth":64,
+ "type":"map",
+ "version":"1.8",
+ "width":10
+}

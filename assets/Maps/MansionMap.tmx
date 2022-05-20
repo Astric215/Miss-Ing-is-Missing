@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="10" height="7" tilewidth="64" tileheight="64" infinite="0" nextlayerid="2" nextobjectid="1">
+ <editorsettings>
+  <export target="MansionMap.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="mansionTiles" tilewidth="64" tileheight="64" spacing="1" tilecount="2" columns="1">
+  <image source="../Atlases/Tiles.png" width="64" height="129"/>
+ </tileset>
+ <layer id="1" name="ground" width="10" height="7">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,
+1,2,2,1,2,2,2,2,2,1,
+1,2,2,1,2,2,1,2,2,1,
+1,2,2,1,2,2,1,2,2,1,
+1,2,2,1,2,2,1,2,2,1,
+1,2,2,2,2,2,1,2,2,1,
+1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+</map>
