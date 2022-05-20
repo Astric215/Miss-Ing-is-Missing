@@ -23,6 +23,7 @@ class Load extends Phaser.Scene
         //CHANGING THIS TEMPORARILY TO BG ART FOR TESTING
         //this.load.image('menu', './assets/Images/Menu.png');
         this.load.image('menu', './assets/Backgrounds/DressingBackground.png');
+        this.load.audio('button_click', './assets/Sfx/ButtonClick.wav');
 
         //when loading is comlete go to the main menu
         this.load.on('complete', () => 

@@ -8,6 +8,8 @@ class CharacterSelection extends Phaser.Scene {
     {
         //adding background here too! (in addition to menu right now)
         this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
+        let ButtonClick = this.sound.add('button_click', 1);
+
             //CHANGED THESE LOCATIONS TO BE IN THE MIDDLE, OFFSET EACH CHARACTER BY 200 PIXELS
             //                                             vvv
         this.pipPos1 = new Pip(this, game.config.width/2 - 200, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
@@ -26,37 +28,19 @@ class CharacterSelection extends Phaser.Scene {
         this.add.text(game.config.width/2 - 135, game.config.height/2 + 162, 'Shuffle')
         this.redraw.setInteractive();
 
-        //putting this in update instead of create!
-        /*
+    
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {
             console.log(gameObject);
             if(gameObject == this.go)
             {
-                this.scene.start("dressUpScene");
-            }
-            
-            else if(gameObeject == this.redraw)
-            {
-                   
-            }
-        }, this)
-        */
-    }
-
-    update() 
-    {
-        this.input.on('gameobjectdown', (pointer, gameObject) =>
-        {
-            console.log(gameObject);
-            if(gameObject == this.go)
-            {
+                ButtonClick.play();
                 this.scene.start("dressUpScene");
             }
             
             else if(gameObject == this.redraw)
             {
-
+                ButtonClick.play();
                 pip1 = this.pipPos1.destroyPip();
                 pip2 = this.pipPos2.destroyPip();
                 pip3 = this.pipPos3.destroyPip();
@@ -74,5 +58,10 @@ class CharacterSelection extends Phaser.Scene {
                 
             }
         }, this)
+    }
+
+    update() 
+    {
+        
     }
 }

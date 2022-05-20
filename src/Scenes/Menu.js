@@ -12,6 +12,7 @@ class Menu extends Phaser.Scene
     {
         //background creation
         this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
+        let ButtonClick = this.sound.add('button_click', 1);
         
         this.go = this.add.rectangle(game.config.width/2 - 15, game.config.height/2, 100, 100, 0xff0000);
         this.go.setInteractive();
@@ -23,6 +24,7 @@ class Menu extends Phaser.Scene
             console.log(gameObject);
             if(gameObject == this.go)
             {
+                ButtonClick.play();
                 this.scene.start("characterSelectionScene");
             }
         }, this)
