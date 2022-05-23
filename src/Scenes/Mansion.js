@@ -27,19 +27,21 @@ class Mansion extends Phaser.Scene {
             
         });*/
 
+        //set the pips current tile
+        this.p1.currentTile = this.map.tiles[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
+        this.p1.update();
+
         //when a tile is clicked
         if(this.input.activePointer.leftButtonDown())
         {
+            
             //set up the paths
-            if(this.input.y/tileSize < 5 && this.input.x/tileSize < 5)
+            if(this.input.y/tileSize < this.map.map.height && this.input.x/tileSize < this.map.map.width)
             {
-                this.p1.setDestination(this.map.map[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
+                this.p1.setDestination(this.map.tiles[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
             }
         }
 
-        //set the pips current tile
-        this.p1.currentTile = this.map.map[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
-        this.p1.update();
         
     }
 }

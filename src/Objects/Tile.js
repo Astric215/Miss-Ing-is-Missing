@@ -1,11 +1,10 @@
-class Tile extends Phaser.GameObjects.Image
+class Tile
 {
-    constructor(scene, x, y, texture, frame, options, config)
+    constructor(config, obj)
     {
-        super(scene, x, y, texture, frame, options);
-        scene.add.existing(this);
         this.config = config;
         this.adjacent = [];
+        this.obj = []
         this.tileX = 0;
         this.tileY = 0;
     }

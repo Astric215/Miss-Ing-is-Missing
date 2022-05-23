@@ -2,8 +2,9 @@ class Map
 {   
     constructor(scene)
     {
-        this.map = [];
+        this.map = null;
         this.scene = scene;
+        this.tiles = [];
     }
 
     //loads the map into the scene from a json file
@@ -11,52 +12,46 @@ class Map
     {
         console.log('loading map');
         //add in the map from Tiled
-        let map = this.scene.add.tilemap("mansionMap");
-        let tileset = map.addTilesetImage('mansionTiles', 'mansionTiles');  // set tileset name
-        let layer = map.createLayer('ground', tileset, 0, 0);  // set layer name
+        this.map = this.scene.add.tilemap("mansionMap");
+        let tileset = this.map.addTilesetImage('mansionTiles', 'mansionTiles');  // set tileset name
+        let layer = this.map.createLayer('ground', tileset, 0, 0);  // set layer name
         
-        //load the map
-        this.map = 
-        [
-            [{"texture": 'wall'}, {"texture": 'wall'},  {"texture": 'wall'},  {"texture": 'wall'},  {"texture": 'wall'}],
-            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'wall'}],
-            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'wall'}],
-            [{"texture": 'wall'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'floor'}, {"texture": 'wall'}],
-            [{"texture": 'wall'}, {"texture": 'wall'}, {"texture": 'wall'}, {"texture": 'wall'}, {"texture": 'wall'}]
-        ];
-        //load the map into the world
-        for(let i = 0; i < this.map.length; i++)
+        //make tile references
+        for(let i = 0; i < this.map.height; i++)
         {
-            for(let j = 0; j < this.map[i].length; j++)
+            this.tiles.push([]);
+            for(let j = 0; j < this.map.width; j++)
             {
                 //add the tiles to the world
-                let config = this.map[i][j];
+                let config = [];
+                //make a name for later
                 config["name"] = j.toString() + ',' + i.toString();
-                this.map[i][j] = 
-                    new Tile(this.scene, j*tileSize, i*tileSize, 'tileAtlas', config["texture"], {}, this.map[i][j]).setOrigin(0, 0);
-                this.map[i][j].tileX = j;
-                this.map[i][j].tileY = i;
+                
+                this.tiles[i].push(new Tile(config, this.map.getTileAt(j,i)));
+                    
+                this.tiles[i][j].tileX = j;
+                this.tiles[i][j].tileY = i;
             }
         }
         //set adjacency list of all tiles
-        for(let i = 0; i < this.map.length; i++)
+        for(let i = 0; i < this.map.height; i++)
         {
-            for(let j = 0; j < this.map[i].length; j++)
+            for(let j = 0; j < this.map.width; j++)
             {
                 if(i!=0)
                 {
-                    this.map[i][j].adjacent.push(this.map[i-1][j]);
+                    this.tiles[i][j].adjacent.push(this.tiles[i-1][j]);
                 }
-                if(i < this.map.length - 1)
+                if(i < this.tiles.length - 1)
                 {
-                    this.map[i][j].adjacent.push(this.map[i+1][j]);
+                    this.tiles[i][j].adjacent.push(this.tiles[i+1][j]);
                 }
                 if(j!=0)
                 {
-                    this.map[i][j].adjacent.push(this.map[i][j-1]);
+                    this.tiles[i][j].adjacent.push(this.tiles[i][j-1]);
                 }
-                if(j < this.map[i].length - 1){
-                    this.map[i][j].adjacent.push(this.map[i][j+1]);
+                if(j < this.tiles[i].length - 1){
+                    this.tiles[i][j].adjacent.push(this.tiles[i][j+1]);
                 }
             }
         }
