@@ -4,7 +4,7 @@ class Tile
     {
         this.config = config;
         this.adjacent = [];
-        this.obj = []
+        this.obj = obj;
         this.tileX = 0;
         this.tileY = 0;
     }

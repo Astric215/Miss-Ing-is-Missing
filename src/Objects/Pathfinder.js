@@ -20,12 +20,10 @@ class Pathfinder
         this.cameFrom[this.start.config['name']] = null;
 
         //clears all arrows
-        console.log('arrows: ' + this.arrows.length);
         for(let i = 0; 0 < this.arrows.length; i++)
         {
             this.arrows.pop().destroy();
         }
-        console.log('arrows: ' + this.arrows.length);
 
         //while there are still tiles to be explored
         while(frontier.length != 0)
@@ -72,11 +70,11 @@ class Pathfinder
     {
         this.path = [];
         let current = goal;
-        console.log('path:' + this.path);
+        //console.log('path:' + this.path);
         //go through cameFrom until you are at the start
         while((current != this.start))
         {
-            console.log(current.config["name"])
+            //console.log(current.config["name"])
             this.path.push(current);
             current = this.cameFrom[current.config["name"]];
         }
