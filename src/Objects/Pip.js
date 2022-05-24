@@ -27,7 +27,7 @@ class Pip extends Phaser.GameObjects.Container
         this.pathfinder = new Pathfinder(scene);
         this.destination = null;
         this.currentTile = null;
-
+        this.activeTween = null;
         this.gender = gender;
         this.hair = hair;
         this.hairPad = pad(hair, 2, "0");
@@ -54,7 +54,6 @@ class Pip extends Phaser.GameObjects.Container
         this.npcToggle = false;
         this.ix = 0;
         this.iy = 0;
-        this.tween;
         console.log(this);
     }
 
@@ -79,12 +78,16 @@ class Pip extends Phaser.GameObjects.Container
     //move by an amount of tiles
     moveTile(ix, iy, side = 0, dur = 1000, eas = 'power0', del = 0)
     {
+        if(this.activeTween)
+        {
+            this.activeTween.stop();
+        }
         this.ix += ix;
         this.iy += iy;
         this.side = side;
         if(dur < 0)
         {
-            this.scene.tweens.add(
+            this.activeTween = this.scene.tweens.add(
                 {
                     targets: this,
                     x: this.ix*tileSize + this.side*tileSize/2 + tileSize/4,
@@ -95,22 +98,29 @@ class Pip extends Phaser.GameObjects.Container
                 }
             );
         }
-        this.scene.tweens.add(
-            {
-                targets: this,
-                x: this.ix*tileSize + this.side*tileSize/2 + tileSize/4,
-                y: this.iy*tileSize + tileSize/2,
-                duration: dur,
-                ease: eas,
-                delay: del
-            }
-        );
+        else
+        {
+            this.activeTween = this.scene.tweens.add(
+                {
+                    targets: this,
+                    x: this.ix*tileSize + this.side*tileSize/2 + tileSize/4,
+                    y: this.iy*tileSize + tileSize/2,
+                    duration: dur,
+                    ease: eas,
+                    delay: del
+                }
+            );
+        }
     }
 
     //move to an xy coordinate
     moveTo(tx, ty, dur = 1000, eas = 'power0', del = 0)
     {
-        this.scene.tweens.add(
+        if(this.activeTween)
+        {
+            this.activeTween.stop();
+        }
+        this.activeTween = this.scene.tweens.add(
             {
                 targets: this,
                 x: tx,
@@ -125,12 +135,16 @@ class Pip extends Phaser.GameObjects.Container
     //move to a specific tile
     moveToTile(ix, iy, side = 0, dur = 1000, eas = 'power0', del = 0)
     {
+        if(this.activeTween)
+        {
+            this.activeTween.stop();
+        }
         this.ix = ix;
         this.iy = iy;
         this.side = side;
         if(dur < 0)
         {
-            this.scene.tweens.add(
+            this.activeTween = this.scene.tweens.add(
                 {
                     targets: this,
                     x: ix*tileSize + side*tileSize/2 + tileSize/4,
@@ -142,7 +156,7 @@ class Pip extends Phaser.GameObjects.Container
             );
         }
         else {
-            this.scene.tweens.add(
+            this.activeTween = this.scene.tweens.add(
                 {
                     targets: this,
                     x: ix*tileSize + side*tileSize/2 + tileSize/4,
