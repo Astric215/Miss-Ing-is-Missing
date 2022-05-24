@@ -35,3 +35,12 @@ function pad(n, width, z)
     n = n + '';
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
+
+//clones a sprite
+function clone(spr)
+{
+    console.log(spr);
+    sprout = new Phaser.GameObjects.Sprite(spr.scene, spr.x, spr.y, spr.texture.key, spr.frame.name);
+    console.log(sprout);
+    return sprout;
+}
