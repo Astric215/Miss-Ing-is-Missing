@@ -13,10 +13,34 @@ class Mansion extends Phaser.Scene {
         this.p1 = new Pip(this, pip1[0], pip1[1], pip1[2], pip1[3], pip1[4]);
         this.p2 = new Pip(this, pip2[0], pip2[1], pip2[2], pip2[3], pip2[4]);
         this.p3 = new Pip(this, pip3[0], pip3[1], pip3[2], pip3[3], pip3[4]);
+        this.controled = this.p1;
         this.p1.moveToTile(2,2,0, 1000, 'power0', 0);
+        this.p2.moveToTile(2,4,0, 1000, 'power0', 0);
+        this.p3.moveToTile(4,2,0, 1000, 'power0', 0);
 
-        
-        
+        this.input.on('pointerdown', (pointer) =>
+        {
+            if(pointer.y/tileSize < this.map.map.height && pointer.x/tileSize < this.map.map.width)
+            {
+                this.controled.setDestination(this.map.tiles[Math.floor(pointer.y/tileSize)][Math.floor(pointer.x/tileSize)]);
+            }
+        }, this);
+        this.input.on('gameobjectdown', (pointer, gameObject) =>
+        {
+            if(gameObject == this.p1)
+            {
+                this.controled = this.p1;
+            }
+            if(gameObject == this.p2)
+            {
+                this.controled = this.p2;
+            }
+            if(gameObject == this.p3)
+            {
+                this.controled = this.p3;
+            }
+            console.log(gameObject);
+        }, this);
     }
 
     update() 
@@ -30,17 +54,19 @@ class Mansion extends Phaser.Scene {
         //set the pips current tile
         this.p1.currentTile = this.map.tiles[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
         this.p1.update();
-
+        this.p2.currentTile = this.map.tiles[Math.floor(this.p2.y/tileSize)][Math.floor(this.p2.x/tileSize)];
+        this.p2.update();
+        this.p3.currentTile = this.map.tiles[Math.floor(this.p3.y/tileSize)][Math.floor(this.p3.x/tileSize)];
+        this.p3.update();
         //when a tile is clicked
-        if(this.input.activePointer.leftButtonDown())
-        {
-            
-            //set up the paths
-            if(this.input.y/tileSize < this.map.map.height && this.input.x/tileSize < this.map.map.width)
-            {
-                this.p1.setDestination(this.map.tiles[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
-            }
-        }
+        // if(this.input.activePointer.leftButtonDown())
+        // {
+        //     //set up the paths
+        //     if(this.input.y/tileSize < this.map.map.height && this.input.x/tileSize < this.map.map.width)
+        //     {
+        //         this.p1.setDestination(this.map.tiles[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
+        //     }
+        // }
 
         
     }

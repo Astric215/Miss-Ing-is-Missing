@@ -6,7 +6,8 @@ class DressUp extends Phaser.Scene {
 
     create() 
     {
-
+        //clothing time
+        
     }
 
     update() 
