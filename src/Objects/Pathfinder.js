@@ -50,19 +50,19 @@ class Pathfinder
         //place the tile
         if(current.adjacent[i].tileX > current.tileX)
         {
-            this.arrows.push(new Tile(this.scene, coords[0], coords[1], 'arrowAtlas', "left", {}, {}).setOrigin(0, 0));
+            this.arrows.push(this.scene.add.image(coords[0], coords[1], 'arrowAtlas', "left").setOrigin(0, 0));
         }
         else if(current.adjacent[i].tileX < current.tileX)
         {
-            this.arrows.push(new Tile(this.scene, coords[0], coords[1], 'arrowAtlas', "right", {}, {}).setOrigin(0, 0));
+            this.arrows.push(this.scene.add.image(coords[0], coords[1], 'arrowAtlas', "right").setOrigin(0, 0));
         }
         else if(current.adjacent[i].tileY > current.tileY)
         {
-            this.arrows.push(new Tile(this.scene, coords[0], coords[1], 'arrowAtlas', "up", {}, {}).setOrigin(0, 0));
+            this.arrows.push(this.scene.add.image(coords[0], coords[1], 'arrowAtlas', "up").setOrigin(0, 0));
         }
         else if(current.adjacent[i].tileY < current.tileY)
         {
-            this.arrows.push(new Tile(this.scene, coords[0], coords[1], 'arrowAtlas', "down", {}, {}).setOrigin(0, 0));
+            this.arrows.push(this.scene.add.image(coords[0], coords[1], 'arrowAtlas', "down").setOrigin(0, 0));
         }
     }
 

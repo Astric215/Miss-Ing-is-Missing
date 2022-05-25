@@ -35,7 +35,7 @@ class Mansion extends Phaser.Scene {
         //process movement
         this.input.on('pointerdown', (pointer) =>
         {
-            if(pointer.y/tileSize < this.map.map.height && pointer.x/tileSize < this.map.map.width)
+            if(pointer.y/tileSize < this.map.map.height && pointer.x/tileSize < this.map.map.width && this.map.tiles[Math.floor(pointer.y/tileSize)][Math.floor(pointer.x/tileSize)].obj == null)
             {
                 this.controled.setDestination(this.map.tiles[Math.floor(pointer.y/tileSize)][Math.floor(pointer.x/tileSize)]);
                 this.controled.pathfind();
