@@ -1,0 +1,333 @@
+{
+    "columns": 9,
+    "image": "MansionTiles.png",
+    "imageheight": 584,
+    "imagewidth": 584,
+    "margin": 0,
+    "name": "mansionTiles",
+    "spacing": 1,
+    "tilecount": 81,
+    "tiledversion": "1.8.4",
+    "tileheight": 64,
+    "tiles": [
+        {
+            "id": 0,
+            "type": "floorWood003"
+        },
+        {
+            "id": 1,
+            "type": "floorWood002"
+        },
+        {
+            "id": 2,
+            "type": "floorChecker004"
+        },
+        {
+            "id": 3,
+            "type": "wallCorner003"
+        },
+        {
+            "id": 4,
+            "type": "wallJunct003"
+        },
+        {
+            "id": 5,
+            "type": "wallJunct009"
+        },
+        {
+            "id": 6,
+            "type": "floorRug012"
+        },
+        {
+            "id": 7,
+            "type": "tableDiningFill"
+        },
+        {
+            "id": 8,
+            "type": "bookshelf002"
+        },
+        {
+            "id": 9,
+            "type": "floorWood002"
+        },
+        {
+            "id": 10,
+            "type": "floorChecker001"
+        },
+        {
+            "id": 11,
+            "type": "floorChecker005"
+        },
+        {
+            "id": 12,
+            "type": "wallCorner004"
+        },
+        {
+            "id": 13,
+            "type": "wallJunct004"
+        },
+        {
+            "id": 14,
+            "type": "floorRug002"
+        },
+        {
+            "id": 15,
+            "type": "floorRug013"
+        },
+        {
+            "id": 16,
+            "type": "floorRug023"
+        },
+        {
+            "id": 17,
+            "type": "bookshelfCorner004"
+        },
+        {
+            "id": 18,
+            "type": "floorChecker002"
+        },
+        {
+            "id": 19,
+            "type": "floorChecker003"
+        },
+        {
+            "id": 20,
+            "type": "wallCenter001"
+        },
+        {
+            "id": 21,
+            "type": "wallEnd001"
+        },
+        {
+            "id": 22,
+            "type": "wallHalf"
+        },
+        {
+            "id": 23,
+            "type": "floorRug002"
+        },
+        {
+            "id": 24,
+            "type": "stairsUpper001"
+        },
+        {
+            "id": 25,
+            "type": "floorRug024"
+        },
+        {
+            "id": 26,
+            "type": "bookshelfCorner004"
+        },
+        {
+            "id": 27,
+            "type": "wallCenter002"
+        },
+        {
+            "id": 28,
+            "type": "wallCorner001"
+        },
+        {
+            "id": 29,
+            "type": "wallCorner002"
+        },
+        {
+            "id": 30,
+            "type": "wallEnd002"
+        },
+        {
+            "id": 31,
+            "type": "wallHalfCorner"
+        },
+        {
+            "id": 32,
+            "type": "floorRug003"
+        },
+        {
+            "id": 33,
+            "type": "stairsUpper002"
+        },
+        {
+            "id": 34,
+            "type": "floorRug025"
+        },
+        {
+            "id": 35,
+            "type": "tableDiningEdge"
+        },
+        {
+            "id": 36,
+            "type": "wallEnd003"
+        },
+        {
+            "id": 37,
+            "type": "wallEnd004"
+        },
+        {
+            "id": 38,
+            "type": "wallJunct001"
+        },
+        {
+            "id": 39,
+            "type": "wallJunct002"
+        },
+        {
+            "id": 40,
+            "type": "wallJunct005"
+        },
+        {
+            "id": 41,
+            "type": "floorRug004"
+        },
+        {
+            "id": 42,
+            "type": "stairsLower001"
+        },
+        {
+            "id": 43,
+            "type": "floorRug026"
+        },
+        {
+            "id": 44,
+            "type": "tableDiningCorner"
+        },
+        {
+            "id": 45,
+            "type": "wallExtend"
+        },
+        {
+            "id": 46,
+            "type": "wallCorner005"
+        },
+        {
+            "id": 47,
+            "type": "wallJunct006"
+        },
+        {
+            "id": 48,
+            "type": "wallJunct007"
+        },
+        {
+            "id": 49,
+            "type": "wallJunct008"
+        },
+        {
+            "id": 50,
+            "type": "floorRug005"
+        },
+        {
+            "id": 51,
+            "type": "stairsLower002"
+        },
+        {
+            "id": 52,
+            "type": "kitchenTableEndLarge"
+        },
+        {
+            "id": 53,
+            "type": "wallFiller"
+        },
+        {
+            "id": 54,
+            "type": "floorRug006"
+        },
+        {
+            "id": 55,
+            "type": "floorRug007"
+        },
+        {
+            "id": 56,
+            "type": "floorRug008"
+        },
+        {
+            "id": 57,
+            "type": "floorRug010"
+        },
+        {
+            "id": 58,
+            "type": "floorRug009"
+        },
+        {
+            "id": 59,
+            "type": "floorRug011"
+        },
+        {
+            "id": 60,
+            "type": "floorRug014"
+        },
+        {
+            "id": 61,
+            "type": "kitchenTableLarge"
+        },
+        {
+            "id": 62,
+            "type": "floorRug021"
+        },
+        {
+            "id": 63,
+            "type": "floorRug015"
+        },
+        {
+            "id": 64,
+            "type": "floorRug016"
+        },
+        {
+            "id": 65,
+            "type": "floorRug017"
+        },
+        {
+            "id": 66,
+            "type": "floorRug018"
+        },
+        {
+            "id": 67,
+            "type": "floorRug019"
+        },
+        {
+            "id": 68,
+            "type": "floorRug020"
+        },
+        {
+            "id": 69,
+            "type": "floorRug022"
+        },
+        {
+            "id": 70,
+            "type": "kitchenTableSmall"
+        },
+        {
+            "id": 72,
+            "type": "kitchenTableEndSmall"
+        },
+        {
+            "id": 73,
+            "type": "bookshelfCorner001"
+        },
+        {
+            "id": 74,
+            "type": "bookshelfCorner002"
+        },
+        {
+            "id": 75,
+            "type": "bookshelfEnd001"
+        },
+        {
+            "id": 76,
+            "type": "bookshelf001"
+        },
+        {
+            "id": 77,
+            "type": "bookshelfEnd002"
+        },
+        {
+            "id": 78,
+            "type": "bookshelfCorner003"
+        },
+        {
+            "id": 79,
+            "type": "bookshelfEnd003"
+        }
+    ],
+    "tilewidth": 64,
+    "type": "tileset",
+    "version": "1.8"
+}

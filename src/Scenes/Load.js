@@ -11,11 +11,11 @@ class Load extends Phaser.Scene
     preload() 
     {
         //load atlases
-        this.load.atlas('tileAtlas', './assets/Atlases/Tiles.png', './assets/Atlases/Tiles.json');
+        this.load.atlas('tileAtlas', './assets/Atlases/MansionTiles.png', './assets/Atlases/MansionTiles.json');
         this.load.atlas('tPipSprites', './assets/Atlases/tmp/tmpPip.png', './assets/Atlases/tmp/tmpPip.json');
-        this.load.atlas('bodyAtlas', './assets/Atlases/bodySheet.png', './assets/Atlases/bodySheet.json');
-        this.load.atlas('ladyAtlas', './assets/Atlases/ladyClothing.png', './assets/Atlases/ladyClothing.json');
-        this.load.atlas('dudeAtlas', './assets/Atlases/dudeClothing.png', './assets/Atlases/dudeClothing.json');
+        this.load.atlas('bodyAtlas', './assets/Atlases/BodySheet.png', './assets/Atlases/BodySheet.json');
+        this.load.atlas('ladyAtlas', './assets/Atlases/LadyClothing.png', './assets/Atlases/LadyClothing.json');
+        this.load.atlas('dudeAtlas', './assets/Atlases/DudeClothing.png', './assets/Atlases/DudeClothing.json');
         this.load.atlas('arrowAtlas', './assets/Atlases/Arrows.png', './assets/Atlases/Arrows.json');
 
         
@@ -27,7 +27,7 @@ class Load extends Phaser.Scene
 
         //load tiled JSON and tilemap
         this.load.tilemapTiledJSON("mansionMap", "./assets/Maps/MansionMap.json");
-        this.load.image('mansionTiles', './assets/Atlases/Tiles.png');
+        this.load.image('mansionTiles', './assets/Atlases/MansionTiles.png');
 
         //when loading is comlete go to the main menu
         this.load.on('complete', () => 
