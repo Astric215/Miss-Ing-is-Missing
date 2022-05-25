@@ -38,8 +38,10 @@ class Mansion extends Phaser.Scene {
             if(pointer.y/tileSize < this.map.map.height && pointer.x/tileSize < this.map.map.width)
             {
                 this.controled.setDestination(this.map.tiles[Math.floor(pointer.y/tileSize)][Math.floor(pointer.x/tileSize)]);
+                this.controled.pathfind();
             }
         }, this);
+
         //process gameobjectswaping
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {

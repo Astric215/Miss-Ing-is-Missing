@@ -224,20 +224,29 @@ class Pip extends Phaser.GameObjects.Container
         if(this.pathfinder.path.length != 0)
         {
             let nextMove = this.pathfinder.path.pop();
-            this.moveToTile(nextMove.tileX,nextMove.tileY,1, -1, 'power0', 0);
-            
+            //this.moveToTile(nextMove.tileX,nextMove.tileY,1, -1, 'power0', 0);
+            let self = this;
+            this.scene.tweens.add(
+                {
+                    targets: this,
+                    x: nextMove.tileX*tileSize + tileSize/4,
+                    y: nextMove.tileY*tileSize + tileSize/2,
+                    duration: 500,
+                    ease: 'power-0',
+                    delay: 0,
+                    onComplete: function()
+                    {
+                        self.pathfind();
+                    }
+                }
+            );
         }
         
     }
 
     update()
     {
-        //console.log(this.currentTile +','+ this.destination);
-        //keep pathfinding until the pip is at the location
-        if((this.currentTile != this.destination) && this.destination != null)
-        {
-            this.pathfind();
-        }
+        
     }
 
 }
