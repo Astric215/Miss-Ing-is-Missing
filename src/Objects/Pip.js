@@ -219,13 +219,14 @@ class Pip extends Phaser.GameObjects.Container
 
 
     //move along the path defined by the pathfinder
-    pathfind()
+    pathfind(dest = this.destination)
     {
         if(this.pathfinder.path.length != 0)
         {
             let nextMove = this.pathfinder.path.pop();
-            //this.moveToTile(nextMove.tileX,nextMove.tileY,1, -1, 'power0', 0);
+            //save this for callbacks
             let self = this;
+            //recursively tween across the path
             this.scene.tweens.add(
                 {
                     targets: this,
@@ -236,7 +237,11 @@ class Pip extends Phaser.GameObjects.Container
                     delay: 0,
                     onComplete: function()
                     {
-                        self.pathfind();
+                        if(dest == self.destination)
+                        {
+                            self.pathfind(dest);
+                        }
+                        
                     }
                 }
             );
