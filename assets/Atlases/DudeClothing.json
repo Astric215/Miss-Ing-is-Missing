@@ -1,0 +1,1494 @@
+{
+    "frames": {
+        "dudeShoes001": {
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes002": {
+            "frame": {
+                "x": 33,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes003": {
+            "frame": {
+                "x": 66,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes006": {
+            "frame": {
+                "x": 0,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes007": {
+            "frame": {
+                "x": 33,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes008": {
+            "frame": {
+                "x": 66,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes004": {
+            "frame": {
+                "x": 99,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes009": {
+            "frame": {
+                "x": 99,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes005": {
+            "frame": {
+                "x": 132,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes010": {
+            "frame": {
+                "x": 132,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes012": {
+            "frame": {
+                "x": 33,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeShoes013": {
+            "frame": {
+                "x": 66,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom012": {
+            "frame": {
+                "x": 99,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom011": {
+            "frame": {
+                "x": 132,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom001": {
+            "frame": {
+                "x": 165,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom005": {
+            "frame": {
+                "x": 165,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom010": {
+            "frame": {
+                "x": 165,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom002": {
+            "frame": {
+                "x": 198,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom006": {
+            "frame": {
+                "x": 198,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom009": {
+            "frame": {
+                "x": 198,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom018": {
+            "frame": {
+                "x": 0,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom017": {
+            "frame": {
+                "x": 33,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom016": {
+            "frame": {
+                "x": 66,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom015": {
+            "frame": {
+                "x": 99,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom014": {
+            "frame": {
+                "x": 132,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeDress001": {
+            "frame": {
+                "x": 165,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeDress002": {
+            "frame": {
+                "x": 198,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom003": {
+            "frame": {
+                "x": 231,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom007": {
+            "frame": {
+                "x": 231,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom008": {
+            "frame": {
+                "x": 231,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom013": {
+            "frame": {
+                "x": 231,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeBottom004": {
+            "frame": {
+                "x": 264,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop014": {
+            "frame": {
+                "x": 264,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeDress005": {
+            "frame": {
+                "x": 264,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop015": {
+            "frame": {
+                "x": 264,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop001": {
+            "frame": {
+                "x": 0,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop002": {
+            "frame": {
+                "x": 33,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop003": {
+            "frame": {
+                "x": 66,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop004": {
+            "frame": {
+                "x": 99,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop005": {
+            "frame": {
+                "x": 132,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop006": {
+            "frame": {
+                "x": 165,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop007": {
+            "frame": {
+                "x": 198,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeDress003": {
+            "frame": {
+                "x": 231,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeDress004": {
+            "frame": {
+                "x": 264,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeDress006": {
+            "frame": {
+                "x": 297,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop019": {
+            "frame": {
+                "x": 297,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop018": {
+            "frame": {
+                "x": 297,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop017": {
+            "frame": {
+                "x": 297,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop016": {
+            "frame": {
+                "x": 297,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop024": {
+            "frame": {
+                "x": 330,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop023": {
+            "frame": {
+                "x": 330,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop022": {
+            "frame": {
+                "x": 330,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop021": {
+            "frame": {
+                "x": 330,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop020": {
+            "frame": {
+                "x": 330,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop008": {
+            "frame": {
+                "x": 0,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop009": {
+            "frame": {
+                "x": 33,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop010": {
+            "frame": {
+                "x": 66,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop011": {
+            "frame": {
+                "x": 99,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop012": {
+            "frame": {
+                "x": 132,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeTop013": {
+            "frame": {
+                "x": 165,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat001": {
+            "frame": {
+                "x": 198,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat002": {
+            "frame": {
+                "x": 231,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat003": {
+            "frame": {
+                "x": 264,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat004": {
+            "frame": {
+                "x": 297,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat005": {
+            "frame": {
+                "x": 330,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat011": {
+            "frame": {
+                "x": 363,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat010": {
+            "frame": {
+                "x": 363,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat009": {
+            "frame": {
+                "x": 363,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat008": {
+            "frame": {
+                "x": 363,
+                "y": 195,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat007": {
+            "frame": {
+                "x": 363,
+                "y": 260,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat006": {
+            "frame": {
+                "x": 363,
+                "y": 325,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat012": {
+            "frame": {
+                "x": 396,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "dudeHat013": {
+            "frame": {
+                "x": 396,
+                "y": 65,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        },
+        "pixil-layer-0": {
+            "frame": {
+                "x": 396,
+                "y": 130,
+                "w": 32,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 32,
+                "h": 64
+            }
+        }
+    },
+    "meta": {
+        "app": "https://www.leshylabs.com/apps/sstool/",
+        "version": "Leshy SpriteSheet Tool v0.8.4",
+        "image": "dudeClothing.png",
+        "size": {
+            "w": 428,
+            "h": 389
+        },
+        "scale": 1
+    }
+}
