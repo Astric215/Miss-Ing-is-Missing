@@ -22,7 +22,9 @@ class Load extends Phaser.Scene
         //load images
         //CHANGING THIS TEMPORARILY TO BG ART FOR TESTING
         //this.load.image('menu', './assets/Images/Menu.png');
-        this.load.image('menu', './assets/Backgrounds/DressingBackground.png');
+        this.load.image('dressing', './assets/Backgrounds/DressingBackground.png');
+        this.load.image('menu', './assets/Backgrounds/MainMenu.png');
+        this.load.image('menuHover', './assets/Backgrounds/MainMenuHover.png');
         this.load.audio('button_click', './assets/Sfx/ButtonClick.wav');
 
         //load tiled JSON and tilemap

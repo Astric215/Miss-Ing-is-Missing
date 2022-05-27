@@ -7,7 +7,7 @@ class CharacterSelection extends Phaser.Scene {
     create() 
     {
         //adding background here too! (in addition to menu right now)
-        this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
+        this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'dressing').setOrigin(0, 0);
         let ButtonClick = this.sound.add('button_click', 1);
 
             //CHANGED THESE LOCATIONS TO BE IN THE MIDDLE, OFFSET EACH CHARACTER BY 200 PIXELS
