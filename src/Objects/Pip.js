@@ -64,22 +64,6 @@ class Pip extends Phaser.GameObjects.Container
         this.destroy();
     }
 
-    testQueue()
-    {
-        let queue = [];
-        queue = this.pathfinder.pQueuePush([0,9], queue);
-        queue = this.pathfinder.pQueuePush([1,0], queue);
-        queue = this.pathfinder.pQueuePush([3,5], queue);
-        queue = this.pathfinder.pQueuePush([2,2], queue);
-        queue = this.pathfinder.pQueuePush([4,7], queue);
-        
-        let j = queue.length;
-        for(let i = 0; i < j; i++)
-        {
-            console.log(queue.shift());
-        }
-    }
-
     //make an array of this pips traits
     toArr()
     {

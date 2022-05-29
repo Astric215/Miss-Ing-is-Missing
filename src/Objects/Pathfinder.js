@@ -70,9 +70,12 @@ class Pathfinder
         this.start = start;
         //start is a tile from the map. The current tile the player is on
         let frontier = [];
-        frontier.push(this.start);
+        this.pQueuePush([this.start, 0], frontier);
+        let totalCost = {};
         this.cameFrom = {};
         this.cameFrom[this.start.config['name']] = null;
+        totalCost[this.start.config['name']] = 0;
+
 
         //clears all arrows
         for(let i = 0; 0 < this.arrows.length; i++)
@@ -85,6 +88,7 @@ class Pathfinder
         {
 
             let current = frontier.shift();
+
             if(current == destination)
             {
                 break;
@@ -92,6 +96,7 @@ class Pathfinder
             //add all adjacent tiles to the tile to the searchable frontier
             for(let i = 0; i < current.adjacent.length; i++)
             {
+                let newCost = totalCost[current.config["name"]];
                 if(!(current.adjacent[i].config["name"] in this.cameFrom)){
                     frontier.push(current.adjacent[i]);
                     this.cameFrom[current.adjacent[i].config["name"]] = current;

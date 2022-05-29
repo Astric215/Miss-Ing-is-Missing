@@ -59,7 +59,6 @@ class Mansion extends Phaser.Scene {
             }
             console.log(gameObject);
         }, this);
-        this.p1.testQueue();
     }
 
     update() 
