@@ -49,6 +49,7 @@ class Pip extends Phaser.GameObjects.Container
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "hairStyle" + this.hairPad));
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "feetTone" + this.tonePad));
         }
+        this.clothing = [0, 0, 0, 0, 0];
         this.stats = 10; // {}:
         this.trait = "booby"; // (:
         this.npcToggle = false;
@@ -67,7 +68,19 @@ class Pip extends Phaser.GameObjects.Container
     //make an array of this pips traits
     toArr()
     {
-        return [this.x, this.y, this.hair, this.tone, this.gender];
+        return [this.x, this.y, this.hair, this.tone, this.gender, this.clothing];
+    }
+
+    genClothes(rand = 0,cloth = this.clothing)
+    {
+        for(let c in cloth)
+        {
+            if(rand == 1)
+            {
+                cloth[c] = Phaser.Math.Between(1, ClothingNums[this.gender][c]);
+            }
+            this.add(new Phaser.GameObjects.Sprite(this.scene, 0, 0, ClothingAtlases[this.gender], ClothingNames[this.gender][c] + pad(cloth[c], 3, "0")))
+        }
     }
 
     //move the pip by (x,y)

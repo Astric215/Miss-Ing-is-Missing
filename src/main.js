@@ -22,7 +22,15 @@ let config = {
 };
 
 let pip1, pip2, pip3;
+//arrays for pips
+let playerPips = [];
+let npcPips = [];
+
 let tileSize = 64;
+//hat, dress, top, bottom, shoes range for male and female respecively
+let ClothingNums = [[13, 6, 24, 18, 12], [12, 6, 22, 16, 13]];
+let ClothingNames = [["dudeHat", "dudeDress", "dudeTop", "dudeBottom", "dudeShoes"], ["ladyHat", "ladyDress", "ladyTop", "ladyBottom", "ladyShoes"]];
+let ClothingAtlases = ["dudeAtlas", "ladyAtlas"];
 
 let game = new Phaser.Game(config);
 
