@@ -52,6 +52,8 @@ class CharacterSelection extends Phaser.Scene {
                 this.pipPos2 = new Pip(this, game.config.width/2, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
                 this.pipPos3 = new Pip(this, game.config.width/2 + 200, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
                 this.pipPos1.genClothes(1);
+                this.pipPos2.genClothes(1);
+                this.pipPos3.genClothes(1);
 
 
 
