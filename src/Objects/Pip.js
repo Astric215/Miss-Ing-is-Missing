@@ -226,7 +226,7 @@ class Pip extends Phaser.GameObjects.Container
     {
         //set the goal and start for the p1 pathfinder and run pathfinding algo
         this.destination = goal;
-        this.pathfinder.bfs(this.currentTile, this.destination);
+        this.pathfinder.astar(this.currentTile, this.destination);
         this.pathfinder.constructPath(this.destination);
     }
 
@@ -245,7 +245,7 @@ class Pip extends Phaser.GameObjects.Container
                     targets: this,
                     x: nextMove.tileX*tileSize + tileSize/4,
                     y: nextMove.tileY*tileSize + tileSize/2,
-                    duration: 500,
+                    duration: 1,
                     ease: 'power-0',
                     delay: 0,
                     onComplete: function()
