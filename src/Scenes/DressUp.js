@@ -22,6 +22,9 @@ class DressUp extends Phaser.Scene {
         this.go = this.add.rectangle(game.config.width/2 + 300, game.config.height/2 + 200, 40, 20, 0x0000ff);
         this.add.text(game.config.width/2 + 290, game.config.height/2 + 190, 'GO');
         this.go.setInteractive();
+        this.redraw = this.add.rectangle(game.config.width/2, game.config.height/2 + 162, 120, 20, 0xff0000);
+        this.add.text(game.config.width/2, game.config.height/2 + 162, 'New Clothes').setOrigin(0.5);
+        this.redraw.setInteractive();
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {
             console.log(gameObject);
@@ -29,6 +32,12 @@ class DressUp extends Phaser.Scene {
             {
                 ButtonClick.play();
                 this.scene.start("mansionScene");
+            }
+            else if(gameObject == this.redraw)
+            {
+                ButtonClick.play();
+                this.p2.genClothes(1);
+                playerPips[1] = this.p2.toArr();
             }
         });
     }

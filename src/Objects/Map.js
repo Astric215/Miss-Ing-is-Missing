@@ -48,7 +48,7 @@ class Map
                         this.objects.push(new Pip(this.scene, j*64, i*64, 9, 3, 1));
                         this.objects[this.objects.length-1].genClothes(1);
                         this.objects[this.objects.length-1].npcToggle = true;
-                        this.objects[this.objects.length-1].moveToTile(j, i, 0, 1);
+                        this.objects[this.objects.length-1].moveToTile(j, i, 1, 0);
                     }
 
                     //only add to adjacency if the current layer tile is null
