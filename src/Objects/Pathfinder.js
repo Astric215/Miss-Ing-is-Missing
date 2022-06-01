@@ -6,6 +6,7 @@ class Pathfinder
         this.start = null;
         this.frontier = [];
         this.cameFrom = {};
+        this.totalCost = {};
         this.scene = scene;
         this.arrows=[];
     }
@@ -50,7 +51,6 @@ class Pathfinder
     //allows for priority queue pushing
     pQueuePush(element, queue)
     {
-        console.log('pqueuepush');
         let i = 0;
         for(i; i < queue.length; i++)
         {
@@ -64,6 +64,12 @@ class Pathfinder
         return queue;
     }
 
+    //heuristic function for a star pathfinding
+    heuristic(destination, next)
+    {
+        return Math.abs(destination.tileX - next.tileX) + Math.abs(destination.tileY - next.tileY);
+    }
+
     //basic pathfinding via bfs: bfs(start) where start is a tile
     astar(start, destination)
     {
@@ -75,6 +81,7 @@ class Pathfinder
         this.cameFrom = {};
         this.cameFrom[this.start.config['name']] = null;
         totalCost[this.start.config['name']] = 0;
+        
 
 
         //clears all arrows
@@ -86,22 +93,30 @@ class Pathfinder
         //while there are still tiles to be explored
         while(frontier.length != 0)
         {
-
-            let current = frontier.shift();
+            let current = frontier.shift()[0];
 
             if(current == destination)
             {
                 break;
             }
+            
             //add all adjacent tiles to the tile to the searchable frontier
+            
             for(let i = 0; i < current.adjacent.length; i++)
             {
-                let newCost = totalCost[current.config["name"]];
-                if(!(current.adjacent[i].config["name"] in this.cameFrom)){
-                    frontier.push(current.adjacent[i]);
+                let newCost = totalCost[current.config["name"]] + 1;
+                if(!(current.adjacent[i].config["name"] in this.totalCost) || (newCost < this.totalCost[current.adjacent[i].config["name"]])){
+                    this.totalCost[current.adjacent[i].config["name"]] = newCost;
+                    let priority = newCost + this.heuristic(destination, current.adjacent[i])
+                    this.pQueuePush([current.adjacent[i], priority], frontier);
                     this.cameFrom[current.adjacent[i].config["name"]] = current;
                     //this.addArrow(current, i);
                 }
+                /*if next not in cost_so_far or new_cost < cost_so_far[next]:
+                    cost_so_far[next] = new_cost
+                    priority = new_cost + heuristic(goal, next)
+                    frontier.put(next, priority)
+                    came_from[next] = current*/
             }
         }      
     }
@@ -139,8 +154,8 @@ class Pathfinder
         //go through cameFrom until you are at the start
         while((current != this.start))
         {
-            //console.log(current.config["name"])
             this.path.push(current);
+            console.log(current);
             current = this.cameFrom[current.config["name"]];
         }
         
