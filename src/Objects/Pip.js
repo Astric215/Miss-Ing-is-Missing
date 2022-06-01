@@ -228,6 +228,7 @@ class Pip extends Phaser.GameObjects.Container
         this.destination = goal;
         this.pathfinder.bfs(this.currentTile, this.destination);
         this.pathfinder.constructPath(this.destination);
+        console.log(this);
     }
 
 

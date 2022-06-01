@@ -24,6 +24,7 @@ class Load extends Phaser.Scene
         //this.load.image('menu', './assets/Images/Menu.png');
         this.load.image('dressing', './assets/Backgrounds/DressingBackground.png');
         this.load.image('menu', './assets/Backgrounds/MainMenu.png');
+        this.load.image('object', './assets/Images/Object.png');
         this.load.image('menuHover', './assets/Backgrounds/MainMenuHover.png');
         this.load.audio('button_click', './assets/Sfx/ButtonClick.wav');
 
