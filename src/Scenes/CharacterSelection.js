@@ -7,7 +7,7 @@ class CharacterSelection extends Phaser.Scene {
     create() 
     {
         //adding background here too! (in addition to menu right now)
-        this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
+        this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'dressing').setOrigin(0, 0);
         let ButtonClick = this.sound.add('button_click', 1);
 
             //CHANGED THESE LOCATIONS TO BE IN THE MIDDLE, OFFSET EACH CHARACTER BY 200 PIXELS
@@ -15,11 +15,13 @@ class CharacterSelection extends Phaser.Scene {
         this.pipPos1 = new Pip(this, game.config.width/2 - 200, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
         this.pipPos2 = new Pip(this, game.config.width/2, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
         this.pipPos3 = new Pip(this, game.config.width/2 + 200, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
-        
+        this.pipPos1.genClothes(1);
+        this.pipPos2.genClothes(1);
+        this.pipPos3.genClothes(1);
 
-        pip1 = this.pipPos1.toArr();
-        pip2 = this.pipPos2.toArr();
-        pip3 = this.pipPos3.toArr();
+        playerPips[0] = this.pipPos1.toArr();
+        playerPips[1] = this.pipPos2.toArr();
+        playerPips[2] = this.pipPos3.toArr();
 
         this.go = this.add.rectangle(game.config.width/2 + 100, game.config.height/2 + 170, 100, 20, 0xff00ff);
         this.add.text(game.config.width/2 + 65, game.config.height/2 + 162, 'Continue');
@@ -41,20 +43,23 @@ class CharacterSelection extends Phaser.Scene {
             else if(gameObject == this.redraw)
             {
                 ButtonClick.play();
-                pip1 = this.pipPos1.destroyPip();
-                pip2 = this.pipPos2.destroyPip();
-                pip3 = this.pipPos3.destroyPip();
+                playerPips[0] = this.pipPos1.destroyPip();
+                playerPips[1] = this.pipPos2.destroyPip();
+                playerPips[2] = this.pipPos3.destroyPip();
 
                 
                 this.pipPos1 = new Pip(this, game.config.width/2 - 200, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
                 this.pipPos2 = new Pip(this, game.config.width/2, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
                 this.pipPos3 = new Pip(this, game.config.width/2 + 200, game.config.height/2, Phaser.Math.Between(1, 11), Phaser.Math.Between(1, 4), Phaser.Math.Between(0, 1));
+                this.pipPos1.genClothes(1);
+                this.pipPos2.genClothes(1);
+                this.pipPos3.genClothes(1);
 
 
 
-                pip1 = this.pipPos1.toArr();
-                pip2 = this.pipPos2.toArr();
-                pip3 = this.pipPos3.toArr();
+                playerPips[0] = this.pipPos1.toArr();
+                playerPips[1] = this.pipPos2.toArr();
+                playerPips[2] = this.pipPos3.toArr();
                 
             }
         }, this)

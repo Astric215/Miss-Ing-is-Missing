@@ -10,11 +10,19 @@ class Mansion extends Phaser.Scene {
         this.map = new Map(this);
         this.map.loadMap();
 
+        //make camera
+        this.cam = this.cameras.main;
+        this.cam.setBounds(0, 0, this.map.map.width* tileSize, this.map.map.height * tileSize);
+        this.cam.setZoom(0.5);
+
         //make pips
-        console.log(pip1);
-        this.p1 = new Pip(this, pip1[0], pip1[1], pip1[2], pip1[3], pip1[4]);
-        this.p2 = new Pip(this, pip2[0], pip2[1], pip2[2], pip2[3], pip2[4]);
-        this.p3 = new Pip(this, pip3[0], pip3[1], pip3[2], pip3[3], pip3[4]);
+        console.log(playerPips[0]);
+        this.p1 = new Pip(this, playerPips[0][0], playerPips[0][1], playerPips[0][2], playerPips[0][3], playerPips[0][4]);
+        this.p2 = new Pip(this, playerPips[1][0], playerPips[1][1], playerPips[1][2], playerPips[1][3], playerPips[1][4]);
+        this.p3 = new Pip(this, playerPips[2][0], playerPips[2][1], playerPips[2][2], playerPips[2][3], playerPips[2][4]);
+        this.p1.genClothes(0, playerPips[0][5]);
+        this.p2.genClothes(0, playerPips[1][5]);
+        this.p3.genClothes(0, playerPips[2][5]);
         this.controled = this.p1;
         this.p1.moveToTile(2,2,0, 1000, 'power0', 0);
         this.p2.moveToTile(2,4,0, 1000, 'power0', 0);
@@ -31,16 +39,8 @@ class Mansion extends Phaser.Scene {
         this.p3HairClone = clone(this.p3.getAt(3));
         this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
 
-
-        //process movement
-        this.input.on('pointerdown', (pointer) =>
-        {
-            if(pointer.y/tileSize < this.map.map.height && pointer.x/tileSize < this.map.map.width && this.map.tiles[Math.floor(pointer.y/tileSize)][Math.floor(pointer.x/tileSize)].obj == null)
-            {
-                this.controled.setDestination(this.map.tiles[Math.floor(pointer.y/tileSize)][Math.floor(pointer.x/tileSize)]);
-                this.controled.pathfind();
-            }
-        }, this);
+        //check for swapping
+        this.swapping = false;
 
         //process gameobjectswaping
         this.input.on('gameobjectdown', (pointer, gameObject) =>
@@ -48,16 +48,58 @@ class Mansion extends Phaser.Scene {
             if(gameObject == this.p1 || gameObject == this.p1Selector)
             {
                 this.controled = this.p1;
+                this.swapping = true;
+                this.cam.startFollow(this.p1);
             }
             if(gameObject == this.p2 || gameObject == this.p2Selector)
             {
                 this.controled = this.p2;
+                this.swapping = true;
+                this.cam.startFollow(this.p2);
             }
             if(gameObject == this.p3 || gameObject == this.p3Selector)
             {
                 this.controled = this.p3;
+                this.swapping = true;
+                this.cam.startFollow(this.p3);
             }
             console.log(gameObject);
+        }, this);
+
+        //process movement
+        this.input.on('pointerdown', (pointer) =>
+        {
+            if((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize < this.map.map.width && (pointer.y/this.cam.zoom + this.cam.scrollY - this.cam.height/2)/tileSize < this.map.map.height && !this.swapping)
+            {
+                this.controled.setDestination(this.map.tiles[Math.floor((pointer.y/this.cam.zoom+ this.cam.scrollY - this.cam.height/2)/tileSize)][Math.floor((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize)]);
+                this.controled.pathfind();
+            }
+        }, this);
+
+        //process gameobjectswaping
+        this.input.keyboard.on('keydown', (event) =>
+        {
+            //1
+            if(event.keyCode == 49)
+            {
+                this.controled = this.p1;
+                this.cam.startFollow(this.p1);
+                //this.zoomTo(1, 3000);
+            }
+            //2
+            if(event.keyCode == 50)
+            {
+                this.controled = this.p2;
+                this.cam.startFollow(this.p2);
+                //this.zoomTo(1, 3000);
+            }
+            //3
+            if(event.keyCode == 51)
+            {
+                this.controled = this.p3;
+                this.cam.startFollow(this.p3);
+                //this.zoomTo(1, 3000);
+            }
         }, this);
     }
 
@@ -86,7 +128,18 @@ class Mansion extends Phaser.Scene {
         //     }
         // }
 
+        this.p1Selector.x = (this.cam.x + 32)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
+        this.p2Selector.x = (this.cam.x + 96)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
+        this.p3Selector.x = (this.cam.x + 160)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         
+        this.p1Selector.y = (this.cam.height - 50)/this.cam.zoom + this.cam.scrollY - this.cam.height/2;
+        this.p2Selector.y = (this.cam.height - 50)/this.cam.zoom + this.cam.scrollY - this.cam.height/2;
+        this.p3Selector.y = (this.cam.height - 50)/this.cam.zoom + this.cam.scrollY - this.cam.height/2;
+
+        this.p1Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
+        this.p2Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
+        this.p3Selector.setScale(2/this.cam.zoom).setSize(tileSize/2, tileSize);
+        this.swapping = false;
     }
     
 }
