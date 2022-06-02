@@ -74,13 +74,42 @@ class Pip extends Phaser.GameObjects.Container
     // generates clothes based on cloth array or randomly if rand is 1
     genClothes(rand = 0,cloth = this.clothing)
     {
-        for(let c in cloth)
+        if(this.length > 5)
+        {
+            //console.log(this);
+            for(let a = this.length - 1; a > 4; a--)
+            {
+                this.removeAt(a, true);
+            }
+            //console.log(this);
+        }
+        let dr = Phaser.Math.Between(0, 1);
+        for(let c = 5; c >= 0; c--)
         {
             if(rand == 1)
             {
+                if(dr == 0 && c == 1)
+                {
+                    cloth[1] = 0;
+                    continue;
+                }
+                if(dr == 1 && (c == 2 || c == 3))
+                {
+                    cloth[2] = 0;
+                    cloth[3] = 0;
+                    continue;
+                }
                 cloth[c] = Phaser.Math.Between(1, ClothingNums[this.gender][c]);
+                //console.log(c);
             }
-            this.add(new Phaser.GameObjects.Sprite(this.scene, 0, 0, ClothingAtlases[this.gender], ClothingNames[this.gender][c] + pad(cloth[c], 3, "0")))
+            this.clothing = cloth;
+            if(cloth[c] > 0)
+            {
+                // console.log(c);
+                // console.log("nxt");
+                // console.log(cloth[c]);
+                this.add(new Phaser.GameObjects.Sprite(this.scene, 0, 0, ClothingAtlases[this.gender], ClothingNames[this.gender][c] + pad(cloth[c], 3, "0")));
+            }
         }
     }
 
@@ -227,8 +256,9 @@ class Pip extends Phaser.GameObjects.Container
     {
         //set the goal and start for the p1 pathfinder and run pathfinding algo
         this.destination = goal;
-        this.pathfinder.bfs(this.currentTile);
+        this.pathfinder.bfs(this.currentTile, this.destination);
         this.pathfinder.constructPath(this.destination);
+        console.log(this);
     }
 
 
