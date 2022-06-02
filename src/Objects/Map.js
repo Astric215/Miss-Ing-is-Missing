@@ -13,9 +13,11 @@ class Map
         console.log('loading map');
         //add in the map from Tiled
         this.map = this.scene.add.tilemap("mansionMap");
-        let tileset = this.map.addTilesetImage("mansionTiles", 'mansionTiles');  // set tileset name
-        let layer = this.map.createLayer('ground', tileset, 0, 0);  // set layer name
-        let layer2 = this.map.createLayer('walls', tileset, 0, 0);  // set layer name
+        let tilesetM = this.map.addTilesetImage("mansionTiles", 'mansionTiles', 64, 64, 0, 1, 1);  // set tileset name
+        let tilesetG = this.map.addTilesetImage("grass", 'grass', 64, 64, 0, 1, 82);  // set tileset name
+        let tilesets= [tilesetM, tilesetG]
+        let layer = this.map.createLayer('ground', tilesets, 0, 0);  // set layer name
+        let layer2 = this.map.createLayer('walls', tilesets, 0, 0);  // set layer name
 
         //make tile references
         for(let i = 0; i < this.map.height; i++)
