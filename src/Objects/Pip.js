@@ -71,6 +71,7 @@ class Pip extends Phaser.GameObjects.Container
         return [this.x, this.y, this.hair, this.tone, this.gender, this.clothing];
     }
 
+    // generates clothes based on cloth array or randomly if rand is 1
     genClothes(rand = 0,cloth = this.clothing)
     {
         for(let c in cloth)
