@@ -19,6 +19,7 @@ class CharacterSelection extends Phaser.Scene {
         this.pipPos2.genClothes(1);
         this.pipPos3.genClothes(1);
 
+
         playerPips[0] = this.pipPos1.toArr();
         playerPips[1] = this.pipPos2.toArr();
         playerPips[2] = this.pipPos3.toArr();
@@ -62,7 +63,7 @@ class CharacterSelection extends Phaser.Scene {
                 playerPips[2] = this.pipPos3.toArr();
                 
             }
-        }, this)
+        }, this);
     }
 
     update() 
