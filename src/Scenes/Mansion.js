@@ -67,14 +67,14 @@ class Mansion extends Phaser.Scene {
         }, this);
 
         //process movement
-        this.input.on('pointerdown', (pointer) =>
+        /*this.input.on('pointerdown', (pointer) =>
         {
             if((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize < this.map.map.width && (pointer.y/this.cam.zoom + this.cam.scrollY - this.cam.height/2)/tileSize < this.map.map.height && !this.swapping)
             {
-                this.controled.setDestination(this.map.tiles[Math.floor((pointer.y/this.cam.zoom+ this.cam.scrollY - this.cam.height/2)/tileSize)][Math.floor((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize)]);
+                //this.controled.setDestination(this.map.tiles[Math.floor((pointer.y/this.cam.zoom+ this.cam.scrollY - this.cam.height/2)/tileSize)][Math.floor((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize)]);
                 this.controled.pathfind();
             }
-        }, this);
+        }, this);*/
 
         //process gameobjectswaping
         this.input.keyboard.on('keydown', (event) =>
@@ -101,6 +101,7 @@ class Mansion extends Phaser.Scene {
                 //this.zoomTo(1, 3000);
             }
         }, this);
+        this.timer = 0;
     }
 
     update() 
@@ -111,13 +112,6 @@ class Mansion extends Phaser.Scene {
             
         });*/
 
-        //set the pips current tile
-        this.p1.currentTile = this.map.tiles[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
-        this.p1.update();
-        this.p2.currentTile = this.map.tiles[Math.floor(this.p2.y/tileSize)][Math.floor(this.p2.x/tileSize)];
-        this.p2.update();
-        this.p3.currentTile = this.map.tiles[Math.floor(this.p3.y/tileSize)][Math.floor(this.p3.x/tileSize)];
-        this.p3.update();
         //when a tile is clicked
         // if(this.input.activePointer.leftButtonDown())
         // {
@@ -127,7 +121,18 @@ class Mansion extends Phaser.Scene {
         //         this.p1.setDestination(this.map.tiles[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
         //     }
         // }
-
+        if(this.timer == 10)
+        {
+            //set the pips current tile
+            this.p1.currentTile = this.map.tiles[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
+            this.p2.currentTile = this.map.tiles[Math.floor(this.p2.y/tileSize)][Math.floor(this.p2.x/tileSize)];
+            this.p3.currentTile = this.map.tiles[Math.floor(this.p3.y/tileSize)][Math.floor(this.p3.x/tileSize)];
+            //start pathfinding
+            this.p1.pathfind();
+            this.p2.pathfind();
+            this.p3.pathfind();
+        }
+        this.timer += 1;
         this.p1Selector.x = (this.cam.x + 32)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         this.p2Selector.x = (this.cam.x + 96)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         this.p3Selector.x = (this.cam.x + 160)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;

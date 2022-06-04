@@ -33,6 +33,8 @@ let ClothingAtlases = ["dudeAtlas", "ladyAtlas"];
 
 let game = new Phaser.Game(config);
 
+//map vars
+randomMovePoints = [];
 // reserve keyboard vars
 
 
