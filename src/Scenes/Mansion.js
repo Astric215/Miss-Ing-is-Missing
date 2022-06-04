@@ -6,6 +6,10 @@ class Mansion extends Phaser.Scene {
 
     create() 
     {
+        let GameplayMusic = this.sound.add('gameplay_music', 1);
+
+        GameplayMusic.setLoop(true);
+        GameplayMusic.play();
         //make map
         this.map = new Map(this);
         this.map.loadMap();

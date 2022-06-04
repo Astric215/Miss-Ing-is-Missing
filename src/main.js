@@ -21,6 +21,7 @@ let config = {
     scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
 };
 
+
 //arrays for pips
 let playerPips = [];
 let npcPips = [];

@@ -6,6 +6,11 @@ class CharacterSelection extends Phaser.Scene {
 
     create() 
     {
+
+        let MenuMusic = this.sound.add('menu_music', 1);
+
+        MenuMusic.setLoop(true);
+        MenuMusic.play();
         //adding background here too! (in addition to menu right now)
         this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'dressing').setOrigin(0, 0);
         let ButtonClick = this.sound.add('button_click', 1);
@@ -37,6 +42,7 @@ class CharacterSelection extends Phaser.Scene {
             console.log(gameObject);
             if(gameObject == this.go)
             {
+                MenuMusic.stop();
                 ButtonClick.play();
                 this.scene.start("dressUpScene");
             }
