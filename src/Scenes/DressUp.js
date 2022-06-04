@@ -25,12 +25,28 @@ class DressUp extends Phaser.Scene {
         
 
         //move on
-        this.go = this.add.rectangle(game.config.width/2 + 300, game.config.height/2 + 200, 40, 20, 0x0000ff);
-        this.add.text(game.config.width/2 + 290, game.config.height/2 + 190, 'GO');
+        this.go = this.add.image(game.config.width/2 + 300, game.config.height/2 + 200, 'continue');
+        //this.go = this.add.rectangle(game.config.width/2 + 300, game.config.height/2 + 200, 100, 20, 0x0000ff);
+        //this.add.text(game.config.width/2 + 260, game.config.height/2 + 190, 'CONTINUE');
         this.go.setInteractive();
-        this.redraw = this.add.rectangle(game.config.width/2, game.config.height/2 + 162, 120, 20, 0xff0000);
-        this.add.text(game.config.width/2, game.config.height/2 + 162, 'New Clothes').setOrigin(0.5);
-        this.redraw.setInteractive();
+
+
+        this.redrawHat = this.add.image(game.config.width/2 + 50, game.config.height/2 + 32, 'purchase');
+        //this.redrawHat = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 32, 20, 20, 0xff0000);
+        this.add.text(game.config.width/2 + 125, game.config.height/2 + 32, 'Purchase Hat').setOrigin(0.5);
+        this.redrawHat.setInteractive();
+
+        this.redrawShirt = this.add.image(game.config.width/2 + 50, game.config.height/2 + 82, 'purchase');
+        //this.redrawShirt = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 82, 20, 20, 0x427888);
+        this.add.text(game.config.width/2 + 130, game.config.height/2 + 82, 'Purchase Shirt').setOrigin(0.5);
+        this.redrawShirt.setInteractive();
+
+        this.redrawPant = this.add.image(game.config.width/2 + 50, game.config.height/2 + 150, 'purchase');
+        //this.redrawPant = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 150, 20, 20, 0x183687);
+        this.add.text(game.config.width/2 + 125, game.config.height/2 + 150, 'Purchase Pant').setOrigin(0.5);
+        this.redrawPant.setInteractive();
+
+        
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {
             console.log(gameObject);
@@ -40,9 +56,24 @@ class DressUp extends Phaser.Scene {
                 ButtonClick.play();
                 this.scene.start("mansionScene");
             }
-            else if(gameObject == this.redraw)
+            else if(gameObject == this.redrawHat)
             {
                 ButtonClick.play();
+                //REDRAW HAT
+                this.p2.genClothes(1);
+                playerPips[1] = this.p2.toArr();
+            }
+            else if(gameObject == this.redrawShirt)
+            {
+                ButtonClick.play();
+                //CHANGE HERE FOR SHIRT
+                this.p2.genClothes(1);
+                playerPips[1] = this.p2.toArr();
+            }
+            else if(gameObject == this.redrawPant)
+            {
+                ButtonClick.play();
+                //CHANGE HERE FOR PANTS
                 this.p2.genClothes(1);
                 playerPips[1] = this.p2.toArr();
             }
