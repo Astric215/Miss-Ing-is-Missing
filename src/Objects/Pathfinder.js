@@ -151,6 +151,11 @@ class Pathfinder
         
         this.path = [];
         let current = goal;
+        //if the goal is not reachable dont move
+        if ( typeof current == 'undefined')
+        {
+            current = this.start;
+        }
         //console.log('path:' + this.path);
         console.log(current);
         //go through cameFrom until you are at the start
