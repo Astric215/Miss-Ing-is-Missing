@@ -304,7 +304,7 @@ class Pip extends Phaser.GameObjects.Container
                     targets: this,
                     x: nextMove.tileX*tileSize + tileSize/4,
                     y: nextMove.tileY*tileSize + tileSize/2,
-                    duration: 500,
+                    duration: 400,
                     ease: 'power-0',
                     delay: 0,
                     onComplete: function()
@@ -317,6 +317,12 @@ class Pip extends Phaser.GameObjects.Container
                     }
                 }
             );
+        }
+        else
+        {
+            let randGoal = randomMovePoints[Math.floor(Math.random() * randomMovePoints.length)];
+            this.setDestination(randGoal);
+            this.pathfind();
         }
         
     }
