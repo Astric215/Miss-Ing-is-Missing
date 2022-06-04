@@ -37,6 +37,8 @@ let statnames = ["strength", "Dexterity", "Constitution", "Intelligence", "Wisdo
 
 let game = new Phaser.Game(config);
 
+//map vars
+randomMovePoints = [];
 // reserve keyboard vars
 
 

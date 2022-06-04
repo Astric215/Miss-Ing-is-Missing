@@ -51,7 +51,11 @@ class Map
                         this.objects[this.objects.length-1].npcToggle = true;
                         this.objects[this.objects.length-1].moveToTile(j, i, 1, 0);
                     }
-
+                    //add random move points
+                    if(Math.random() < 0.1)
+                    {
+                        randomMovePoints.push(this.tiles[i][j]);
+                    }
                     //only add to adjacency if the current layer tile is null
                     //aka the tile is not a wall
                     if(i!=0)
