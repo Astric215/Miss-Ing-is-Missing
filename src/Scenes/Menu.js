@@ -10,11 +10,16 @@ class Menu extends Phaser.Scene
 
     create() 
     {
+        
         //background creation
         this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
         this.menuHover = this.add.tileSprite(0, 0, 1000, 1000, 'menuHover').setOrigin(0, 0);
         this.menuHover.alpha = 0.0;
         let ButtonClick = this.sound.add('button_click', 1);
+        let MenuMusic = this.sound.add('menu_music', 1);
+
+        MenuMusic.setLoop(true);
+        MenuMusic.play();
         
         this.go = this.add.rectangle(675, 165, 180, 100, 0xff0000);
         this.go.setInteractive();
@@ -32,7 +37,9 @@ class Menu extends Phaser.Scene
             console.log(gameObject);
             if(gameObject == this.go)
             {
+                MenuMusic.stop();
                 ButtonClick.play();
+
                 this.scene.start("characterSelectionScene");
             }
         }, this)

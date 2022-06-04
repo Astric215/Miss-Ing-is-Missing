@@ -6,6 +6,10 @@ class Mansion extends Phaser.Scene {
 
     create() 
     {
+        let GameplayMusic = this.sound.add('gameplay_music', 1);
+
+        GameplayMusic.setLoop(true);
+        GameplayMusic.play();
         //make map
         this.map = new Map(this);
         this.map.loadMap();
@@ -24,20 +28,23 @@ class Mansion extends Phaser.Scene {
         this.p2.genClothes(0, playerPips[1][5]);
         this.p3.genClothes(0, playerPips[2][5]);
         this.controled = this.p1;
-        this.p1.moveToTile(3,2,0, 1000, 'power0', 0);
-        this.p2.moveToTile(3,4,0, 1000, 'power0', 0);
-        this.p3.moveToTile(4,2,0, 1000, 'power0', 0);
+        this.p1.moveToTile(18,1,0, 1, 'power0', 0);
+        this.p2.moveToTile(19,1,0, 1, 'power0', 0);
+        this.p3.moveToTile(20,1,0, 1, 'power0', 0);
 
         //make pipheads
+        this.p1AgentName = this.add.text(-5, 0, "A");
         this.p1HeadClone = clone(this.p1.getAt(2));
         this.p1HairClone = clone(this.p1.getAt(3));
-        this.p1Selector = this.add.container(50, 550, [this.p1HeadClone, this.p1HairClone]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p1Selector = this.add.container(50, 550, [this.p1HeadClone, this.p1HairClone, this.p1AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p2AgentName = this.add.text(-5, 0, "B");
         this.p2HeadClone = clone(this.p2.getAt(2));
         this.p2HairClone = clone(this.p2.getAt(3));
-        this.p2Selector = this.add.container(100, 550, [this.p2HeadClone, this.p2HairClone]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p2Selector = this.add.container(100, 550, [this.p2HeadClone, this.p2HairClone, this.p2AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p3AgentName = this.add.text(-5, 0, "C");
         this.p3HeadClone = clone(this.p3.getAt(2));
         this.p3HairClone = clone(this.p3.getAt(3));
-        this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone, this.p3AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
 
         //check for swapping
         this.swapping = false;

@@ -19,6 +19,7 @@ class Load extends Phaser.Scene
         this.load.atlas('arrowAtlas', './assets/Atlases/Arrows.png', './assets/Atlases/Arrows.json');
         this.load.atlas('grassAtlas', './assets/Atlases/Grass.png', './assets/Atlases/Grass.json');
 
+
         
         //load images
         //CHANGING THIS TEMPORARILY TO BG ART FOR TESTING
@@ -26,8 +27,12 @@ class Load extends Phaser.Scene
         this.load.image('dressing', './assets/Backgrounds/DressingBackground.png');
         this.load.image('menu', './assets/Backgrounds/MainMenu.png');
         this.load.image('object', './assets/Images/Object.png');
+        this.load.image('purchase', './assets/Images/PurchaseButton.png');
+        this.load.image('continue', './assets/Images/ContinueButton.png');
         this.load.image('menuHover', './assets/Backgrounds/MainMenuHover.png');
-        this.load.audio('button_click', './assets/Sfx/ButtonClick.wav');
+        this.load.audio('button_click', './assets/Sfx/button.wav');
+        this.load.audio('menu_music', './assets/Sfx/menu.wav');
+        this.load.audio('gameplay_music', './assets/Sfx/gameplay.wav')
 
         //load tiled JSON and tilemap
         this.load.tilemapTiledJSON("mansionMap", "./assets/Maps/MansionMap.json");

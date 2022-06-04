@@ -58,6 +58,7 @@ class Pip extends Phaser.GameObjects.Container
         this.setSize(tileSize/2, tileSize);
         this.setInteractive();
         console.log(this);
+        this.dr = 0;
     }
 
     destroyPip ()
@@ -71,7 +72,34 @@ class Pip extends Phaser.GameObjects.Container
         return [this.x, this.y, this.hair, this.tone, this.gender, this.clothing];
     }
 
-    genClothes(rand = 0,cloth = this.clothing)
+    //increment clothing index
+    incoClothes(pos)
+    {
+        if(this.clothing[pos] >= ClothingNums[this.gender][pos])
+        {
+            this.clothing[pos] = 0;
+            if(pos == 1 && this.dr == 1)
+            {
+                this.dr = 0;
+            }
+        }
+        else
+        {
+            this.clothing[pos] += 1;
+            if(pos == 1 && this.dr == 0)
+            {
+                this.dr = 1;
+            }
+            else if((pos == 2 || pos == 3) && this.dr == 1)
+            {
+                this.dr = 0;
+            }
+        }
+        this.genClothes();
+    }
+
+    // generates clothes based on cloth array or randomly if rand is 1
+    genClothes(rand = 0,cloth = this.clothing, dr = this.dr)
     {
         if(this.length > 5)
         {
@@ -82,25 +110,26 @@ class Pip extends Phaser.GameObjects.Container
             }
             //console.log(this);
         }
-        let dr = Phaser.Math.Between(0, 1);
         for(let c = 5; c >= 0; c--)
         {
             if(rand == 1)
             {
-                if(dr == 0 && c == 1)
-                {
-                    cloth[1] = 0;
-                    continue;
-                }
-                if(dr == 1 && (c == 2 || c == 3))
-                {
-                    cloth[2] = 0;
-                    cloth[3] = 0;
-                    continue;
-                }
+                this.dr = Phaser.Math.Between(0, 1);
                 cloth[c] = Phaser.Math.Between(1, ClothingNums[this.gender][c]);
                 //console.log(c);
             }
+            if(dr == 0 && c == 1)
+            {
+                cloth[1] = 0;
+                continue;
+            }
+            if(dr == 1 && (c == 2 || c == 3))
+            {
+                cloth[2] = 0;
+                cloth[3] = 0;
+                continue;
+            }
+            this.dr = dr;
             this.clothing = cloth;
             if(cloth[c] > 0)
             {
