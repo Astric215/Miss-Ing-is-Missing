@@ -32,8 +32,13 @@ let ClothingNums = [[13, 6, 24, 18, 12], [12, 6, 22, 16, 13]];
 let ClothingNames = [["dudeHat", "dudeDress", "dudeTop", "dudeBottom", "dudeShoes"], ["ladyHat", "ladyDress", "ladyTop", "ladyBottom", "ladyShoes"]];
 let ClothingAtlases = ["dudeAtlas", "ladyAtlas"];
 
+//stat to index conversion
+let statnames = ["strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
+
 let game = new Phaser.Game(config);
 
+//map vars
+randomMovePoints = [];
 // reserve keyboard vars
 
 
