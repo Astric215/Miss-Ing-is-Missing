@@ -24,8 +24,8 @@ class Mansion extends Phaser.Scene {
         this.p2.genClothes(0, playerPips[1][5]);
         this.p3.genClothes(0, playerPips[2][5]);
         this.controled = this.p1;
-        this.p1.moveToTile(2,2,0, 1000, 'power0', 0);
-        this.p2.moveToTile(2,4,0, 1000, 'power0', 0);
+        this.p1.moveToTile(3,2,0, 1000, 'power0', 0);
+        this.p2.moveToTile(3,4,0, 1000, 'power0', 0);
         this.p3.moveToTile(4,2,0, 1000, 'power0', 0);
 
         //make pipheads
