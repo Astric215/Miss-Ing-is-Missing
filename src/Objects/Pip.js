@@ -50,7 +50,7 @@ class Pip extends Phaser.GameObjects.Container
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "feetTone" + this.tonePad));
         }
         this.clothing = [0, 0, 0, 0, 0];
-        this.stats = 10; // {}:
+        this.stats = [10, 10, 10, 10, 10, 10]; // {}:
         this.trait = "booby"; // (:
         this.npcToggle = false;
         this.ix = 0;
