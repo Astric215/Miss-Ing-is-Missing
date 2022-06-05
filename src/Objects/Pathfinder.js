@@ -164,9 +164,9 @@ class Pathfinder
             current = this.cameFrom[current.config["name"]];
             if(current.tileX == 18 && current.tileY == 1)
             {
-                console.log('start');
+                //console.log('start');
             }
         }
-        console.log(this.path);
+        //console.log(this.path);
     }
 }

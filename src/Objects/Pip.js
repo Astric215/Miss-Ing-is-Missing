@@ -57,7 +57,7 @@ class Pip extends Phaser.GameObjects.Container
         this.iy = 0;
         this.setSize(tileSize/2, tileSize);
         this.setInteractive();
-        console.log(this);
+        //console.log(this);
         this.dr = 0;
     }
 
@@ -286,7 +286,7 @@ class Pip extends Phaser.GameObjects.Container
         this.destination = goal;
         this.pathfinder.bfs(this.currentTile, this.destination);
         this.pathfinder.constructPath(this.destination);
-        console.log(this);
+        //console.log(this);
     }
 
 
