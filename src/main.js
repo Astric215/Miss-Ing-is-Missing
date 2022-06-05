@@ -36,6 +36,7 @@ let ClothingAtlases = ["dudeAtlas", "ladyAtlas"];
 let statnames = ["strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
 
 let statdistro;
+let events;
 
 let game = new Phaser.Game(config);
 
