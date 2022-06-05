@@ -35,6 +35,8 @@ let ClothingAtlases = ["dudeAtlas", "ladyAtlas"];
 //stat to index conversion
 let statnames = ["strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
 
+let statdistro;
+
 let game = new Phaser.Game(config);
 
 //map vars

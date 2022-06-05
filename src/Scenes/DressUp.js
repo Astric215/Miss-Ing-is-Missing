@@ -27,7 +27,14 @@ class DressUp extends Phaser.Scene {
         this.trgt = this.p2;
         this.ind = 1;
 
-        this.agentname = this.add.text(game.config.width/2 - 25, game.config.height/2 - 125,"B")
+        this.agentname = this.add.text(game.config.width/2 - 25, game.config.height/2 - 125,"B");
+
+        this.agentstr = this.add.text(game.config.width/2 - 250, game.config.height/2 - 60, "Strength: " + this.p2.stats[0]);
+        this.agentdex = this.add.text(game.config.width/2 - 250, game.config.height/2 - 20, "Dexterity: " + this.p2.stats[1]);
+        this.agentcon = this.add.text(game.config.width/2 - 250, game.config.height/2 + 20, "Constitution: " + this.p2.stats[2]);
+        this.agentint = this.add.text(game.config.width/2 - 250, game.config.height/2 + 60, "Intelligence: " + this.p2.stats[3]);
+        this.agentwis = this.add.text(game.config.width/2 - 250, game.config.height/2 + 100, "Wisdom: " + this.p2.stats[4]);
+        this.agentcha = this.add.text(game.config.width/2 - 250, game.config.height/2 + 140, "Charisma: " + this.p2.stats[5]);
 
         //move on
         this.go = this.add.image(game.config.width/2 + 300, game.config.height/2 + 200, 'continue');
@@ -149,7 +156,13 @@ class DressUp extends Phaser.Scene {
 
     update() 
     {
-        console.log('DressUpscene');
+        this.agentstr.text = "Strength: " + this.trgt.stats[0];
+        this.agentdex.text = "Dexterity: " + this.trgt.stats[1];
+        this.agentcon.text = "Constitution: " + this.trgt.stats[2];
+        this.agentint.text = "Intelligence: " + this.trgt.stats[3];
+        this.agentwis.text = "Wisdom: " + this.trgt.stats[4];
+        this.agentcha.text = "Charisma: " + this.trgt.stats[5];
+
     }
 
     changetrgt()

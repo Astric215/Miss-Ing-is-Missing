@@ -101,6 +101,7 @@ class Pip extends Phaser.GameObjects.Container
     // generates clothes based on cloth array or randomly if rand is 1
     genClothes(rand = 0,cloth = this.clothing, dr = this.dr)
     {
+        this.stats = [10, 10, 10, 10, 10, 10];
         if(this.length > 5)
         {
             //console.log(this);
@@ -137,6 +138,10 @@ class Pip extends Phaser.GameObjects.Container
                 // console.log("nxt");
                 // console.log(cloth[c]);
                 this.add(new Phaser.GameObjects.Sprite(this.scene, 0, 0, ClothingAtlases[this.gender], ClothingNames[this.gender][c] + pad(cloth[c], 3, "0")));
+                for(let a = 0; a < 6; a++)
+                {
+                    this.stats[a] += statdistro[c][this.clothing[c]-1][a];
+                }
             }
         }
     }
