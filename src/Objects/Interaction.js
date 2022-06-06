@@ -17,12 +17,13 @@ class Interaction extends Phaser.GameObjects.Container
     {
         super(scene, x, y);
         scene.add.existing(this);
-        this.style = { font: "20px Arial", fill: "#ff0000", align: "center" };
-        this.Question = new Phaser.GameObjects.Text(scene, 0, -100, Question, this.style);
+        let middle = x+480;
+        this.style = { font: "60px Arial", fill: "#ff0000", align: "center", wordWrap: { width: 1500 } };
+        this.Question = new Phaser.GameObjects.Text(scene, middle, y + 250, Question, this.style);
         this.Question.setInteractive();
-        this.Choice1 = new Phaser.GameObjects.Text(scene, -50, 0, Choice1, this.style);
+        this.Choice1 = new Phaser.GameObjects.Text(scene, middle, y + 775, Choice1, this.style);
         this.Choice1.setInteractive();
-        this.Choice2 = new Phaser.GameObjects.Text(scene, 50, 0, Choice2, this.style);
+        this.Choice2 = new Phaser.GameObjects.Text(scene, middle, y + 925, Choice2, this.style);
         this.Choice2.setInteractive();
         this.Question.tint = "#000000"
         this.c1StatInd = c1StatInd;
@@ -33,34 +34,71 @@ class Interaction extends Phaser.GameObjects.Container
         this.add(this.Question);
         this.add(this.Choice1);
         this.add(this.Choice2);
+        //pause = true;
         scene.input.on("gameobjectdown", (Pointer, GameObject) =>
             {
                 if(GameObject == this.Choice1)
                 {
                     ButtonClick.play();
-                    if(this.player.checkstats()[this.c1StatInd] >= this.c1StatReq)
+                    if(this.player.checkstats()[this.c1StatInd] >= this.player.checkstats()[this.c2StatInd])
                     {
                         //succeed
+                        clueNum++;
+                        this.Question = "Success " + clueNum + "/5 clues found";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                     else
                     {
                         //fail
+                        this.Question = "Failure";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                 }
                 else if(GameObject == this.Choice2)
                 {
                     ButtonClick.play();
-                    if(this.player.checkstats()[this.c2StatInd] >= this.c2StatReq)
+                    if(this.player.checkstats()[this.c1StatInd] <= this.player.checkstats()[this.c2StatInd])
                     {
                         //succeed
+                        clueNum++;
+                        this.Question = "Success " + clueNum + "/5 clues found";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                     else
                     {
                         //fail
+                        this.Question = "Failure";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                 }
             }, this
         )
-        console.log(this);
+        //console.log(this);
+        //this.create();
     }
+
+    create()
+    {
+        console.log(this.Question);
+        console.log(this.Choice1);
+        console.log(this.Choice2);
+    }
+
+    updatePos(x,y)
+    {
+        let middle = x + 300;
+        this.Question.x = middle;
+        this.Question.y = y + 250;
+
+        this.Choice1.x = middle;
+        this.Choice1.y = y + 775;
+
+        this.Choice2.x = middle;
+        this.Choice2.y = y + 925;
+    }
+    
 }
