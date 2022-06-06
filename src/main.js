@@ -3,6 +3,7 @@
 */
 let config = {
     type: Phaser.AUTO,
+    backgroundColor: '#000000',
     width: 960,
     height: 540,
     fps: {

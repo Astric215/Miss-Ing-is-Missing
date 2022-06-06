@@ -26,7 +26,8 @@ class DressUp extends Phaser.Scene {
         this.trgt = this.p2;
         this.ind = 1;
 
-        this.agentname = this.add.text(game.config.width/2 - 25, game.config.height/2 - 125,agentNames[1]);
+        this.agentSelectCurrent = this.add.text(game.config.width/2 + 65, game.config.height/2 - 135, "Current Agent:");
+        this.agentname = this.add.text(game.config.width/2 + 205, game.config.height/2 - 135,agentNames[1]);
 
         this.agentstr = this.add.text(game.config.width/2 - 250, game.config.height/2 - 60, "Strength: " + this.p2.stats[0]);
         this.agentdex = this.add.text(game.config.width/2 - 250, game.config.height/2 - 20, "Dexterity: " + this.p2.stats[1]);
@@ -37,44 +38,35 @@ class DressUp extends Phaser.Scene {
 
         //move on
         this.go = this.add.image(game.config.width/2 + 300, game.config.height/2 + 200, 'continue');
-        //this.go = this.add.rectangle(game.config.width/2 + 300, game.config.height/2 + 200, 100, 20, 0x0000ff);
-        //this.add.text(game.config.width/2 + 260, game.config.height/2 + 190, 'CONTINUE');
         this.go.setInteractive();
 
-        this.selectNext = this.add.image(game.config.width/2, game.config.height/2 - 60, 'purchase');
-        //this.selectNext = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 32, 20, 20, 0xff0000);
-        this.add.text(game.config.width/2 + 30, game.config.height/2 - 60, 'Next').setOrigin(0.5);
+        this.selectNext = this.add.image(game.config.width/2 + 75, game.config.height/2 - 100, 'purchase');
+        this.add.text(game.config.width/2 + 90, game.config.height/2 - 108, 'Next Character', { color: '#ffffff', align: 'left' });
         this.selectNext.setInteractive();
         
-        this.selectPrev = this.add.image(game.config.width/2, game.config.height/2 - 40, 'purchase');
-        //this.selectNext = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 32, 20, 20, 0xff0000);
-        this.add.text(game.config.width/2 + 30, game.config.height/2 - 40, 'Prev').setOrigin(0.5);
+        this.selectPrev = this.add.image(game.config.width/2 + 75, game.config.height/2 - 75, 'purchase');
+        this.add.text(game.config.width/2 + 90, game.config.height/2 - 83, 'Previous Character', { color: '#ffffff', align: 'left' });
         this.selectPrev.setInteractive();
 
         this.redrawHat = this.add.image(game.config.width/2 + 50, game.config.height/2, 'purchase');
-        //this.redrawHat = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 32, 20, 20, 0xff0000);
-        this.add.text(game.config.width/2 + 125, game.config.height/2, 'Purchase Hat').setOrigin(0.5);
+        this.add.text(game.config.width/2 + 65, game.config.height/2 - 8, 'Purchase Hat');
         this.redrawHat.setInteractive();
 
         this.redrawDress = this.add.image(game.config.width/2 + 50, game.config.height/2 + 32, 'purchase');
-        //this.redrawDress = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 82, 20, 20, 0x427888);
-        this.add.text(game.config.width/2 + 130, game.config.height/2 + 32, 'Purchase Dress').setOrigin(0.5);
+        this.add.text(game.config.width/2 + 65, game.config.height/2 + 23, 'Purchase Dress');
         this.redrawDress.setInteractive();
 
         this.redrawShirt = this.add.image(game.config.width/2 + 50, game.config.height/2 + 82, 'purchase');
-        //this.redrawShirt = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 82, 20, 20, 0x427888);
-        this.add.text(game.config.width/2 + 130, game.config.height/2 + 82, 'Purchase Shirt').setOrigin(0.5);
+        this.add.text(game.config.width/2 + 65, game.config.height/2 + 74, 'Purchase Shirt');
         this.redrawShirt.setInteractive();
 
         this.redrawPant = this.add.image(game.config.width/2 + 50, game.config.height/2 + 150, 'purchase');
-        //this.redrawPant = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 150, 20, 20, 0x183687);
-        this.add.text(game.config.width/2 + 125, game.config.height/2 + 150, 'Purchase Pant').setOrigin(0.5);
+        this.add.text(game.config.width/2 + 65, game.config.height/2 + 142, 'Purchase Pant');
         this.redrawPant.setInteractive();
 
 
         this.redrawShoes = this.add.image(game.config.width/2 + 50, game.config.height/2 + 200, 'purchase');
-        //this.redrawShoes = this.add.rectangle(game.config.width/2 + 50, game.config.height/2 + 150, 20, 20, 0x183687);
-        this.add.text(game.config.width/2 + 125, game.config.height/2 + 200, 'Purchase Shoes').setOrigin(0.5);
+        this.add.text(game.config.width/2 + 65, game.config.height/2 + 190, 'Purchase Shoes');
         this.redrawShoes.setInteractive();
 
         
@@ -181,6 +173,6 @@ class DressUp extends Phaser.Scene {
         }
         this.agentname.text = agentNames[this.ind];
         this.trgt.y /= 2;
-        console.log(this.ind);
+        //console.log(this.ind);
     }
 }

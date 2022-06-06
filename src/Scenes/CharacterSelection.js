@@ -28,11 +28,11 @@ class CharacterSelection extends Phaser.Scene {
         playerPips[1] = this.pipPos2.toArr();
         playerPips[2] = this.pipPos3.toArr();
 
-        this.go = this.add.rectangle(game.config.width/2 + 100, game.config.height/2 + 170, 100, 20, 0xff00ff);
-        this.add.text(game.config.width/2 + 65, game.config.height/2 + 162, 'Continue');
+
+        this.go = this.add.image(game.config.width/2 + 300, game.config.height/2 + 200, 'continue');
         this.go.setInteractive();
-        this.redraw = this.add.rectangle(game.config.width/2 - 100, game.config.height/2 + 170, 100, 20, 0xff0000);
-        this.add.text(game.config.width/2 - 135, game.config.height/2 + 162, 'Shuffle')
+
+        this.redraw = this.add.image(game.config.width/2 - 300, game.config.height/2 + 200, 'shuffle');
         this.redraw.setInteractive();
 
     
