@@ -43,6 +43,9 @@ let statdistro;
 let events;
 let pause = false;
 let clueNum = 0;
+let clueGoal = 5;
+let failNum = 0;
+let failGoal = 3;
 
 let game = new Phaser.Game(config);
 
