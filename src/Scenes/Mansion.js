@@ -273,6 +273,11 @@ class Mansion extends Phaser.Scene {
         this.agentint.text = "Intelligence: " + this.trgt.stats[3];
         this.agentwis.text = "Wisdom: " + this.trgt.stats[4];
         this.agentcha.text = "Charisma: " + this.trgt.stats[5];
+
+        if((clueGoal == clueNum || failGoal == failNum) && this.delay == 0)
+        {
+            this.scene.start("endScene");
+        }
     }
     
 }

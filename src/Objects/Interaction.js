@@ -45,14 +45,14 @@ class Interaction extends Phaser.GameObjects.Container
                     {
                         //succeed
                         clueNum++;
-                        this.Question.text = "Success " + clueNum + "/5 clues found";
+                        this.Question.text = "Success " + clueNum + "/" + clueGoal + " clues found";
                         this.Choice1.text = '';
                         this.Choice2.text = '';
                     }
                     else
                     {
                         //fail
-                        this.Question.text = "Failure";
+                        this.Question.text = "Failure " + (failGoal - failNum) + " lives remaining";
                         this.Choice1.text = '';
                         this.Choice2.text = '';
                     }
@@ -65,7 +65,7 @@ class Interaction extends Phaser.GameObjects.Container
                     {
                         //succeed
                         clueNum++;
-                        this.Question.text = "Success " + clueNum + "/5 clues found";
+                        this.Question.text = "Success " + clueNum + "/" + clueGoal + " clues found";
                         this.Choice1.text = '';
                         this.Choice2.text = '';
 
@@ -73,7 +73,7 @@ class Interaction extends Phaser.GameObjects.Container
                     else
                     {
                         //fail
-                        this.Question.text = "Failure";
+                        this.Question.text = "Failure " + (failGoal - failNum) + " lives remaining";
                         this.Choice1.text = '';
                         this.Choice2.text = '';
                     }
