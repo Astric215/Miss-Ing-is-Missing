@@ -31,6 +31,7 @@ class Interaction extends Phaser.GameObjects.Container
         this.c1StatReq = c1StatReq;
         this.c2StatReq = c2StatReq;
         this.player = player;
+        this.visible = false;
         this.add(this.Question);
         this.add(this.Choice1);
         this.add(this.Choice2);
@@ -40,41 +41,45 @@ class Interaction extends Phaser.GameObjects.Container
                 if(GameObject == this.Choice1)
                 {
                     ButtonClick.play();
-                    if(this.player.checkstats()[this.c1StatInd] >= this.player.checkstats()[this.c2StatInd])
+                    if(this.player.checkStats()[this.c1StatInd] >= this.player.checkStats()[this.c2StatInd])
                     {
                         //succeed
                         clueNum++;
-                        this.Question = "Success " + clueNum + "/5 clues found";
-                        this.Choice1 = '';
-                        this.Choice2 = '';
+                        this.Question.text = "Success " + clueNum + "/5 clues found";
+                        this.Choice1.text = '';
+                        this.Choice2.text = '';
                     }
                     else
                     {
                         //fail
-                        this.Question = "Failure";
-                        this.Choice1 = '';
-                        this.Choice2 = '';
+                        this.Question.text = "Failure";
+                        this.Choice1.text = '';
+                        this.Choice2.text = '';
                     }
+                    this.scene.delay = 180;
                 }
                 else if(GameObject == this.Choice2)
                 {
                     ButtonClick.play();
-                    if(this.player.checkstats()[this.c1StatInd] <= this.player.checkstats()[this.c2StatInd])
+                    if(this.player.checkStats()[this.c1StatInd] <= this.player.checkStats()[this.c2StatInd])
                     {
                         //succeed
                         clueNum++;
-                        this.Question = "Success " + clueNum + "/5 clues found";
-                        this.Choice1 = '';
-                        this.Choice2 = '';
+                        this.Question.text = "Success " + clueNum + "/5 clues found";
+                        this.Choice1.text = '';
+                        this.Choice2.text = '';
+
                     }
                     else
                     {
                         //fail
-                        this.Question = "Failure";
-                        this.Choice1 = '';
-                        this.Choice2 = '';
+                        this.Question.text = "Failure";
+                        this.Choice1.text = '';
+                        this.Choice2.text = '';
                     }
+                    this.scene.delay = 180;
                 }
+                
             }, this
         )
         //console.log(this);
