@@ -41,6 +41,7 @@ let ButtonClick;
 let statdistro;
 let events;
 let pause = false;
+let clueNum = 0;
 
 let game = new Phaser.Game(config);
 

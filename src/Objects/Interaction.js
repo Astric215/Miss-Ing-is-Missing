@@ -34,31 +34,45 @@ class Interaction extends Phaser.GameObjects.Container
         this.add(this.Question);
         this.add(this.Choice1);
         this.add(this.Choice2);
-        pause = true;
+        //pause = true;
         scene.input.on("gameobjectdown", (Pointer, GameObject) =>
             {
                 if(GameObject == this.Choice1)
                 {
                     ButtonClick.play();
-                    if(this.player.checkstats()[this.c1StatInd] >= this.c1StatReq)
+                    if(this.player.checkstats()[this.c1StatInd] >= this.player.checkstats()[this.c2StatInd])
                     {
                         //succeed
+                        clueNum++;
+                        this.Question = "Success " + clueNum + "/5 clues found";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                     else
                     {
                         //fail
+                        this.Question = "Failure";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                 }
                 else if(GameObject == this.Choice2)
                 {
                     ButtonClick.play();
-                    if(this.player.checkstats()[this.c2StatInd] >= this.c2StatReq)
+                    if(this.player.checkstats()[this.c1StatInd] <= this.player.checkstats()[this.c2StatInd])
                     {
                         //succeed
+                        clueNum++;
+                        this.Question = "Success " + clueNum + "/5 clues found";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                     else
                     {
                         //fail
+                        this.Question = "Failure";
+                        this.Choice1 = '';
+                        this.Choice2 = '';
                     }
                 }
             }, this
