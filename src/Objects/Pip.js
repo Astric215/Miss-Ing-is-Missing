@@ -253,6 +253,10 @@ class Pip extends Phaser.GameObjects.Container
                     {
                         if(dest == self.destination)
                         {
+                            while(pause)
+                            {
+
+                            }
                             self.pathfind(dest);
                         }
                         

@@ -127,7 +127,25 @@ class Mansion extends Phaser.Scene {
         //         this.p1.setDestination(this.map.tiles[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
         //     }
         // }
-
+        if(this.timer == 10)
+        {
+            //set the pips current tile
+            this.p1.currentTile = this.map.tiles[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
+            this.p2.currentTile = this.map.tiles[Math.floor(this.p2.y/tileSize)][Math.floor(this.p2.x/tileSize)];
+            this.p3.currentTile = this.map.tiles[Math.floor(this.p3.y/tileSize)][Math.floor(this.p3.x/tileSize)];
+            //start pathfinding
+            this.p1.pathfind();
+            this.p2.pathfind();
+            this.p3.pathfind();
+        }
+        if(this.timer == 20)
+        {
+            console.log('event');
+            let eventRand = events[Math.floor(Math.random() * events.length)];
+            let interactMen = new Interaction(this, this.cam.x, this.cam.y, eventRand[0], eventRand[1][0][0], eventRand[1][1][0], eventRand[1][0][1], eventRand[1][1][1], this.controled, 12, 12);
+        }
+        console.log(this.cam.x);
+        this.timer += 1;
         this.p1Selector.x = (this.cam.x + 32)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         this.p2Selector.x = (this.cam.x + 96)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         this.p3Selector.x = (this.cam.x + 160)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
