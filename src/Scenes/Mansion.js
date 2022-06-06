@@ -32,6 +32,7 @@ class Mansion extends Phaser.Scene {
         this.p2.moveToTile(19,1,0, 1, 'power0', 0);
         this.p3.moveToTile(20,1,0, 1, 'power0', 0);
 
+        //set initial controlled pip
         this.controled = this.p1;
         this.cam.startFollow(this.p1);
         this.trgt = this.p1;
@@ -81,7 +82,6 @@ class Mansion extends Phaser.Scene {
         this.menu1.alpha = 0.0;
         this.menu2.alpha = 0.0;
 
-        this.interactMenuOn = false;
         //when hovering over "interact"...
         this.interact.on("pointerover", () => 
         { 
@@ -234,6 +234,8 @@ class Mansion extends Phaser.Scene {
             this.agentwis.alpha = 1;
             this.agentcha.alpha = 1;
         }
+
+        //manage the delay for a interactive menu screen to go away
         if(this.delay == 0)
         {
             this.interactMen.visible = false;
@@ -251,6 +253,8 @@ class Mansion extends Phaser.Scene {
             this.interactMen.alpha = 0.0;
         }*/
         this.timer += 1;
+
+        //calculate n
         this.p1Selector.x = (this.cam.x + 32)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         this.p2Selector.x = (this.cam.x + 96)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         this.p3Selector.x = (this.cam.x + 160)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
@@ -259,14 +263,13 @@ class Mansion extends Phaser.Scene {
         this.p2Selector.y = (this.cam.height - 50)/this.cam.zoom + this.cam.scrollY - this.cam.height/2;
         this.p3Selector.y = (this.cam.height - 50)/this.cam.zoom + this.cam.scrollY - this.cam.height/2;
 
-        //console.log(this.cam.scrollY - this.cam.height/2);
+        //set things to follow the camera
         this.interactMen.updatePos(this.cam.scrollX - this.cam.width/2, this.cam.scrollY - this.cam.height/2)
         this.p1Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
         this.p2Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
         this.p3Selector.setScale(2/this.cam.zoom).setSize(tileSize/2, tileSize);
         this.swapping = false;
 
-        this
         this.agentstr.text = "Strength: " + this.trgt.stats[0];
         this.agentdex.text = "Dexterity: " + this.trgt.stats[1];
         this.agentcon.text = "Constitution: " + this.trgt.stats[2];
