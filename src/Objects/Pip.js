@@ -319,12 +319,11 @@ class Pip extends Phaser.GameObjects.Container
                     {
                         if(dest == self.destination)
                         {
-                            console.log(pause);
                             if(!pause && Math.random() < 0.1)
                             {
                                 let eventRand = events[Math.floor(Math.random() * events.length)];
                                 self.scene.interactMen.destroy();
-                                self.scene.interactMen = new Interaction(self.scene, self.scene.cam.x, self.scene.cam.y, eventRand[0], eventRand[1][0][0], eventRand[1][1][0], eventRand[1][0][1], eventRand[1][1][1], this, 12, 12);
+                                self.scene.interactMen = new Interaction(self.scene, self.scene.cam.x, self.scene.cam.y, eventRand[0], eventRand[1][0][0], eventRand[1][1][0], eventRand[1][0][1], eventRand[1][1][1], self, 12, 12);
                                 self.scene.interactMen.alpha = 0.0;
                                 pause = true;
                             }

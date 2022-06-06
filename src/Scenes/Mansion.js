@@ -84,18 +84,23 @@ class Mansion extends Phaser.Scene {
         //when hovering over "interact"...
         this.interact.on("pointerover", () => 
         { 
-            //show the interactive menu!
-            this.menuMain.alpha = 1; 
-            this.menu1.alpha = 1;
-            this.menu2.alpha = 1;
-            this.interactMen.alpha = 1;
-            //hide stats too
-            this.agentstr.alpha = 0;
-            this.agentdex.alpha = 0;
-            this.agentcon.alpha = 0;
-            this.agentint.alpha = 0;
-            this.agentwis.alpha = 0;
-            this.agentcha.alpha = 0;
+            console.log(this.interactMen.player);
+            if(this.controled == this.interactMen.player)
+            {
+                //show the interactive menu!
+                this.menuMain.alpha = 1; 
+                this.menu1.alpha = 1;
+                this.menu2.alpha = 1;
+                this.interactMen.alpha = 1;
+                //hide stats too
+                this.agentstr.alpha = 0;
+                this.agentdex.alpha = 0;
+                this.agentcon.alpha = 0;
+                this.agentint.alpha = 0;
+                this.agentwis.alpha = 0;
+                this.agentcha.alpha = 0; 
+            }
+            
         })
         
         //when you are no longer hovering over...
