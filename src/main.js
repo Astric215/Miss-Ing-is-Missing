@@ -18,7 +18,7 @@ let config = {
         width: 960,
         height: 540
     },
-    scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
+    scene: [Load, Menu, Mansion, DressUp, CharacterSelection, End]
 };
 
 
@@ -34,6 +34,8 @@ let ClothingAtlases = ["dudeAtlas", "ladyAtlas"];
 
 //stat to index conversion
 let statnames = ["strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
+
+let agentNames = ["A", "B", "C"];
 
 let statdistro;
 let events;

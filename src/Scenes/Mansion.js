@@ -32,6 +32,21 @@ class Mansion extends Phaser.Scene {
         this.p2.moveToTile(19,1,0, 1, 'power0', 0);
         this.p3.moveToTile(20,1,0, 1, 'power0', 0);
 
+        this.controled = this.p1;
+        this.cam.startFollow(this.p1);
+        this.trgt = this.p1;
+
+        this.agentname = this.add.text(-game.config.width/2, -game.config.height/2,"Observing: " + agentNames[0]).setScrollFactor(0).setScale(2);
+
+        //make stats
+        this.agentstr = this.add.text(-game.config.width/2, -game.config.height/2 + 80, "Strength: " + this.trgt.stats[0]).setScrollFactor(0).setScale(2);
+        this.agentdex = this.add.text(-game.config.width/2, -game.config.height/2 + 120, "Dexterity: " + this.trgt.stats[1]).setScrollFactor(0).setScale(2);
+        this.agentcon = this.add.text(-game.config.width/2, -game.config.height/2 + 160, "Constitution: " + this.trgt.stats[2]).setScrollFactor(0).setScale(2);
+        this.agentint = this.add.text(-game.config.width/2, -game.config.height/2 + 200, "Intelligence: " + this.trgt.stats[3]).setScrollFactor(0).setScale(2);
+        this.agentwis = this.add.text(-game.config.width/2, -game.config.height/2 + 240, "Wisdom: " + this.trgt.stats[4]).setScrollFactor(0).setScale(2);
+        this.agentcha = this.add.text(-game.config.width/2, -game.config.height/2 + 280, "Charisma: " + this.trgt.stats[5]).setScrollFactor(0).setScale(2);
+
+
         //make pipheads
         this.p1AgentName = this.add.text(-5, 0, "A");
         this.p1HeadClone = clone(this.p1.getAt(2));
@@ -57,18 +72,24 @@ class Mansion extends Phaser.Scene {
                 this.controled = this.p1;
                 this.swapping = true;
                 this.cam.startFollow(this.p1);
+                this.agentname.text = "Observing: " + agentNames[0];
+                this.trgt = this.controled;
             }
             if(gameObject == this.p2 || gameObject == this.p2Selector)
             {
                 this.controled = this.p2;
                 this.swapping = true;
                 this.cam.startFollow(this.p2);
+                this.agentname.text = "Observing: " + agentNames[1];
+                this.trgt = this.controled;
             }
             if(gameObject == this.p3 || gameObject == this.p3Selector)
             {
                 this.controled = this.p3;
                 this.swapping = true;
                 this.cam.startFollow(this.p3);
+                this.agentname.text = "Observing: " + agentNames[2];
+                this.trgt = this.controled;
             }
             console.log(gameObject);
         }, this);
@@ -91,6 +112,8 @@ class Mansion extends Phaser.Scene {
             {
                 this.controled = this.p1;
                 this.cam.startFollow(this.p1);
+                this.agentname.text = "Observing: " + agentNames[0];
+                this.trgt = this.controled;
                 //this.zoomTo(1, 3000);
             }
             //2
@@ -98,6 +121,8 @@ class Mansion extends Phaser.Scene {
             {
                 this.controled = this.p2;
                 this.cam.startFollow(this.p2);
+                this.agentname.text = "Observing: " + agentNames[1];
+                this.trgt = this.controled;
                 //this.zoomTo(1, 3000);
             }
             //3
@@ -105,6 +130,8 @@ class Mansion extends Phaser.Scene {
             {
                 this.controled = this.p3;
                 this.cam.startFollow(this.p3);
+                this.agentname.text = "Observing: " + agentNames[2];
+                this.trgt = this.controled;
                 //this.zoomTo(1, 3000);
             }
         }, this);
@@ -152,6 +179,13 @@ class Mansion extends Phaser.Scene {
         this.p2Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
         this.p3Selector.setScale(2/this.cam.zoom).setSize(tileSize/2, tileSize);
         this.swapping = false;
+
+        this.agentstr.text = "Strength: " + this.trgt.stats[0];
+        this.agentdex.text = "Dexterity: " + this.trgt.stats[1];
+        this.agentcon.text = "Constitution: " + this.trgt.stats[2];
+        this.agentint.text = "Intelligence: " + this.trgt.stats[3];
+        this.agentwis.text = "Wisdom: " + this.trgt.stats[4];
+        this.agentcha.text = "Charisma: " + this.trgt.stats[5];
     }
     
 }

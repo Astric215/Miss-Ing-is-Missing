@@ -27,7 +27,7 @@ class DressUp extends Phaser.Scene {
         this.trgt = this.p2;
         this.ind = 1;
 
-        this.agentname = this.add.text(game.config.width/2 - 25, game.config.height/2 - 125,"B");
+        this.agentname = this.add.text(game.config.width/2 - 25, game.config.height/2 - 125,agentNames[1]);
 
         this.agentstr = this.add.text(game.config.width/2 - 250, game.config.height/2 - 60, "Strength: " + this.p2.stats[0]);
         this.agentdex = this.add.text(game.config.width/2 - 250, game.config.height/2 - 20, "Dexterity: " + this.p2.stats[1]);
@@ -170,19 +170,17 @@ class DressUp extends Phaser.Scene {
         this.trgt.y *= 2;
         if(this.ind == 0)
         {
-            this.agentname.text = "A";
             this.trgt = this.p1;
         }
         else if(this.ind == 1)
         {
-            this.agentname.text = "B";
             this.trgt = this.p2;
         }
         else if(this.ind == 2)
         {
-            this.agentname.text = "C";
             this.trgt = this.p3;
         }
+        this.agentname.text = agentNames[this.ind];
         this.trgt.y /= 2;
         console.log(this.ind);
     }
