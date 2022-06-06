@@ -299,7 +299,7 @@ class Pip extends Phaser.GameObjects.Container
     //move along the path defined by the pathfinder
     pathfind(dest = this.destination)
     {
-        if(this.pathfinder.path.length != 0)
+        if(this.pathfinder.path.length != 0 && !pause)
         {
             let nextMove = this.pathfinder.path.pop();
             this.currentTile = nextMove;
@@ -318,10 +318,6 @@ class Pip extends Phaser.GameObjects.Container
                     {
                         if(dest == self.destination)
                         {
-                            while(pause)
-                            {
-
-                            }
                             self.pathfind(dest);
                         }
                         
@@ -329,7 +325,7 @@ class Pip extends Phaser.GameObjects.Container
                 }
             );
         }
-        else
+        else if (!pause)
         {
             let randGoal = randomMovePoints[Math.floor(Math.random() * randomMovePoints.length)];
             this.setDestination(randGoal);
