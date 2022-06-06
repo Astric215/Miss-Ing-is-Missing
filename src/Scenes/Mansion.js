@@ -84,6 +84,9 @@ class Mansion extends Phaser.Scene {
         //when hovering over "interact"...
         this.interact.on("pointerover", () => 
         { 
+            let eventRand = events[Math.floor(Math.random() * events.length)];
+            this.interactMen.destroy();
+            this.interactMen = new Interaction(this, this.cam.x, this.cam.y, eventRand[0], eventRand[1][0][0], eventRand[1][1][0], eventRand[1][0][1], eventRand[1][1][1], this.controled, 12, 12);
             //show the interactive menu!
             this.menuMain.alpha = 1; 
             this.menu1.alpha = 1;
@@ -226,15 +229,13 @@ class Mansion extends Phaser.Scene {
             this.p2.pathfind();
             this.p3.pathfind();
         }
-        if(this.timer == 20)
+        /*if(this.timer == 20)
         {
-            console.log('event');
             let eventRand = events[Math.floor(Math.random() * events.length)];
             this.interactMen.destroy();
             this.interactMen = new Interaction(this, this.cam.x, this.cam.y, eventRand[0], eventRand[1][0][0], eventRand[1][1][0], eventRand[1][0][1], eventRand[1][1][1], this.controled, 12, 12);
             this.interactMen.alpha = 0.0;
-        }
-        console.log(this.cam.x);
+        }*/
         this.timer += 1;
         this.p1Selector.x = (this.cam.x + 32)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;
         this.p2Selector.x = (this.cam.x + 96)/this.cam.zoom + this.cam.scrollX - this.cam.width/2;

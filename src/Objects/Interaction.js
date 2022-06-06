@@ -35,7 +35,6 @@ class Interaction extends Phaser.GameObjects.Container
         this.add(this.Choice1);
         this.add(this.Choice2);
         pause = true;
-        console.log(Question);
         scene.input.on("gameobjectdown", (Pointer, GameObject) =>
             {
                 if(GameObject == this.Choice1)
@@ -64,8 +63,8 @@ class Interaction extends Phaser.GameObjects.Container
                 }
             }, this
         )
-        console.log(this);
-        this.create();
+        //console.log(this);
+        //this.create();
     }
 
     create()
