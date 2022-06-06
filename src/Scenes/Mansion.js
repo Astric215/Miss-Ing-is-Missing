@@ -61,12 +61,65 @@ class Mansion extends Phaser.Scene {
         this.p3HairClone = clone(this.p3.getAt(3));
         this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone, this.p3AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
 
+        //=============================================================
+        //NEW INTERACTION MENU
+
+        //making hoverable button for interactive menu
+        this.interact = this.add.text(game.config.width/2 + 380, -game.config.height/2 + 80, "+INTERACT MENU+").setScrollFactor(0).setScale(2);
+        this.interact.setInteractive();
+
+        //this is the actual interactive menu that pops up when hovering over button
+        this.menuMain = this.add.tileSprite(-480, -290, 960, 540, 'interactiveMenu').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.menu1 = this.add.tileSprite(-480, -290, 960, 540, 'interactiveTop').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.menu2 = this.add.tileSprite(-480, -290, 960, 540, 'interactiveBottom').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        
+        //set it to invis by default
+        this.menuMain.alpha = 0.0;
+        this.menu1.alpha = 0.0;
+        this.menu2.alpha = 0.0;
+
+        //when hovering over "interact"...
+        this.interact.on("pointerover", () => 
+        { 
+            //show the interactive menu!
+            this.menuMain.alpha = 1; 
+            this.menu1.alpha = 1;
+            this.menu2.alpha = 1;
+            //hide stats too
+            this.agentstr.alpha = 0;
+            this.agentdex.alpha = 0;
+            this.agentcon.alpha = 0;
+            this.agentint.alpha = 0;
+            this.agentwis.alpha = 0;
+            this.agentcha.alpha = 0;
+        })
+        
+        //when you are no longer hovering over...
+        this.interact.on("pointerout", () => 
+        { 
+            //make the interactive menu incvis again!
+            this.menuMain.alpha = 0.0;
+            this.menu1.alpha = 0.0; 
+            this.menu2.alpha = 0.0; 
+
+            //unhide stats
+            this.agentstr.alpha = 1;
+            this.agentdex.alpha = 1;
+            this.agentcon.alpha = 1;
+            this.agentint.alpha = 1;
+            this.agentwis.alpha = 1;
+            this.agentcha.alpha = 1;
+        });
+
+    //=============================================================
+
         //check for swapping
         this.swapping = false;
 
         //process gameobjectswaping
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {
+
             if(gameObject == this.p1 || gameObject == this.p1Selector)
             {
                 this.controled = this.p1;
@@ -91,6 +144,8 @@ class Mansion extends Phaser.Scene {
                 this.agentname.text = "Observing: " + agentNames[2];
                 this.trgt = this.controled;
             }
+
+
             console.log(gameObject);
         }, this);
 
