@@ -10,6 +10,7 @@ class Menu extends Phaser.Scene
 
     create() 
     {
+        
         //background creation
         this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
         this.menuHover = this.add.tileSprite(0, 0, 1000, 1000, 'menuHover').setOrigin(0, 0);
@@ -36,7 +37,9 @@ class Menu extends Phaser.Scene
             console.log(gameObject);
             if(gameObject == this.go)
             {
+                MenuMusic.stop();
                 ButtonClick.play();
+
                 this.scene.start("characterSelectionScene");
             }
         }, this)

@@ -50,14 +50,15 @@ class Pip extends Phaser.GameObjects.Container
             this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "bodyAtlas", "feetTone" + this.tonePad));
         }
         this.clothing = [0, 0, 0, 0, 0];
-        this.stats = 10; // {}:
+        this.stats = [10, 10, 10, 10, 10, 10]; // {}:
         this.trait = "booby"; // (:
         this.npcToggle = false;
         this.ix = 0;
         this.iy = 0;
         this.setSize(tileSize/2, tileSize);
         this.setInteractive();
-        console.log(this);
+        //console.log(this);
+        this.dr = 0;
     }
 
     destroyPip ()
@@ -71,15 +72,77 @@ class Pip extends Phaser.GameObjects.Container
         return [this.x, this.y, this.hair, this.tone, this.gender, this.clothing];
     }
 
-    genClothes(rand = 0,cloth = this.clothing)
+    //increment clothing index
+    incoClothes(pos)
     {
-        for(let c in cloth)
+        if(this.clothing[pos] >= ClothingNums[this.gender][pos])
+        {
+            this.clothing[pos] = 0;
+            if(pos == 1 && this.dr == 1)
+            {
+                this.dr = 0;
+            }
+        }
+        else
+        {
+            this.clothing[pos] += 1;
+            if(pos == 1 && this.dr == 0)
+            {
+                this.dr = 1;
+            }
+            else if((pos == 2 || pos == 3) && this.dr == 1)
+            {
+                this.dr = 0;
+            }
+        }
+        this.genClothes();
+    }
+
+    // generates clothes based on cloth array or randomly if rand is 1
+    genClothes(rand = 0,cloth = this.clothing, dr = this.dr)
+    {
+        this.stats = [10, 10, 10, 10, 10, 10];
+        if(this.length > 5)
+        {
+            //console.log(this);
+            for(let a = this.length - 1; a > 4; a--)
+            {
+                this.removeAt(a, true);
+            }
+            //console.log(this);
+        }
+        for(let c = 5; c >= 0; c--)
         {
             if(rand == 1)
             {
+                this.dr = Phaser.Math.Between(0, 1);
                 cloth[c] = Phaser.Math.Between(1, ClothingNums[this.gender][c]);
+                //console.log(c);
             }
-            this.add(new Phaser.GameObjects.Sprite(this.scene, 0, 0, ClothingAtlases[this.gender], ClothingNames[this.gender][c] + pad(cloth[c], 3, "0")))
+            if(dr == 0 && c == 1)
+            {
+                cloth[1] = 0;
+                continue;
+            }
+            if(dr == 1 && (c == 2 || c == 3))
+            {
+                cloth[2] = 0;
+                cloth[3] = 0;
+                continue;
+            }
+            this.dr = dr;
+            this.clothing = cloth;
+            if(cloth[c] > 0)
+            {
+                // console.log(c);
+                // console.log("nxt");
+                // console.log(cloth[c]);
+                this.add(new Phaser.GameObjects.Sprite(this.scene, 0, 0, ClothingAtlases[this.gender], ClothingNames[this.gender][c] + pad(cloth[c], 3, "0")));
+                for(let a = 0; a < 6; a++)
+                {
+                    this.stats[a] += statdistro[c][this.clothing[c]-1][a];
+                }
+            }
         }
     }
 
@@ -228,8 +291,9 @@ class Pip extends Phaser.GameObjects.Container
         this.destination = goal;
         this.pathfinder.bfs(this.currentTile, this.destination);
         this.pathfinder.constructPath(this.destination);
-        console.log(this);
+        //console.log(this);
     }
+
 
 
     //move along the path defined by the pathfinder
@@ -238,6 +302,7 @@ class Pip extends Phaser.GameObjects.Container
         if(this.pathfinder.path.length != 0)
         {
             let nextMove = this.pathfinder.path.pop();
+            this.currentTile = nextMove;
             //save this for callbacks
             let self = this;
             //recursively tween across the path
@@ -246,7 +311,7 @@ class Pip extends Phaser.GameObjects.Container
                     targets: this,
                     x: nextMove.tileX*tileSize + tileSize/4,
                     y: nextMove.tileY*tileSize + tileSize/2,
-                    duration: 500,
+                    duration: 400,
                     ease: 'power-0',
                     delay: 0,
                     onComplete: function()
@@ -263,6 +328,12 @@ class Pip extends Phaser.GameObjects.Container
                     }
                 }
             );
+        }
+        else
+        {
+            let randGoal = randomMovePoints[Math.floor(Math.random() * randomMovePoints.length)];
+            this.setDestination(randGoal);
+            this.pathfind();
         }
         
     }

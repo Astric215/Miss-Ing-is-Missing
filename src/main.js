@@ -18,10 +18,10 @@ let config = {
         width: 960,
         height: 540
     },
-    scene: [Load, Menu, Mansion, DressUp, CharacterSelection]
+    scene: [Load, Menu, Mansion, DressUp, CharacterSelection, End]
 };
 
-let pip1, pip2, pip3;
+
 //arrays for pips
 let playerPips = [];
 let npcPips = [];
@@ -44,6 +44,8 @@ let pause = false;
 
 let game = new Phaser.Game(config);
 
+//map vars
+randomMovePoints = [];
 // reserve keyboard vars
 
 

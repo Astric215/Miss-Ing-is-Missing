@@ -6,6 +6,10 @@ class Mansion extends Phaser.Scene {
 
     create() 
     {
+        let GameplayMusic = this.sound.add('gameplay_music', 1);
+
+        GameplayMusic.setLoop(true);
+        GameplayMusic.play();
         //make map
         this.map = new Map(this);
         this.map.loadMap();
@@ -24,20 +28,90 @@ class Mansion extends Phaser.Scene {
         this.p2.genClothes(0, playerPips[1][5]);
         this.p3.genClothes(0, playerPips[2][5]);
         this.controled = this.p1;
-        this.p1.moveToTile(2,2,0, 1000, 'power0', 0);
-        this.p2.moveToTile(2,4,0, 1000, 'power0', 0);
-        this.p3.moveToTile(4,2,0, 1000, 'power0', 0);
+        this.p1.moveToTile(18,1,0, 1, 'power0', 0);
+        this.p2.moveToTile(19,1,0, 1, 'power0', 0);
+        this.p3.moveToTile(20,1,0, 1, 'power0', 0);
+
+        this.controled = this.p1;
+        this.cam.startFollow(this.p1);
+        this.trgt = this.p1;
+
+        this.agentname = this.add.text(-game.config.width/2, -game.config.height/2,"Observing: " + agentNames[0]).setScrollFactor(0).setScale(2);
+
+        //make stats
+        this.agentstr = this.add.text(-game.config.width/2, -game.config.height/2 + 80, "Strength: " + this.trgt.stats[0]).setScrollFactor(0).setScale(2);
+        this.agentdex = this.add.text(-game.config.width/2, -game.config.height/2 + 120, "Dexterity: " + this.trgt.stats[1]).setScrollFactor(0).setScale(2);
+        this.agentcon = this.add.text(-game.config.width/2, -game.config.height/2 + 160, "Constitution: " + this.trgt.stats[2]).setScrollFactor(0).setScale(2);
+        this.agentint = this.add.text(-game.config.width/2, -game.config.height/2 + 200, "Intelligence: " + this.trgt.stats[3]).setScrollFactor(0).setScale(2);
+        this.agentwis = this.add.text(-game.config.width/2, -game.config.height/2 + 240, "Wisdom: " + this.trgt.stats[4]).setScrollFactor(0).setScale(2);
+        this.agentcha = this.add.text(-game.config.width/2, -game.config.height/2 + 280, "Charisma: " + this.trgt.stats[5]).setScrollFactor(0).setScale(2);
+
 
         //make pipheads
+        this.p1AgentName = this.add.text(-5, 0, "A");
         this.p1HeadClone = clone(this.p1.getAt(2));
         this.p1HairClone = clone(this.p1.getAt(3));
-        this.p1Selector = this.add.container(50, 550, [this.p1HeadClone, this.p1HairClone]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p1Selector = this.add.container(50, 550, [this.p1HeadClone, this.p1HairClone, this.p1AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p2AgentName = this.add.text(-5, 0, "B");
         this.p2HeadClone = clone(this.p2.getAt(2));
         this.p2HairClone = clone(this.p2.getAt(3));
-        this.p2Selector = this.add.container(100, 550, [this.p2HeadClone, this.p2HairClone]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p2Selector = this.add.container(100, 550, [this.p2HeadClone, this.p2HairClone, this.p2AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p3AgentName = this.add.text(-5, 0, "C");
         this.p3HeadClone = clone(this.p3.getAt(2));
         this.p3HairClone = clone(this.p3.getAt(3));
-        this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone, this.p3AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+
+        //=============================================================
+        //NEW INTERACTION MENU
+
+        //making hoverable button for interactive menu
+        this.interact = this.add.text(game.config.width/2 + 380, -game.config.height/2 + 80, "+INTERACT MENU+").setScrollFactor(0).setScale(2);
+        this.interact.setInteractive();
+
+        //this is the actual interactive menu that pops up when hovering over button
+        this.menuMain = this.add.tileSprite(-480, -290, 960, 540, 'interactiveMenu').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.menu1 = this.add.tileSprite(-480, -290, 960, 540, 'interactiveTop').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.menu2 = this.add.tileSprite(-480, -290, 960, 540, 'interactiveBottom').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        
+        //set it to invis by default
+        this.menuMain.alpha = 0.0;
+        this.menu1.alpha = 0.0;
+        this.menu2.alpha = 0.0;
+
+        //when hovering over "interact"...
+        this.interact.on("pointerover", () => 
+        { 
+            //show the interactive menu!
+            this.menuMain.alpha = 1; 
+            this.menu1.alpha = 1;
+            this.menu2.alpha = 1;
+            //hide stats too
+            this.agentstr.alpha = 0;
+            this.agentdex.alpha = 0;
+            this.agentcon.alpha = 0;
+            this.agentint.alpha = 0;
+            this.agentwis.alpha = 0;
+            this.agentcha.alpha = 0;
+        })
+        
+        //when you are no longer hovering over...
+        this.interact.on("pointerout", () => 
+        { 
+            //make the interactive menu incvis again!
+            this.menuMain.alpha = 0.0;
+            this.menu1.alpha = 0.0; 
+            this.menu2.alpha = 0.0; 
+
+            //unhide stats
+            this.agentstr.alpha = 1;
+            this.agentdex.alpha = 1;
+            this.agentcon.alpha = 1;
+            this.agentint.alpha = 1;
+            this.agentwis.alpha = 1;
+            this.agentcha.alpha = 1;
+        });
+
+    //=============================================================
 
         //check for swapping
         this.swapping = false;
@@ -45,36 +119,45 @@ class Mansion extends Phaser.Scene {
         //process gameobjectswaping
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {
+
             if(gameObject == this.p1 || gameObject == this.p1Selector)
             {
                 this.controled = this.p1;
                 this.swapping = true;
                 this.cam.startFollow(this.p1);
+                this.agentname.text = "Observing: " + agentNames[0];
+                this.trgt = this.controled;
             }
             if(gameObject == this.p2 || gameObject == this.p2Selector)
             {
                 this.controled = this.p2;
                 this.swapping = true;
                 this.cam.startFollow(this.p2);
+                this.agentname.text = "Observing: " + agentNames[1];
+                this.trgt = this.controled;
             }
             if(gameObject == this.p3 || gameObject == this.p3Selector)
             {
                 this.controled = this.p3;
                 this.swapping = true;
                 this.cam.startFollow(this.p3);
+                this.agentname.text = "Observing: " + agentNames[2];
+                this.trgt = this.controled;
             }
+
+
             console.log(gameObject);
         }, this);
 
         //process movement
-        this.input.on('pointerdown', (pointer) =>
+        /*this.input.on('pointerdown', (pointer) =>
         {
             if((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize < this.map.map.width && (pointer.y/this.cam.zoom + this.cam.scrollY - this.cam.height/2)/tileSize < this.map.map.height && !this.swapping)
             {
-                this.controled.setDestination(this.map.tiles[Math.floor((pointer.y/this.cam.zoom+ this.cam.scrollY - this.cam.height/2)/tileSize)][Math.floor((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize)]);
+                //this.controled.setDestination(this.map.tiles[Math.floor((pointer.y/this.cam.zoom+ this.cam.scrollY - this.cam.height/2)/tileSize)][Math.floor((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize)]);
                 this.controled.pathfind();
             }
-        }, this);
+        }, this);*/
 
         //process gameobjectswaping
         this.input.keyboard.on('keydown', (event) =>
@@ -84,6 +167,8 @@ class Mansion extends Phaser.Scene {
             {
                 this.controled = this.p1;
                 this.cam.startFollow(this.p1);
+                this.agentname.text = "Observing: " + agentNames[0];
+                this.trgt = this.controled;
                 //this.zoomTo(1, 3000);
             }
             //2
@@ -91,6 +176,8 @@ class Mansion extends Phaser.Scene {
             {
                 this.controled = this.p2;
                 this.cam.startFollow(this.p2);
+                this.agentname.text = "Observing: " + agentNames[1];
+                this.trgt = this.controled;
                 //this.zoomTo(1, 3000);
             }
             //3
@@ -98,9 +185,12 @@ class Mansion extends Phaser.Scene {
             {
                 this.controled = this.p3;
                 this.cam.startFollow(this.p3);
+                this.agentname.text = "Observing: " + agentNames[2];
+                this.trgt = this.controled;
                 //this.zoomTo(1, 3000);
             }
         }, this);
+        this.timer = 0;
     }
 
     update() 
@@ -111,13 +201,6 @@ class Mansion extends Phaser.Scene {
             
         });*/
 
-        //set the pips current tile
-        this.p1.currentTile = this.map.tiles[Math.floor(this.p1.y/tileSize)][Math.floor(this.p1.x/tileSize)];
-        this.p1.update();
-        this.p2.currentTile = this.map.tiles[Math.floor(this.p2.y/tileSize)][Math.floor(this.p2.x/tileSize)];
-        this.p2.update();
-        this.p3.currentTile = this.map.tiles[Math.floor(this.p3.y/tileSize)][Math.floor(this.p3.x/tileSize)];
-        this.p3.update();
         //when a tile is clicked
         // if(this.input.activePointer.leftButtonDown())
         // {
@@ -158,6 +241,13 @@ class Mansion extends Phaser.Scene {
         this.p2Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
         this.p3Selector.setScale(2/this.cam.zoom).setSize(tileSize/2, tileSize);
         this.swapping = false;
+
+        this.agentstr.text = "Strength: " + this.trgt.stats[0];
+        this.agentdex.text = "Dexterity: " + this.trgt.stats[1];
+        this.agentcon.text = "Constitution: " + this.trgt.stats[2];
+        this.agentint.text = "Intelligence: " + this.trgt.stats[3];
+        this.agentwis.text = "Wisdom: " + this.trgt.stats[4];
+        this.agentcha.text = "Charisma: " + this.trgt.stats[5];
     }
     
 }
