@@ -28,6 +28,7 @@ class Load extends Phaser.Scene
         this.load.image('object', './assets/Images/Object.png');
         this.load.image('purchase', './assets/Images/PurchaseButton.png');
         this.load.image('continue', './assets/Images/ContinueButton.png');
+        this.load.image('shuffle', './assets/Images/ShuffleButton.png')
 
         //interactive menu stuff vvv
         this.load.image('interactiveMenu', './assets/Images/InteractiveMain.png');

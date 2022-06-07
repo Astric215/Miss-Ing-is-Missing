@@ -156,17 +156,11 @@ class Pathfinder
         {
             current = this.start;
         }
-        //console.log('path:' + this.path);
         //go through cameFrom until you are at the start
         while((current.config["name"] != this.start.config["name"]))
         {
             this.path.push(current);
             current = this.cameFrom[current.config["name"]];
-            if(current.tileX == 18 && current.tileY == 1)
-            {
-                //console.log('start');
-            }
         }
-        //console.log(this.path);
     }
 }

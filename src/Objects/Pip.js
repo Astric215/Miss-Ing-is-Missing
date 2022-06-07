@@ -58,7 +58,6 @@ class Pip extends Phaser.GameObjects.Container
         this.iy = 0;
         this.setSize(tileSize/2, tileSize);
         this.setInteractive();
-        //console.log(this);
         this.dr = 0;
     }
 
