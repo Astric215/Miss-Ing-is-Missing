@@ -10,7 +10,9 @@ class End extends Phaser.Scene
 
     create() 
     {
-        
+        failNum = 0;
+        clueNum = 0;
+        pause = false;
         //background creation
         this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
         this.menuHover = this.add.tileSprite(0, 0, 1000, 1000, 'menuHover').setOrigin(0, 0);
