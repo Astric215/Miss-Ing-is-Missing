@@ -147,7 +147,7 @@ class Load extends Phaser.Scene
         [
             //STR
             ["You see people challenging each other to arm wrestling contests. You may be able to get info if you win.", [["Try your hardest", 0], ["Tickle your opponent", 1]], "outcome"],
-            ["You see a grizzled man at the bar wearing a detective hat. he may have information.", [["Fight him", 0], ["Drink with him", 2]], "outcome"],
+            ["You see a grizzled man at the bar wearing a detective hat. He may have information.", [["Fight him", 0], ["Drink with him", 2]], "outcome"],
             ["A man bumps into you and immediately starts yelling about how he is going to beat you up.", [["Beat him up", 0], ["Predict his punches and dodge", 3]], "outcome"],
             ["A man is bragging about how strong he is. If you make an example of him people may be more inclined to give you info.", [["Challenge him to a fight", 0], ["Call him on his bluff.", 4]], "outcome"],
             ["Your way is blocked by a hulking muscular man. He doesn't seem to want to let you pass.", [["Fight him", 0], ["Seduce him", 5]], "outcome"],
