@@ -36,6 +36,9 @@ class Mansion extends Phaser.Scene {
         this.p2Background = this.add.image(-331, 580, 'charBG').setOrigin(0, 0).setScrollFactor(0).setScale(2);
         this.p3Background = this.add.image(-205, 580, 'charBG').setOrigin(0, 0).setScrollFactor(0).setScale(2);
 
+        this.restartButton = this.add.image(1200, 580, 'restartButton').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.restartButton.setInteractive();
+
         //set initial controlled pip
         this.controled = this.p1;
         this.cam.startFollow(this.p1);
@@ -57,17 +60,19 @@ class Mansion extends Phaser.Scene {
         this.p1HeadClone = clone(this.p1.getAt(2));
         this.p1HairClone = clone(this.p1.getAt(3));
         this.p1Selector = this.add.container(50, 550, [this.p1HeadClone, this.p1HairClone, this.p1AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
-        this.p1even = this.add.rectangle(-425, 500, 25, 25, "#ff0000").setScale(2).setScrollFactor(0).setVisible(false);
+
+
+        this.p1event = this.add.image(-410, 500, 'exclaim').setScale(2).setScrollFactor(0).setVisible(false);
         this.p2AgentName = this.add.text(-5, 0, "B");
         this.p2HeadClone = clone(this.p2.getAt(2));
         this.p2HairClone = clone(this.p2.getAt(3));
         this.p2Selector = this.add.container(100, 550, [this.p2HeadClone, this.p2HairClone, this.p2AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
-        this.p2even = this.add.rectangle(-275, 500, 25, 25, "#ff0000").setScale(2).setScrollFactor(0).setVisible(false);
+        this.p2event = this.add.image(-285, 500, 'exclaim').setScale(2).setScrollFactor(0).setVisible(false);
         this.p3AgentName = this.add.text(-5, 0, "C");
         this.p3HeadClone = clone(this.p3.getAt(2));
         this.p3HairClone = clone(this.p3.getAt(3));
         this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone, this.p3AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
-        this.p3even = this.add.rectangle(-150, 500, 25, 25, "#ff0000").setScale(2).setScrollFactor(0).setVisible(false);
+        this.p3event = this.add.image(-160, 500, 'exclaim').setScale(2).setScrollFactor(0).setVisible(false);
 
         //=============================================================
         //NEW INTERACTION MENU
@@ -144,6 +149,14 @@ class Mansion extends Phaser.Scene {
                 this.agentname.text = "Observing: " + agentNames[2];
                 this.trgt = this.controled;
             }
+            if(gameObject == this.restartButton)
+            {
+                failNum = 0;
+                clueNum = 0;
+                pause = false;
+                this.GameplayMusic.stop();
+                this.scene.start("menuScene");
+            }
 
 
             console.log(gameObject);
@@ -196,39 +209,25 @@ class Mansion extends Phaser.Scene {
             this.interactOn.alpha = 0.0;
         }
         
-        this.p1even.visible = false;
-        this.p2even.visible = false;
-        this.p3even.visible = false;
+        this.p1event.visible = false;
+        this.p2event.visible = false;
+        this.p3event.visible = false;
         if(this.interhist)
         {
             if(this.interactMen.player == this.p1)
             {
-                this.p1even.visible = true;
+                this.p1event.visible = true;
             }
             else if(this.interactMen.player == this.p2)
             {
-                this.p2even.visible = true;
+                this.p2event.visible = true;
             }
             else if(this.interactMen.player == this.p3)
             {
-                this.p3even.visible = true;
+                this.p3event.visible = true;
             }
         }
-        /*this.input.on('pointerdown', function(pointer){
-            console.log(this.input.y/tileSize);
-            this.p1.setDestination(this.map.map[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
-            
-        });*/
-
-        //when a tile is clicked
-        // if(this.input.activePointer.leftButtonDown())
-        // {
-        //     //set up the paths
-        //     if(this.input.y/tileSize < this.map.map.height && this.input.x/tileSize < this.map.map.width)
-        //     {
-        //         this.p1.setDestination(this.map.tiles[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
-        //     }
-        // }
+       
         if(this.timer == 10)
         {
             //set the pips current tile
@@ -314,13 +313,7 @@ class Mansion extends Phaser.Scene {
         {
             this.delay--;
         }
-        /*if(this.timer == 20)
-        {
-            let eventRand = events[Math.floor(Math.random() * events.length)];
-            this.interactMen.destroy();
-            this.interactMen = new Interaction(this, this.cam.x, this.cam.y, eventRand[0], eventRand[1][0][0], eventRand[1][1][0], eventRand[1][0][1], eventRand[1][1][1], this.controled, 12, 12);
-            this.interactMen.alpha = 0.0;
-        }*/
+
         this.timer += 1;
 
         //calculate n

@@ -34,6 +34,8 @@ class Load extends Phaser.Scene
         this.load.image('interactOn', './assets/Images/InteractOn.png')
         this.load.image('interactOff', './assets/Images/InteractOff.png')
         this.load.image('charBG', './assets/Images/SmallBackground.png')
+        this.load.image('restartButton', './assets/Images/RestartButton.png')
+        this.load.image('exclaim', './assets/Images/EventNotification.png')
 
         //interactive menu stuff vvv
         this.load.image('interactiveMenu', './assets/Images/InteractiveMain.png');
