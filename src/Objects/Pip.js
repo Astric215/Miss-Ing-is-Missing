@@ -23,6 +23,7 @@ class Pip extends Phaser.GameObjects.Container
     {
         super(scene, x, y);
         scene.add.existing(this);
+        this.scene = scene;
         //pathfinding vars
         this.pathfinder = new Pathfinder(scene);
         this.destination = null;
@@ -57,7 +58,6 @@ class Pip extends Phaser.GameObjects.Container
         this.iy = 0;
         this.setSize(tileSize/2, tileSize);
         this.setInteractive();
-        console.log(this);
         this.dr = 0;
     }
 
@@ -101,6 +101,7 @@ class Pip extends Phaser.GameObjects.Container
     // generates clothes based on cloth array or randomly if rand is 1
     genClothes(rand = 0,cloth = this.clothing, dr = this.dr)
     {
+        this.stats = [10, 10, 10, 10, 10, 10];
         if(this.length > 5)
         {
             //console.log(this);
@@ -137,6 +138,10 @@ class Pip extends Phaser.GameObjects.Container
                 // console.log("nxt");
                 // console.log(cloth[c]);
                 this.add(new Phaser.GameObjects.Sprite(this.scene, 0, 0, ClothingAtlases[this.gender], ClothingNames[this.gender][c] + pad(cloth[c], 3, "0")));
+                for(let a = 0; a < 6; a++)
+                {
+                    this.stats[a] += statdistro[c][this.clothing[c]-1][a];
+                }
             }
         }
     }
@@ -286,8 +291,9 @@ class Pip extends Phaser.GameObjects.Container
         this.destination = goal;
         this.pathfinder.bfs(this.currentTile, this.destination);
         this.pathfinder.constructPath(this.destination);
-        console.log(this);
+        //console.log(this);
     }
+
 
 
     //move along the path defined by the pathfinder
@@ -296,6 +302,7 @@ class Pip extends Phaser.GameObjects.Container
         if(this.pathfinder.path.length != 0)
         {
             let nextMove = this.pathfinder.path.pop();
+            this.currentTile = nextMove;
             //save this for callbacks
             let self = this;
             //recursively tween across the path
@@ -311,6 +318,15 @@ class Pip extends Phaser.GameObjects.Container
                     {
                         if(dest == self.destination)
                         {
+                            if(!pause && Math.random() < 0.1)
+                            {
+                                let eventRand = events[Math.floor(Math.random() * events.length)];
+                                self.scene.interactMen.destroy();
+                                self.scene.interactMen = new Interaction(self.scene, self.scene.cam.x, self.scene.cam.y, eventRand[0], eventRand[1][0][0], eventRand[1][1][0], eventRand[1][0][1], eventRand[1][1][1], self, 12, 12);
+                                self.scene.interhist = true;
+                                self.scene.interactMen.alpha = 0.0;
+                                pause = true;
+                            }
                             self.pathfind(dest);
                         }
                         

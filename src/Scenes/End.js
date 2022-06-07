@@ -1,21 +1,23 @@
 /*
-    Menu scene wher menu stuff happens ¯\_(ツ)_/¯
+    End scene wher End stuff happens ¯\_(ツ)_/¯
 */
-class Menu extends Phaser.Scene 
+class End extends Phaser.Scene 
 {
     constructor()
     {
-        super("menuScene");
+        super("endScene");
     }
 
     create() 
     {
-        
+        failNum = 0;
+        clueNum = 0;
+        pause = false;
         //background creation
         this.menu = this.add.tileSprite(0, 0, 1000, 1000, 'menu').setOrigin(0, 0);
         this.menuHover = this.add.tileSprite(0, 0, 1000, 1000, 'menuHover').setOrigin(0, 0);
         this.menuHover.alpha = 0.0;
-        ButtonClick = this.sound.add('button_click', 1);
+        let ButtonClick = this.sound.add('button_click', 1);
         let MenuMusic = this.sound.add('menu_music', 1);
 
         MenuMusic.setLoop(true);
