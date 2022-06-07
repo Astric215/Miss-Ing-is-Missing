@@ -53,19 +53,23 @@ class Mansion extends Phaser.Scene {
         this.p1HeadClone = clone(this.p1.getAt(2));
         this.p1HairClone = clone(this.p1.getAt(3));
         this.p1Selector = this.add.container(50, 550, [this.p1HeadClone, this.p1HairClone, this.p1AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p1even = this.add.rectangle(-425, 500, 25, 25, "#ff0000").setScale(2).setScrollFactor(0).setVisible(false);
         this.p2AgentName = this.add.text(-5, 0, "B");
         this.p2HeadClone = clone(this.p2.getAt(2));
         this.p2HairClone = clone(this.p2.getAt(3));
         this.p2Selector = this.add.container(100, 550, [this.p2HeadClone, this.p2HairClone, this.p2AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p2even = this.add.rectangle(-275, 500, 25, 25, "#ff0000").setScale(2).setScrollFactor(0).setVisible(false);
         this.p3AgentName = this.add.text(-5, 0, "C");
         this.p3HeadClone = clone(this.p3.getAt(2));
         this.p3HairClone = clone(this.p3.getAt(3));
         this.p3Selector = this.add.container(150, 550, [this.p3HeadClone, this.p3HairClone, this.p3AgentName]).setScale(2).setSize(tileSize/2, tileSize).setInteractive();
+        this.p3even = this.add.rectangle(-150, 500, 25, 25, "#ff0000").setScale(2).setScrollFactor(0).setVisible(false);
 
         //=============================================================
         //NEW INTERACTION MENU
 
         this.interactMen = new Interaction(this, - this.cam.width/2, - this.cam.height/2, '1', '2', '3', 0, 0, this.controled, 12, 12).setScrollFactor(0);
+        this.interhist = false;
 
         //making hoverable button for interactive menu
         this.interact = this.add.text(game.config.width/2 + 380, -game.config.height/2 + 80, "+INTERACT MENU+").setScrollFactor(0).setScale(2);
@@ -177,6 +181,24 @@ class Mansion extends Phaser.Scene {
 
     update() 
     {   
+        this.p1even.visible = false;
+        this.p2even.visible = false;
+        this.p3even.visible = false;
+        if(this.interhist)
+        {
+            if(this.interactMen.player == this.p1)
+            {
+                this.p1even.visible = true;
+            }
+            else if(this.interactMen.player == this.p2)
+            {
+                this.p2even.visible = true;
+            }
+            else if(this.interactMen.player == this.p3)
+            {
+                this.p3even.visible = true;
+            }
+        }
         /*this.input.on('pointerdown', function(pointer){
             console.log(this.input.y/tileSize);
             this.p1.setDestination(this.map.map[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
