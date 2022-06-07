@@ -48,11 +48,11 @@ class Mansion extends Phaser.Scene {
 
         //make stats
         this.agentstr = this.add.text(-game.config.width/2, -game.config.height/2 + 80, "Strength: " + this.trgt.stats[0]).setScrollFactor(0).setScale(2);
-        this.agentdex = this.add.text(-game.config.width/2, -game.config.height/2 + 120, "Dexterity: " + this.trgt.stats[1]).setScrollFactor(0).setScale(2);
-        this.agentcon = this.add.text(-game.config.width/2, -game.config.height/2 + 160, "Constitution: " + this.trgt.stats[2]).setScrollFactor(0).setScale(2);
-        this.agentint = this.add.text(-game.config.width/2, -game.config.height/2 + 200, "Intelligence: " + this.trgt.stats[3]).setScrollFactor(0).setScale(2);
-        this.agentwis = this.add.text(-game.config.width/2, -game.config.height/2 + 240, "Wisdom: " + this.trgt.stats[4]).setScrollFactor(0).setScale(2);
-        this.agentcha = this.add.text(-game.config.width/2, -game.config.height/2 + 280, "Charisma: " + this.trgt.stats[5]).setScrollFactor(0).setScale(2);
+        this.agentdex = this.add.text(-game.config.width/2, -game.config.height/2 + 120, "Sneakiness: " + this.trgt.stats[1]).setScrollFactor(0).setScale(2);
+        this.agentcon = this.add.text(-game.config.width/2, -game.config.height/2 + 160, "Tolerance: " + this.trgt.stats[2]).setScrollFactor(0).setScale(2);
+        this.agentint = this.add.text(-game.config.width/2, -game.config.height/2 + 200, "Knowledge: " + this.trgt.stats[3]).setScrollFactor(0).setScale(2);
+        this.agentwis = this.add.text(-game.config.width/2, -game.config.height/2 + 240, "Observation: " + this.trgt.stats[4]).setScrollFactor(0).setScale(2);
+        this.agentcha = this.add.text(-game.config.width/2, -game.config.height/2 + 280, "Sexiness: " + this.trgt.stats[5]).setScrollFactor(0).setScale(2);
 
 
         //make pipheads
@@ -93,13 +93,12 @@ class Mansion extends Phaser.Scene {
 
 
 
-        
 
         //this is the actual interactive menu that pops up when hovering over button
         this.menuMain = this.add.tileSprite(-480, -290, 960, 540, 'interactiveMenu').setOrigin(0, 0).setScrollFactor(0).setScale(2);
         this.menu1 = this.add.tileSprite(-480, -290, 960, 540, 'interactiveTop').setOrigin(0, 0).setScrollFactor(0).setScale(2);
         this.menu2 = this.add.tileSprite(-480, -290, 960, 540, 'interactiveBottom').setOrigin(0, 0).setScrollFactor(0).setScale(2);
-        
+
         //set it to invis by default
         this.interactMen.alpha = 0.0;
         this.menuMain.alpha = 0.0;

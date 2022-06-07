@@ -33,11 +33,11 @@ class Interaction extends Phaser.GameObjects.Container
         this.statstyle = { font: "30px Arial", fill: "#000000", align: "left", wordWrap: { width: 150 } };
         this.sts = new Phaser.GameObjects.Text(scene, middle - 150, y - 100, "", this.statstyle).setScrollFactor(0);
         this.sts.text += "STR: " + player.stats[0] + "\n\n";
-        this.sts.text += "DEX: " + player.stats[1] + "\n\n";
-        this.sts.text += "CON: " + player.stats[2] + "\n\n";
-        this.sts.text += "INT: " + player.stats[3] + "\n\n";
-        this.sts.text += "WIS: " + player.stats[4] + "\n\n";
-        this.sts.text += "CHA: " + player.stats[5] + "\n\n";
+        this.sts.text += "SNK: " + player.stats[1] + "\n\n";
+        this.sts.text += "TOL: " + player.stats[2] + "\n\n";
+        this.sts.text += "KNW: " + player.stats[3] + "\n\n";
+        this.sts.text += "OBV: " + player.stats[4] + "\n\n";
+        this.sts.text += "SEX: " + player.stats[5] + "\n\n";
         this.player = player;
         this.visible = false;
         this.add(this.Question);

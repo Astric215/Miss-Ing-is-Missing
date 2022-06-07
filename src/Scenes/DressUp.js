@@ -30,13 +30,18 @@ class DressUp extends Phaser.Scene {
         this.agentname = this.add.text(game.config.width/2 + 205, game.config.height/2 - 135,agentNames[1]);
 
         this.agentstr = this.add.text(game.config.width/2 - 250, game.config.height/2 - 60, "Strength: " + this.p2.stats[0]);
-        this.agentdex = this.add.text(game.config.width/2 - 250, game.config.height/2 - 20, "Dexterity: " + this.p2.stats[1]);
-        this.agentcon = this.add.text(game.config.width/2 - 250, game.config.height/2 + 20, "Constitution: " + this.p2.stats[2]);
-        this.agentint = this.add.text(game.config.width/2 - 250, game.config.height/2 + 60, "Intelligence: " + this.p2.stats[3]);
-        this.agentwis = this.add.text(game.config.width/2 - 250, game.config.height/2 + 100, "Wisdom: " + this.p2.stats[4]);
-        this.agentcha = this.add.text(game.config.width/2 - 250, game.config.height/2 + 140, "Charisma: " + this.p2.stats[5]);
+        this.agentdex = this.add.text(game.config.width/2 - 250, game.config.height/2 - 20, "Sneakiness: " + this.p2.stats[1]);
+        this.agentcon = this.add.text(game.config.width/2 - 250, game.config.height/2 + 20, "Tolerance: " + this.p2.stats[2]);
+        this.agentint = this.add.text(game.config.width/2 - 250, game.config.height/2 + 60, "Knowledge: " + this.p2.stats[3]);
+        this.agentwis = this.add.text(game.config.width/2 - 250, game.config.height/2 + 100, "Observation: " + this.p2.stats[4]);
+        this.agentcha = this.add.text(game.config.width/2 - 250, game.config.height/2 + 140, "Sexiness: " + this.p2.stats[5]);
 
         //move on
+        this.info = this.add.image(game.config.width/2 - 300, game.config.height/2 + 140, 'info');
+        this.info.setInteractive();
+        //this.infoGraphic = this.add.image(0, 0,'stats');
+        //this.infoGraphic.alpha = 0.0;
+
         this.go = this.add.image(game.config.width/2 + 300, game.config.height/2 + 200, 'continue');
         this.go.setInteractive();
 
@@ -69,6 +74,9 @@ class DressUp extends Phaser.Scene {
         this.add.text(game.config.width/2 + 65, game.config.height/2 + 190, 'Purchase Shoes');
         this.redrawShoes.setInteractive();
 
+   
+
+
         
         this.input.on('gameobjectdown', (pointer, gameObject) =>
         {
@@ -78,6 +86,19 @@ class DressUp extends Phaser.Scene {
                 MenuMusic.stop();
                 ButtonClick.play();
                 this.scene.start("mansionScene");
+            }
+            else if(gameObject == this.info)
+            {
+                MenuMusic.stop();
+                ButtonClick.play();
+                this.scene.start("statGraphic");
+            }
+            else if(gameObject == this.infoGraphic)
+            {
+                ButtonClick.play();
+                this.infoGraphic.visible = false;
+                this.infoGraphic.disableInteractive() 
+                
             }
             else if(gameObject == this.selectNext)
             {
@@ -147,12 +168,26 @@ class DressUp extends Phaser.Scene {
 
     update() 
     {
+       // this.infoGraphic.visible = false;
+       // if(this.infoGraphic.visible)
+       // {
+       //     //show stats graphic
+      //     this.infoGraphic.alpha = 1; 
+       // }
+        //else
+        //{
+      //hide stats graphic
+     //  this.infoGraphic.alpha = 0.0; 
+       // }
+   
+
+
         this.agentstr.text = "Strength: " + this.trgt.stats[0];
-        this.agentdex.text = "Dexterity: " + this.trgt.stats[1];
-        this.agentcon.text = "Constitution: " + this.trgt.stats[2];
-        this.agentint.text = "Intelligence: " + this.trgt.stats[3];
-        this.agentwis.text = "Wisdom: " + this.trgt.stats[4];
-        this.agentcha.text = "Charisma: " + this.trgt.stats[5];
+        this.agentdex.text = "Sneakiness: " + this.trgt.stats[1];
+        this.agentcon.text = "Tolerance: " + this.trgt.stats[2];
+        this.agentint.text = "Knowledge: " + this.trgt.stats[3];
+        this.agentwis.text = "Observation: " + this.trgt.stats[4];
+        this.agentcha.text = "Sexiness: " + this.trgt.stats[5];
 
     }
 

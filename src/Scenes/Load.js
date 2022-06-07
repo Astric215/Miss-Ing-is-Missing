@@ -35,6 +35,7 @@ class Load extends Phaser.Scene
         this.load.image('continue', './assets/Images/ContinueButton.png');
         this.load.image('shuffle', './assets/Images/ShuffleButton.png');
         this.load.image('credits', './assets/Backgrounds/CreditGraphic.png');
+        this.load.image('stats', './assets/Backgrounds/StatsGraphic.png');
 
         //load intro animation
         this.load.atlas('introAtlas', './assets/Atlases/IntroFrames.png', "./assets/Atlases/IntroFrames.json");
@@ -45,6 +46,7 @@ class Load extends Phaser.Scene
         this.load.image('charBG', './assets/Images/SmallBackground.png')
         this.load.image('restartButton', './assets/Images/RestartButton.png')
         this.load.image('exclaim', './assets/Images/EventNotification.png')
+        this.load.image('info', './assets/Images/MoreoInfo.png')
 
         //interactive menu stuff vvv
         this.load.image('interactiveMenu', './assets/Images/InteractiveMain.png');
