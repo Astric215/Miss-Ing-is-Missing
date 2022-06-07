@@ -8,6 +8,8 @@ class Mansion extends Phaser.Scene {
     {
         let GameplayMusic = this.sound.add('gameplay_music', 1);
 
+        
+
         GameplayMusic.setLoop(true);
         GameplayMusic.play();
         //make map
@@ -31,6 +33,10 @@ class Mansion extends Phaser.Scene {
         this.p1.moveToTile(18,1,0, 1, 'power0', 0);
         this.p2.moveToTile(19,1,0, 1, 'power0', 0);
         this.p3.moveToTile(20,1,0, 1, 'power0', 0);
+
+        this.p1Background = this.add.image(-460, 580, 'charBG').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.p2Background = this.add.image(-331, 580, 'charBG').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.p3Background = this.add.image(-205, 580, 'charBG').setOrigin(0, 0).setScrollFactor(0).setScale(2);
 
         //set initial controlled pip
         this.controled = this.p1;
@@ -65,11 +71,22 @@ class Mansion extends Phaser.Scene {
         //=============================================================
         //NEW INTERACTION MENU
 
+
+        
+
+
         this.interactMen = new Interaction(this, - this.cam.width/2, - this.cam.height/2, '1', '2', '3', 0, 0, this.controled, 12, 12).setScrollFactor(0);
 
         //making hoverable button for interactive menu
-        this.interact = this.add.text(game.config.width/2 + 380, -game.config.height/2 + 80, "+INTERACT MENU+").setScrollFactor(0).setScale(2);
-        this.interact.setInteractive();
+        this.interact = this.add.image(game.config.width/2 + 380, -game.config.height/2 + 80, 'interactOff').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+
+        this.interactOn = this.add.image(game.config.width/2 + 380, -game.config.height/2 + 80, 'interactOn').setOrigin(0, 0).setScrollFactor(0).setScale(2);
+        this.interactOn.setInteractive();
+        this.interactOn.alpha = 0.0;
+
+
+
+        
 
         //this is the actual interactive menu that pops up when hovering over button
         this.menuMain = this.add.tileSprite(-480, -290, 960, 540, 'interactiveMenu').setOrigin(0, 0).setScrollFactor(0).setScale(2);
@@ -83,7 +100,7 @@ class Mansion extends Phaser.Scene {
         this.menu2.alpha = 0.0;
 
         //when hovering over "interact"...
-        this.interact.on("pointerover", () => 
+        this.interactOn.on("pointerover", () => 
         { 
             console.log(this.interactMen.player);
             if(this.controled == this.interactMen.player && pause)
@@ -130,16 +147,6 @@ class Mansion extends Phaser.Scene {
             console.log(gameObject);
         }, this);
 
-        //process movement
-        /*this.input.on('pointerdown', (pointer) =>
-        {
-            if((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize < this.map.map.width && (pointer.y/this.cam.zoom + this.cam.scrollY - this.cam.height/2)/tileSize < this.map.map.height && !this.swapping)
-            {
-                //this.controled.setDestination(this.map.tiles[Math.floor((pointer.y/this.cam.zoom+ this.cam.scrollY - this.cam.height/2)/tileSize)][Math.floor((pointer.x/this.cam.zoom + this.cam.scrollX - this.cam.width/2)/tileSize)]);
-                this.controled.pathfind();
-            }
-        }, this);*/
-
         //process gameobjectswaping
         this.input.keyboard.on('keydown', (event) =>
         {
@@ -177,21 +184,16 @@ class Mansion extends Phaser.Scene {
 
     update() 
     {   
-        /*this.input.on('pointerdown', function(pointer){
-            console.log(this.input.y/tileSize);
-            this.p1.setDestination(this.map.map[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
-            
-        });*/
-
-        //when a tile is clicked
-        // if(this.input.activePointer.leftButtonDown())
-        // {
-        //     //set up the paths
-        //     if(this.input.y/tileSize < this.map.map.height && this.input.x/tileSize < this.map.map.width)
-        //     {
-        //         this.p1.setDestination(this.map.tiles[Math.floor(this.input.y/tileSize)][Math.floor(this.input.x/tileSize)]);
-        //     }
-        // }
+        if (pause && this.interactMen.player == this.controled) 
+        {
+            console.log(this.interactMen.player == this.controled);
+            this.interactOn.alpha = 1.0;    
+        } 
+        else 
+        {
+            this.interactOn.alpha = 0.0;
+        }
+        
         if(this.timer == 10)
         {
             //set the pips current tile
@@ -217,6 +219,22 @@ class Mansion extends Phaser.Scene {
             this.agentint.alpha = 0;
             this.agentwis.alpha = 0;
             this.agentcha.alpha = 0; 
+            this.agentname.alpha = 0;
+            this.p1Background.alpha = 0;
+            this.p2Background.alpha = 0;
+            this.p3Background.alpha = 0;
+
+            this.p1AgentName.alpha = 0;
+            this.p1HeadClone.alpha = 0;
+            this.p1Selector.alpha = 0;
+
+            this.p2AgentName.alpha = 0;
+            this.p2HeadClone.alpha = 0;
+            this.p2Selector.alpha = 0;
+
+            this.p3AgentName.alpha = 0;
+            this.p3HeadClone.alpha = 0;
+            this.p3Selector.alpha = 0;
         }
         else
         {
@@ -227,12 +245,28 @@ class Mansion extends Phaser.Scene {
             this.menu2.alpha = 0.0; 
 
             //unhide stats
-            this.agentstr.alpha = 1;
-            this.agentdex.alpha = 1;
-            this.agentcon.alpha = 1;
-            this.agentint.alpha = 1;
-            this.agentwis.alpha = 1;
-            this.agentcha.alpha = 1;
+            this.agentstr.alpha = 0;
+            this.agentdex.alpha = 0;
+            this.agentcon.alpha = 0;
+            this.agentint.alpha = 0;
+            this.agentwis.alpha = 0;
+            this.agentcha.alpha = 0;
+            this.agentname.alpha = 0;
+            this.p1Background.alpha = 1;
+            this.p2Background.alpha = 1;
+            this.p3Background.alpha = 1;
+
+            this.p1AgentName.alpha = 1;
+            this.p1HeadClone.alpha = 1;
+            this.p1Selector.alpha = 1;
+
+            this.p2AgentName.alpha = 1;
+            this.p2HeadClone.alpha = 1;
+            this.p2Selector.alpha = 1;
+
+            this.p3AgentName.alpha = 1;
+            this.p3HeadClone.alpha = 1;
+            this.p3Selector.alpha = 1;
         }
 
         //manage the delay for a interactive menu screen to go away
