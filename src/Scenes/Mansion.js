@@ -64,7 +64,7 @@ class Mansion extends Phaser.Scene {
         //=============================================================
         //NEW INTERACTION MENU
 
-        this.interactMen = new Interaction(this, this.cam.x, this.cam.y, '1', '2', '3', 0, 0, this.controled, 12, 12);
+        this.interactMen = new Interaction(this, - this.cam.width/2, - this.cam.height/2, '1', '2', '3', 0, 0, this.controled, 12, 12).setScrollFactor(0);
 
         //making hoverable button for interactive menu
         this.interact = this.add.text(game.config.width/2 + 380, -game.config.height/2 + 80, "+INTERACT MENU+").setScrollFactor(0).setScale(2);
@@ -260,13 +260,11 @@ class Mansion extends Phaser.Scene {
         this.p3Selector.y = (this.cam.height - 50)/this.cam.zoom + this.cam.scrollY - this.cam.height/2;
 
         //console.log(this.cam.scrollY - this.cam.height/2);
-        this.interactMen.updatePos(this.cam.scrollX - this.cam.width/2, this.cam.scrollY - this.cam.height/2)
         this.p1Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
         this.p2Selector.setScale(2/this.cam.zoom).setSize(tileSize/4, tileSize);
         this.p3Selector.setScale(2/this.cam.zoom).setSize(tileSize/2, tileSize);
         this.swapping = false;
 
-        this
         this.agentstr.text = "Strength: " + this.trgt.stats[0];
         this.agentdex.text = "Dexterity: " + this.trgt.stats[1];
         this.agentcon.text = "Constitution: " + this.trgt.stats[2];

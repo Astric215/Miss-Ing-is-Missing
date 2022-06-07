@@ -17,24 +17,33 @@ class Interaction extends Phaser.GameObjects.Container
     {
         super(scene, x, y);
         scene.add.existing(this);
-        let middle = x+480;
+        let middle = x-240;
         this.style = { font: "60px Arial", fill: "#ff0000", align: "center", wordWrap: { width: 1500 } };
-        this.Question = new Phaser.GameObjects.Text(scene, middle, y + 250, Question, this.style);
+        this.Question = new Phaser.GameObjects.Text(scene, middle, y , Question, this.style).setScrollFactor(0);
         this.Question.setInteractive();
-        this.Choice1 = new Phaser.GameObjects.Text(scene, middle, y + 775, Choice1, this.style);
+        this.Choice1 = new Phaser.GameObjects.Text(scene, middle, y + 500, Choice1, this.style).setScrollFactor(0);
         this.Choice1.setInteractive();
-        this.Choice2 = new Phaser.GameObjects.Text(scene, middle, y + 925, Choice2, this.style);
+        this.Choice2 = new Phaser.GameObjects.Text(scene, middle, y + 675, Choice2, this.style).setScrollFactor(0);
         this.Choice2.setInteractive();
         this.Question.tint = "#000000"
         this.c1StatInd = c1StatInd;
         this.c2StatInd = c2StatInd;
         this.c1StatReq = c1StatReq;
         this.c2StatReq = c2StatReq;
+        this.statstyle = { font: "30px Arial", fill: "#000000", align: "left", wordWrap: { width: 150 } };
+        this.sts = new Phaser.GameObjects.Text(scene, middle - 150, y - 100, "", this.statstyle).setScrollFactor(0);
+        this.sts.text += "STR: " + player.stats[0] + "\n\n";
+        this.sts.text += "DEX: " + player.stats[1] + "\n\n";
+        this.sts.text += "CON: " + player.stats[2] + "\n\n";
+        this.sts.text += "INT: " + player.stats[3] + "\n\n";
+        this.sts.text += "WIS: " + player.stats[4] + "\n\n";
+        this.sts.text += "CHA: " + player.stats[5] + "\n\n";
         this.player = player;
         this.visible = false;
         this.add(this.Question);
         this.add(this.Choice1);
         this.add(this.Choice2);
+        this.add(this.sts);
         //pause = true;
         scene.input.on("gameobjectdown", (Pointer, GameObject) =>
             {
@@ -91,19 +100,6 @@ class Interaction extends Phaser.GameObjects.Container
         console.log(this.Question);
         console.log(this.Choice1);
         console.log(this.Choice2);
-    }
-
-    updatePos(x,y)
-    {
-        let middle = x + 300;
-        this.Question.x = middle;
-        this.Question.y = y + 250;
-
-        this.Choice1.x = middle;
-        this.Choice1.y = y + 775;
-
-        this.Choice2.x = middle;
-        this.Choice2.y = y + 925;
     }
     
 }
