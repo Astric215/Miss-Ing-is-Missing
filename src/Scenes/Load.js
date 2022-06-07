@@ -26,11 +26,17 @@ class Load extends Phaser.Scene
         //load images
         //this.load.image('menu', './assets/Images/Menu.png');
         this.load.image('dressing', './assets/Backgrounds/DressingBackground.png');
+        this.load.image('tutorial', './assets/Backgrounds/InstructionGraphic.png');
+        this.load.image('failure', './assets/Backgrounds/FailureGraphic.png');
+        this.load.image('success', './assets/Backgrounds/SuccessGraphic.png');
         this.load.image('menu', './assets/Backgrounds/MainMenu.png');
         this.load.image('object', './assets/Images/Object.png');
         this.load.image('purchase', './assets/Images/PurchaseButton.png');
         this.load.image('continue', './assets/Images/ContinueButton.png');
-        this.load.image('shuffle', './assets/Images/ShuffleButton.png')
+        this.load.image('shuffle', './assets/Images/ShuffleButton.png');
+
+        //load intro animation
+        this.load.atlas('introAtlas', './assets/Atlases/IntroFrames.png', "./assets/Atlases/IntroFrames.json");
 
         //interaction button
         this.load.image('interactOn', './assets/Images/InteractOn.png')
@@ -57,10 +63,10 @@ class Load extends Phaser.Scene
         this.load.image("dining", "./assets/Atlases/Dining.png");
         this.load.image("fence", "./assets/Atlases/Fence.png");
 
-        //when loading is comlete go to the main menu
+        //when loading is comlete go to the intro
         this.load.on('complete', () => 
         {
-            this.scene.start("menuScene")
+            this.scene.start("introScene")
         }
         );
         statdistro = 
