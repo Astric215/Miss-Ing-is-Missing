@@ -90,6 +90,7 @@ class Interaction extends Phaser.GameObjects.Container
                     }
                     this.scene.delay = 180;
                 }
+                scene.interhist = false;
                 
             }, this
         )
