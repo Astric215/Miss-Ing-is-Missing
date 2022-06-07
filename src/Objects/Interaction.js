@@ -61,6 +61,7 @@ class Interaction extends Phaser.GameObjects.Container
                     else
                     {
                         //fail
+                        failNum++;
                         this.Question.text = "Failure " + (failGoal - failNum) + " lives remaining";
                         this.Choice1.text = '';
                         this.Choice2.text = '';
@@ -82,6 +83,7 @@ class Interaction extends Phaser.GameObjects.Container
                     else
                     {
                         //fail
+                        failNum++;
                         this.Question.text = "Failure " + (failGoal - failNum) + " lives remaining";
                         this.Choice1.text = '';
                         this.Choice2.text = '';
