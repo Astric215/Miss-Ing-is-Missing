@@ -318,7 +318,7 @@ class Pip extends Phaser.GameObjects.Container
                     {
                         if(dest == self.destination)
                         {
-                            if(!pause && Math.random() < 0.1)
+                            if(!pause && Math.random() < 0.03)
                             {
                                 let eventRand = events[Math.floor(Math.random() * events.length)];
                                 self.scene.interactMen.destroy();
