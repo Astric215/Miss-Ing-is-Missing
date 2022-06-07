@@ -6,10 +6,10 @@ class Mansion extends Phaser.Scene {
 
     create() 
     {
-        let GameplayMusic = this.sound.add('gameplay_music', 1);
+        this.GameplayMusic = this.sound.add('gameplay_music', 1);
 
-        GameplayMusic.setLoop(true);
-        GameplayMusic.play();
+        this.GameplayMusic.setLoop(true);
+        this.GameplayMusic.play();
         //make map
         this.map = new Map(this);
         this.map.loadMap();
@@ -278,6 +278,7 @@ class Mansion extends Phaser.Scene {
 
         if((clueGoal == clueNum || failGoal == failNum) && this.delay == 0)
         {
+            this.GameplayMusic.stop();
             this.scene.start("endScene");
         }
     }
