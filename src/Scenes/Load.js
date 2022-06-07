@@ -34,6 +34,7 @@ class Load extends Phaser.Scene
         this.load.image('purchase', './assets/Images/PurchaseButton.png');
         this.load.image('continue', './assets/Images/ContinueButton.png');
         this.load.image('shuffle', './assets/Images/ShuffleButton.png');
+        this.load.image('credits', './assets/Backgrounds/CreditGraphic.png');
 
         //load intro animation
         this.load.atlas('introAtlas', './assets/Atlases/IntroFrames.png', "./assets/Atlases/IntroFrames.json");
