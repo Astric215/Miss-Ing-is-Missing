@@ -20,13 +20,14 @@ class Mansion extends Phaser.Scene {
         this.cam.setZoom(0.5);
 
         //make pips
-        console.log(playerPips[0]);
+        console.log(playerPips[1]);
         this.p1 = new Pip(this, playerPips[0][0], playerPips[0][1], playerPips[0][2], playerPips[0][3], playerPips[0][4]);
         this.p2 = new Pip(this, playerPips[1][0], playerPips[1][1], playerPips[1][2], playerPips[1][3], playerPips[1][4]);
         this.p3 = new Pip(this, playerPips[2][0], playerPips[2][1], playerPips[2][2], playerPips[2][3], playerPips[2][4]);
-        this.p1.genClothes(0, playerPips[0][5]);
-        this.p2.genClothes(0, playerPips[1][5]);
-        this.p3.genClothes(0, playerPips[2][5]);
+        this.p1.genClothes(0, playerPips[0][5], playerPips[0][6]);
+        this.p2.genClothes(0, playerPips[1][5], playerPips[1][6]);
+        console.log(this.p2);
+        this.p3.genClothes(0, playerPips[2][5], playerPips[2][6]);
         this.controled = this.p1;
         this.p1.moveToTile(18,1,0, 1, 'power0', 0);
         this.p2.moveToTile(19,1,0, 1, 'power0', 0);

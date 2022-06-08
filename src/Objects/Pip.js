@@ -69,7 +69,7 @@ class Pip extends Phaser.GameObjects.Container
     //make an array of this pips traits
     toArr()
     {
-        return [this.x, this.y, this.hair, this.tone, this.gender, this.clothing];
+        return [this.x, this.y, this.hair, this.tone, this.gender, this.clothing, this.dr];
     }
 
     //increment clothing index
@@ -101,6 +101,7 @@ class Pip extends Phaser.GameObjects.Container
     // generates clothes based on cloth array or randomly if rand is 1
     genClothes(rand = 0,cloth = this.clothing, dr = this.dr)
     {
+        console.log(this);
         this.stats = [10, 10, 10, 10, 10, 10];
         if(this.length > 5)
         {
@@ -111,26 +112,30 @@ class Pip extends Phaser.GameObjects.Container
             }
             //console.log(this);
         }
+        this.dr = dr;
+        if(rand == 1)
+        {
+            this.dr = Phaser.Math.Between(0, 1);
+            //console.log(c);
+        }
         for(let c = 5; c >= 0; c--)
         {
             if(rand == 1)
             {
-                this.dr = Phaser.Math.Between(0, 1);
                 cloth[c] = Phaser.Math.Between(1, ClothingNums[this.gender][c]);
                 //console.log(c);
             }
-            if(dr == 0 && c == 1)
+            if(this.dr == 0 && c == 1)
             {
                 cloth[1] = 0;
                 continue;
             }
-            if(dr == 1 && (c == 2 || c == 3))
+            if(this.dr == 1 && (c == 2 || c == 3))
             {
                 cloth[2] = 0;
                 cloth[3] = 0;
                 continue;
             }
-            this.dr = dr;
             this.clothing = cloth;
             if(cloth[c] > 0)
             {

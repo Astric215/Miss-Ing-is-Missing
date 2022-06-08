@@ -16,9 +16,9 @@ class DressUp extends Phaser.Scene {
         this.p1 = new Pip(this, 465, 375*2, playerPips[0][2], playerPips[0][3], playerPips[0][4]);
         this.p2 = new Pip(this, 465, 375 , playerPips[1][2], playerPips[1][3], playerPips[1][4]);
         this.p3 = new Pip(this, 465, 375*2, playerPips[2][2], playerPips[2][3], playerPips[2][4]);
-        this.p1.genClothes(0, playerPips[0][5]);
-        this.p2.genClothes(0, playerPips[1][5]);
-        this.p3.genClothes(0, playerPips[2][5]);
+        this.p1.genClothes(0, playerPips[0][5], playerPips[0][6]);
+        this.p2.genClothes(0, playerPips[1][5], playerPips[1][6]);
+        this.p3.genClothes(0, playerPips[2][5], playerPips[2][6]);
         this.p1.setScale(3.5);
         this.p2.setScale(3.5);
         this.p3.setScale(3.5);
