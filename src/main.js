@@ -19,7 +19,7 @@ let config = {
         width: 960,
         height: 540
     },
-    scene: [Load, Menu, Mansion, DressUp, CharacterSelection, End]
+    scene: [Load, Menu, Mansion, DressUp, CharacterSelection, StatGraphic, End, Intro, Tutorial, Credits]
 };
 
 

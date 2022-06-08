@@ -16,7 +16,10 @@ class Map
         this.map = this.scene.add.tilemap("mansionMap");
         let tilesetM = this.map.addTilesetImage("mansionTiles", 'mansionTiles', 64, 64, 0, 1, 1);  // set tileset name
         let tilesetG = this.map.addTilesetImage("grass", 'grass', 64, 64, 0, 1, 82);  // set tileset name
-        let tilesets= [tilesetM, tilesetG]
+        let tilesetB = this.map.addTilesetImage("bar", 'bar', 64, 64, 0, 1, 99);  // set tileset name
+        let tilesetD = this.map.addTilesetImage("dining", 'dining', 64, 64, 0, 1, 90);  // set tileset name
+        let tilesetF = this.map.addTilesetImage("fence", 'fence', 64, 64, 0, 1, 86);  // set tileset name
+        let tilesets= [tilesetM, tilesetG, tilesetB, tilesetD, tilesetF]
         let layer = this.map.createLayer('ground', tilesets, 0, 0);  // set layer name
         let layer2 = this.map.createLayer('walls', tilesets, 0, 0);  // set layer name
 

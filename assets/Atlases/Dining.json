@@ -1,0 +1,53 @@
+{
+       "columns": 3,
+       "image": "Dining.png",
+       "imageheight": 194,
+       "imagewidth": 194,
+       "margin": 0,
+       "name": "dining",
+       "spacing": 1,
+       "tilecount": 9,
+       "tiledversion": "1.8.4",
+       "tileheight": 64,
+       "tiles": [
+              {
+                     "id": 0,
+                     "type": "tableEnd01"
+              },
+              {
+                     "id": 1,
+                     "type": "tableSet01"
+              },
+              {
+                     "id": 2,
+                     "type": "diningChair"
+              },
+              {
+                     "id": 3,
+                     "type": "tableSet02"
+              },
+              {
+                     "id": 4,
+                     "type": "tableSet03"
+              },
+              {
+                     "id": 5,
+                     "type": "tableSet05"
+              },
+              {
+                     "id": 6,
+                     "type": "tableCorner"
+              },
+              {
+                     "id": 7,
+                     "type": "tableEnd02"
+              },
+              {
+                     "id": 8,
+                     "type": "tableSet04"
+              }
+       ],
+       "tilewidth": 64,
+       "type": "tileset",
+       "version": "1.8"
+}
